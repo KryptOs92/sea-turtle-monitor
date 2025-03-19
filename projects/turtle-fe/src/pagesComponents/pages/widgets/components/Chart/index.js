@@ -36,14 +36,14 @@ import { Line } from "react-chartjs-2";
 import Card from "@mui/material/Card";
 
 // Next.js Material Dashboard 2 PRO components
-import MDBox from "/components/MDBox";
-import MDTypography from "/components/MDTypography";
+import MDBox from "/src/components/MDBox";
+import MDTypography from "/src/components/MDTypography";
 
 // Chart configurations
 import configs from "./configs";
 
 // Next.js Material Dashboard 2 PRO base styles
-import colors from "/assets/theme/base/colors";
+import colors from "/src/assets/theme/base/colors";
 
 ChartJS.register(
   CategoryScale,

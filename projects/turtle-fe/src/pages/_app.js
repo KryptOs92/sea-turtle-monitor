@@ -33,22 +33,22 @@ import Icon from "@mui/material/Icon";
 import MDBox from "/src/components/MDBox";
 
 // NextJS Material Dashboard 2 PRO examples
-import Sidenav from "/examples/Sidenav";
-import Configurator from "/examples/Configurator";
+import Sidenav from "/src/examples/Sidenav";
+import Configurator from "/src/examples/Configurator";
 
 // NextJS Material Dashboard 2 PRO themes
-import theme from "/assets/theme";
-import themeRTL from "/assets/theme/theme-rtl";
+import theme from "/src/assets/theme";
+import themeRTL from "/src/assets/theme/theme-rtl";
 
 // NextJS Material Dashboard 2 PRO Dark Mode themes
-import themeDark from "/assets/theme-dark";
-import themeDarkRTL from "/assets/theme-dark/theme-rtl";
+import themeDark from "/src/assets/theme-dark";
+import themeDarkRTL from "/src/assets/theme-dark/theme-rtl";
 
 // RTL plugins
 import rtlPlugin from "stylis-plugin-rtl";
 
 // NextJS Material Dashboard 2 PRO routes
-import routes from "/routes";
+import routes from "/src/routes";
 
 // NextJS Material Dashboard 2 PRO Context Provider
 import {
@@ -56,13 +56,13 @@ import {
   useMaterialUIController,
   setMiniSidenav,
   setOpenConfigurator,
-} from "/context";
+} from "/src/context";
 
 // Images
-import favicon from "/assets/images/favicon.png";
-import appleIcon from "/assets/images/apple-icon.png";
-import brandWhite from "/assets/images/logo-ct.png";
-import brandDark from "/assets/images/logo-ct-dark.png";
+import favicon from "/src/assets/images/favicon.png";
+import appleIcon from "/src/assets/images/apple-icon.png";
+import brandWhite from "/src/assets/images/logo-ct.png";
+import brandDark from "/src/assets/images/logo-ct-dark.png";
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createCache({ key: "css", prepend: true });

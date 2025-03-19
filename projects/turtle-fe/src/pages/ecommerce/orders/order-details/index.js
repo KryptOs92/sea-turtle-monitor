@@ -19,20 +19,20 @@ import Card from "@mui/material/Card";
 import Divider from "@mui/material/Divider";
 
 // NextJS Material Dashboard 2 PRO components
-import MDBox from "/components/MDBox";
+import MDBox from "/src/components/MDBox";
 
 // NextJS Material Dashboard 2 PRO examples
-import DashboardLayout from "/examples/LayoutContainers/DashboardLayout";
-import DashboardNavbar from "/examples/Navbars/DashboardNavbar";
-import Footer from "/examples/Footer";
+import DashboardLayout from "/src/examples/LayoutContainers/DashboardLayout";
+import DashboardNavbar from "/src/examples/Navbars/DashboardNavbar";
+import Footer from "/src/examples/Footer";
 
 // OrderDetails page components
-import Header from "/pagesComponents/ecommerce/orders/order-details/components/Header";
-import OrderInfo from "/pagesComponents/ecommerce/orders/order-details/components/OrderInfo";
-import TrackOrder from "/pagesComponents/ecommerce/orders/order-details/components/TrackOrder";
-import PaymentDetails from "/pagesComponents/ecommerce/orders/order-details/components/PaymentDetails";
-import BillingInformation from "/pagesComponents/ecommerce/orders/order-details/components/BillingInformation";
-import OrderSummary from "/pagesComponents/ecommerce/orders/order-details/components/OrderSummary";
+import Header from "/src/pagesComponents/ecommerce/orders/order-details/components/Header";
+import OrderInfo from "/src/pagesComponents/ecommerce/orders/order-details/components/OrderInfo";
+import TrackOrder from "/src/pagesComponents/ecommerce/orders/order-details/components/TrackOrder";
+import PaymentDetails from "/src/pagesComponents/ecommerce/orders/order-details/components/PaymentDetails";
+import BillingInformation from "/src/pagesComponents/ecommerce/orders/order-details/components/BillingInformation";
+import OrderSummary from "/src/pagesComponents/ecommerce/orders/order-details/components/OrderSummary";
 
 function OrderDetails() {
   return (

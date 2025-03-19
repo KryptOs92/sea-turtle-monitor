@@ -20,7 +20,7 @@ import PropTypes from "prop-types";
 import Icon from "@mui/material/Icon";
 
 // NextJS Material Dashboard 2 PRO components
-import MDTypography from "/components/MDTypography";
+import MDTypography from "/src/components/MDTypography";
 
 function ReviewCell({ rating }) {
   const ratings = {

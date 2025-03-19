@@ -20,9 +20,9 @@ import Grid from "@mui/material/Grid";
 import Icon from "@mui/material/Icon";
 
 // NextJS Material Dashboard 2 PRO components
-import MDBox from "/components/MDBox";
-import MDTypography from "/components/MDTypography";
-import MDButton from "/components/MDButton";
+import MDBox from "/src/components/MDBox";
+import MDTypography from "/src/components/MDTypography";
+import MDButton from "/src/components/MDButton";
 
 function Account() {
   const [design, setDesign] = useState(false);

@@ -21,14 +21,14 @@ import Grid from "@mui/material/Grid";
 import Icon from "@mui/material/Icon";
 
 // NextJS Material Dashboard 2 PRO components
-import MDBox from "/components/MDBox";
-import MDTypography from "/components/MDTypography";
+import MDBox from "/src/components/MDBox";
+import MDTypography from "/src/components/MDTypography";
 
 // NextJS Material Dashboard 2 PRO examples
-import SalesTable from "/examples/Tables/SalesTable";
+import SalesTable from "/src/examples/Tables/SalesTable";
 
 // Data
-import salesTableData from "/pagesComponents/dashboards/analytics/components/SalesByCountry/data/salesTableData";
+import salesTableData from "/src/pagesComponents/dashboards/analytics/components/SalesByCountry/data/salesTableData";
 
 function SalesByCountry() {
   useEffect(() => {

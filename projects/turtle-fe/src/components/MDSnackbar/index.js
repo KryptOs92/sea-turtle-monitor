@@ -24,14 +24,14 @@ import Divider from "@mui/material/Divider";
 import Fade from "@mui/material/Fade";
 
 // NextJS Material Dashboard 2 PRO components
-import MDBox from "/components/MDBox";
-import MDTypography from "/components/MDTypography";
+import MDBox from "/src/components/MDBox";
+import MDTypography from "/src/components/MDTypography";
 
 // Custom styles for the MDSnackbar
-import MDSnackbarIconRoot from "/components/MDSnackbar/MDSnackbarIconRoot";
+import MDSnackbarIconRoot from "/src/components/MDSnackbar/MDSnackbarIconRoot";
 
 // NextJS Material Dashboard 2 PRO context
-import { useMaterialUIController } from "/context";
+import { useMaterialUIController } from "/src/context";
 
 function MDSnackbar({
   color,

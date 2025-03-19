@@ -17,9 +17,9 @@ Coded by www.creative-tim.com
 import PropTypes from "prop-types";
 
 // NextJS Material Dashboard 2 PRO components
-import MDBox from "/components/MDBox";
-import MDTypography from "/components/MDTypography";
-import MDAvatar from "/components/MDAvatar";
+import MDBox from "/src/components/MDBox";
+import MDTypography from "/src/components/MDTypography";
+import MDAvatar from "/src/components/MDAvatar";
 
 function ProductCell({ image, name }) {
   return (

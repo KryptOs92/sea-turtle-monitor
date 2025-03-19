@@ -18,11 +18,11 @@ import { useState } from "react";
 // @mui material components
 import Grid from "@mui/material/Grid";
 // NextJS Material Dashboard 2 PRO components
-import MDBox from "/components/MDBox";
-import MDTypography from "/components/MDTypography";
+import MDBox from "/src/components/MDBox";
+import MDTypography from "/src/components/MDTypography";
 
 // Pricing page components
-import FaqCollapse from "/pagesComponents/pages/pricing-page/components/FaqCollapse";
+import FaqCollapse from "/src/pagesComponents/pages/pricing-page/components/FaqCollapse";
 
 function Faq() {
   const [collapse, setCollapse] = useState(false);

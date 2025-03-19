@@ -29,16 +29,16 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import GoogleIcon from "@mui/icons-material/Google";
 
 // NextJS Material Dashboard 2 PRO components
-import MDBox from "/components/MDBox";
-import MDTypography from "/components/MDTypography";
-import MDInput from "/components/MDInput";
-import MDButton from "/components/MDButton";
+import MDBox from "/src/components/MDBox";
+import MDTypography from "/src/components/MDTypography";
+import MDInput from "/src/components/MDInput";
+import MDButton from "/src/components/MDButton";
 
 // Authentication layout components
-import BasicLayout from "/pagesComponents/authentication/components/BasicLayout";
+import BasicLayout from "/src/pagesComponents/authentication/components/BasicLayout";
 
 // Images
-import bgImage from "/assets/images/bg-sign-in-basic.jpeg";
+import bgImage from "/src/assets/images/bg-sign-in-basic.jpeg";
 
 function Basic() {
   const [rememberMe, setRememberMe] = useState(false);

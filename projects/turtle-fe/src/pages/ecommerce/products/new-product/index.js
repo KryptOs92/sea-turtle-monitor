@@ -23,20 +23,20 @@ import StepLabel from "@mui/material/StepLabel";
 import Card from "@mui/material/Card";
 
 // NextJS Material Dashboard 2 PRO components
-import MDBox from "/components/MDBox";
-import MDButton from "/components/MDButton";
-import MDTypography from "/components/MDTypography";
+import MDBox from "/src/components/MDBox";
+import MDButton from "/src/components/MDButton";
+import MDTypography from "/src/components/MDTypography";
 
 // NextJS Material Dashboard 2 PRO examples
-import DashboardLayout from "/examples/LayoutContainers/DashboardLayout";
-import DashboardNavbar from "/examples/Navbars/DashboardNavbar";
-import Footer from "/examples/Footer";
+import DashboardLayout from "/src/examples/LayoutContainers/DashboardLayout";
+import DashboardNavbar from "/src/examples/Navbars/DashboardNavbar";
+import Footer from "/src/examples/Footer";
 
 // NewProduct page components
-import ProductInfo from "/pagesComponents/ecommerce/products/new-product/components/ProductInfo";
-import Media from "/pagesComponents/ecommerce/products/new-product/components/Media";
-import Socials from "/pagesComponents/ecommerce/products/new-product/components/Socials";
-import Pricing from "/pagesComponents/ecommerce/products/new-product/components/Pricing";
+import ProductInfo from "/src/pagesComponents/ecommerce/products/new-product/components/ProductInfo";
+import Media from "/src/pagesComponents/ecommerce/products/new-product/components/Media";
+import Socials from "/src/pagesComponents/ecommerce/products/new-product/components/Socials";
+import Pricing from "/src/pagesComponents/ecommerce/products/new-product/components/Pricing";
 
 function getSteps() {
   return ["1. Product Info", "2. Media", "3. Social", "4. Pricing"];

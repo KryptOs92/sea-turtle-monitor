@@ -17,12 +17,12 @@ Coded by www.creative-tim.com
 import Card from "@mui/material/Card";
 
 // NextJS Material Dashboard 2 PRO components
-import MDBox from "/components/MDBox";
-import MDTypography from "/components/MDTypography";
-import MDButton from "/components/MDButton";
+import MDBox from "/src/components/MDBox";
+import MDTypography from "/src/components/MDTypography";
+import MDButton from "/src/components/MDButton";
 
 // Billing page components
-import Invoice from "/pagesComponents/pages/account/billing/components/Invoice";
+import Invoice from "/src/pagesComponents/pages/account/billing/components/Invoice";
 
 function Invoices() {
   return (

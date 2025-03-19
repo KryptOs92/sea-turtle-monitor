@@ -14,10 +14,10 @@ Coded by www.creative-tim.com
 */
 
 // NextJS Material Dashboard 2 PRO base styles
-import breakpoints from "/assets/theme/base/breakpoints";
+import breakpoints from "/src/assets/theme/base/breakpoints";
 
 // NextJS Material Dashboard 2 PRO helper functions
-import pxToRem from "/assets/theme/functions/pxToRem";
+import pxToRem from "/src/assets/theme/functions/pxToRem";
 
 const {
   values: { sm, md, lg, xl, xxl },

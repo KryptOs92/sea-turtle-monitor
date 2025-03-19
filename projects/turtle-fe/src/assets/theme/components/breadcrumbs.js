@@ -14,8 +14,8 @@ Coded by www.creative-tim.com
 */
 
 // NextJS Material Dashboard 2 PRO base styles
-import colors from "/assets/theme/base/colors";
-import typography from "/assets/theme/base/typography";
+import colors from "/src/assets/theme/base/colors";
+import typography from "/src/assets/theme/base/typography";
 
 const { grey } = colors;
 const { size } = typography;

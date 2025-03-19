@@ -14,7 +14,7 @@ Coded by www.creative-tim.com
 */
 
 import * as Yup from "yup";
-import checkout from "/pagesComponents/pages/users/new-user/schemas/form";
+import checkout from "/src/pagesComponents/pages/users/new-user/schemas/form";
 
 const {
   formField: {

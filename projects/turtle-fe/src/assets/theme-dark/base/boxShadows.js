@@ -20,10 +20,10 @@ Coded by www.creative-tim.com
  */
 
 // NextJS Material Dashboard 2 PRO Base Styles
-import colors from "/assets/theme-dark/base/colors";
+import colors from "/src/assets/theme-dark/base/colors";
 
 // NextJS Material Dashboard 2 PRO Helper Functions
-import boxShadow from "/assets/theme-dark/functions/boxShadow";
+import boxShadow from "/src/assets/theme-dark/functions/boxShadow";
 
 const { black, dark, tabs, coloredShadows } = colors;
 

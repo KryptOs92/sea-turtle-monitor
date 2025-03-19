@@ -20,10 +20,10 @@ Coded by www.creative-tim.com
  */
 
 // NextJS Material Dashboard 2 PRO Base Styles
-import colors from "/assets/theme/base/colors";
+import colors from "/src/assets/theme/base/colors";
 
 // NextJS Material Dashboard 2 PRO Helper Functions
-import pxToRem from "/assets/theme/functions/pxToRem";
+import pxToRem from "/src/assets/theme/functions/pxToRem";
 
 const { grey } = colors;
 

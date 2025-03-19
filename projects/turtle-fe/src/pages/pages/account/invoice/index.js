@@ -23,19 +23,19 @@ import TableRow from "@mui/material/TableRow";
 import TableBody from "@mui/material/TableBody";
 
 // NextJS Material Dashboard 2 PRO components
-import MDBox from "/components/MDBox";
-import MDTypography from "/components/MDTypography";
-import MDButton from "/components/MDButton";
+import MDBox from "/src/components/MDBox";
+import MDTypography from "/src/components/MDTypography";
+import MDButton from "/src/components/MDButton";
 
 // Invoice page components
-import BaseLayout from "/pagesComponents/pages/account/components/BaseLayout";
+import BaseLayout from "/src/pagesComponents/pages/account/components/BaseLayout";
 
 // Images
-import logoCT from "/assets/images/logo-ct.png";
-import logoCTDark from "/assets/images/logo-ct-dark.png";
+import logoCT from "/src/assets/images/logo-ct.png";
+import logoCTDark from "/src/assets/images/logo-ct-dark.png";
 
 // NextJS Material Dashboard 2 PRO context
-import { useMaterialUIController } from "/context";
+import { useMaterialUIController } from "/src/context";
 
 function Invoice() {
   const [controller] = useMaterialUIController();

@@ -17,17 +17,17 @@ Coded by www.creative-tim.com
 import Card from "@mui/material/Card";
 
 // NextJS Material Dashboard 2 PRO components
-import MDBox from "/components/MDBox";
-import MDTypography from "/components/MDTypography";
+import MDBox from "/src/components/MDBox";
+import MDTypography from "/src/components/MDTypography";
 
 // NextJS Material Dashboard 2 PRO examples
-import DashboardLayout from "/examples/LayoutContainers/DashboardLayout";
-import DashboardNavbar from "/examples/Navbars/DashboardNavbar";
-import Footer from "/examples/Footer";
-import DataTable from "/examples/Tables/DataTable";
+import DashboardLayout from "/src/examples/LayoutContainers/DashboardLayout";
+import DashboardNavbar from "/src/examples/Navbars/DashboardNavbar";
+import Footer from "/src/examples/Footer";
+import DataTable from "/src/examples/Tables/DataTable";
 
 // Data
-import dataTableData from "/pagesComponents/applications/data-tables/data/dataTableData";
+import dataTableData from "/src/pagesComponents/applications/data-tables/data/dataTableData";
 
 function DataTables() {
   return (

@@ -24,29 +24,29 @@ import Icon from "@mui/material/Icon";
 import Card from "@mui/material/Card";
 
 // NextJS Material Dashboard 2 PRO components
-import MDBox from "/components/MDBox";
-import MDBadgeDot from "/components/MDBadgeDot";
-import MDButton from "/components/MDButton";
-import MDTypography from "/components/MDTypography";
+import MDBox from "/src/components/MDBox";
+import MDBadgeDot from "/src/components/MDBadgeDot";
+import MDButton from "/src/components/MDButton";
+import MDTypography from "/src/components/MDTypography";
 
 // NextJS Material Dashboard 2 PRO examples
-import DashboardLayout from "/examples/LayoutContainers/DashboardLayout";
-import DashboardNavbar from "/examples/Navbars/DashboardNavbar";
-import Footer from "/examples/Footer";
-import DefaultStatisticsCard from "/examples/Cards/StatisticsCards/DefaultStatisticsCard";
-import DefaultLineChart from "/examples/Charts/LineCharts/DefaultLineChart";
-import HorizontalBarChart from "/examples/Charts/BarCharts/HorizontalBarChart";
-import SalesTable from "/examples/Tables/SalesTable";
-import DataTable from "/examples/Tables/DataTable";
+import DashboardLayout from "/src/examples/LayoutContainers/DashboardLayout";
+import DashboardNavbar from "/src/examples/Navbars/DashboardNavbar";
+import Footer from "/src/examples/Footer";
+import DefaultStatisticsCard from "/src/examples/Cards/StatisticsCards/DefaultStatisticsCard";
+import DefaultLineChart from "/src/examples/Charts/LineCharts/DefaultLineChart";
+import HorizontalBarChart from "/src/examples/Charts/BarCharts/HorizontalBarChart";
+import SalesTable from "/src/examples/Tables/SalesTable";
+import DataTable from "/src/examples/Tables/DataTable";
 
 // Sales dashboard components
-import ChannelsChart from "/pagesComponents/dashboards/sales/components/ChannelsChart";
+import ChannelsChart from "/src/pagesComponents/dashboards/sales/components/ChannelsChart";
 
 // Data
-import defaultLineChartData from "/pagesComponents/dashboards/sales/data/defaultLineChartData";
-import horizontalBarChartData from "/pagesComponents/dashboards/sales/data/horizontalBarChartData";
-import salesTableData from "/pagesComponents/dashboards/sales/data/salesTableData";
-import dataTableData from "/pagesComponents/dashboards/sales/data/dataTableData";
+import defaultLineChartData from "/src/pagesComponents/dashboards/sales/data/defaultLineChartData";
+import horizontalBarChartData from "/src/pagesComponents/dashboards/sales/data/horizontalBarChartData";
+import salesTableData from "/src/pagesComponents/dashboards/sales/data/salesTableData";
+import dataTableData from "/src/pagesComponents/dashboards/sales/data/dataTableData";
 
 function Sales() {
   // DefaultStatisticsCard state for the dropdown value

@@ -19,14 +19,14 @@ import { useState } from "react";
 import Container from "@mui/material/Container";
 
 // NextJS Material Dashboard 2 PRO examples
-import PageLayout from "/examples/LayoutContainers/PageLayout";
+import PageLayout from "/src/examples/LayoutContainers/PageLayout";
 
 // Pricing page components
-import Header from "/pagesComponents/pages/pricing-page/components/Header";
-import Footer from "/pagesComponents/pages/pricing-page/components/Footer";
-import PricingCards from "/pagesComponents/pages/pricing-page/components/PricingCards";
-import TrustedBrands from "/pagesComponents/pages/pricing-page/components/TrustedBrands";
-import Faq from "/pagesComponents/pages/pricing-page/components/Faq";
+import Header from "/src/pagesComponents/pages/pricing-page/components/Header";
+import Footer from "/src/pagesComponents/pages/pricing-page/components/Footer";
+import PricingCards from "/src/pagesComponents/pages/pricing-page/components/PricingCards";
+import TrustedBrands from "/src/pagesComponents/pages/pricing-page/components/TrustedBrands";
+import Faq from "/src/pagesComponents/pages/pricing-page/components/Faq";
 
 function PricingPage() {
   const [tabValue, setTabValue] = useState(0);

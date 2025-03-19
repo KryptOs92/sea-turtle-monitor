@@ -14,7 +14,7 @@ Coded by www.creative-tim.com
 */
 
 // NextJS Material Dashboard 2 PRO helper functions
-import pxToRem from "/assets/theme-dark/functions/pxToRem";
+import pxToRem from "/src/assets/theme-dark/functions/pxToRem";
 
 const svgIcon = {
   defaultProps: {

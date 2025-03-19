@@ -18,21 +18,21 @@ import Card from "@mui/material/Card";
 import Grid from "@mui/material/Grid";
 
 // NextJS Material Dashboard 2 PRO components
-import MDBox from "/components/MDBox";
-import MDTypography from "/components/MDTypography";
+import MDBox from "/src/components/MDBox";
+import MDTypography from "/src/components/MDTypography";
 
 // NextJS Material Dashboard 2 PRO examples
-import DashboardLayout from "/examples/LayoutContainers/DashboardLayout";
-import DashboardNavbar from "/examples/Navbars/DashboardNavbar";
-import Footer from "/examples/Footer";
-import DataTable from "/examples/Tables/DataTable";
+import DashboardLayout from "/src/examples/LayoutContainers/DashboardLayout";
+import DashboardNavbar from "/src/examples/Navbars/DashboardNavbar";
+import Footer from "/src/examples/Footer";
+import DataTable from "/src/examples/Tables/DataTable";
 
 // ProductPage page components
-import ProductImages from "/pagesComponents/ecommerce/products/product-page/components/ProductImages";
-import ProductInfo from "/pagesComponents/ecommerce/products/product-page/components/ProductInfo";
+import ProductImages from "/src/pagesComponents/ecommerce/products/product-page/components/ProductImages";
+import ProductInfo from "/src/pagesComponents/ecommerce/products/product-page/components/ProductInfo";
 
 // Data
-import dataTableData from "/pagesComponents/ecommerce/products/product-page/data/dataTableData";
+import dataTableData from "/src/pagesComponents/ecommerce/products/product-page/data/dataTableData";
 
 function ProductPage() {
   return (

@@ -14,8 +14,8 @@ Coded by www.creative-tim.com
 */
 
 // NextJS Material Dashboard 2 PRO base styles
-import borders from "/assets/theme/base/borders";
-import colors from "/assets/theme/base/colors";
+import borders from "/src/assets/theme/base/borders";
+import colors from "/src/assets/theme/base/colors";
 
 const { white, grey } = colors;
 const { borderWidth } = borders;

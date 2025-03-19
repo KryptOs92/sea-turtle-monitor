@@ -22,31 +22,31 @@ import MenuItem from "@mui/material/MenuItem";
 import Icon from "@mui/material/Icon";
 
 // NextJS Material Dashboard 2 PRO components
-import MDBox from "/components/MDBox";
-import MDTypography from "/components/MDTypography";
-import MDButton from "/components/MDButton";
+import MDBox from "/src/components/MDBox";
+import MDTypography from "/src/components/MDTypography";
+import MDButton from "/src/components/MDButton";
 
 // NextJS Material Dashboard 2 PRO examples
-import DashboardLayout from "/examples/LayoutContainers/DashboardLayout";
-import DashboardNavbar from "/examples/Navbars/DashboardNavbar";
-import Footer from "/examples/Footer";
-import ComplexProjectCard from "/examples/Cards/ProjectCards/ComplexProjectCard";
+import DashboardLayout from "/src/examples/LayoutContainers/DashboardLayout";
+import DashboardNavbar from "/src/examples/Navbars/DashboardNavbar";
+import Footer from "/src/examples/Footer";
+import ComplexProjectCard from "/src/examples/Cards/ProjectCards/ComplexProjectCard";
 
 // Project page components
-import Header from "/pagesComponents/pages/profile/components/Header";
+import Header from "/src/pagesComponents/pages/profile/components/Header";
 
 // Images
-import team1 from "/assets/images/team-1.jpg";
-import team2 from "/assets/images/team-2.jpg";
-import team3 from "/assets/images/team-3.jpg";
-import team4 from "/assets/images/team-4.jpg";
-import team5 from "/assets/images/team-5.jpg";
-import logoSlack from "/assets/images/small-logos/logo-slack.svg";
-import logoSpotify from "/assets/images/small-logos/logo-spotify.svg";
-import logoXD from "/assets/images/small-logos/logo-xd.svg";
-import logoAsana from "/assets/images/small-logos/logo-asana.svg";
-import logoInvision from "/assets/images/small-logos/logo-invision.svg";
-import logoAtlassian from "/assets/images/small-logos/logo-atlassian.svg";
+import team1 from "/src/assets/images/team-1.jpg";
+import team2 from "/src/assets/images/team-2.jpg";
+import team3 from "/src/assets/images/team-3.jpg";
+import team4 from "/src/assets/images/team-4.jpg";
+import team5 from "/src/assets/images/team-5.jpg";
+import logoSlack from "/src/assets/images/small-logos/logo-slack.svg";
+import logoSpotify from "/src/assets/images/small-logos/logo-spotify.svg";
+import logoXD from "/src/assets/images/small-logos/logo-xd.svg";
+import logoAsana from "/src/assets/images/small-logos/logo-asana.svg";
+import logoInvision from "/src/assets/images/small-logos/logo-invision.svg";
+import logoAtlassian from "/src/assets/images/small-logos/logo-atlassian.svg";
 
 function AllProjects() {
   // ComplexProjectCard dropdown menu state

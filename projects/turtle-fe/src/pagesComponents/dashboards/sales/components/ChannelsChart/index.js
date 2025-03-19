@@ -20,17 +20,17 @@ import Icon from "@mui/material/Icon";
 import Grid from "@mui/material/Grid";
 
 // NextJS Material Dashboard 2 PRO components
-import MDBox from "/components/MDBox";
-import MDTypography from "/components/MDTypography";
-import MDButton from "/components/MDButton";
-import MDBadgeDot from "/components/MDBadgeDot";
-import PieChart from "/examples/Charts/PieChart";
+import MDBox from "/src/components/MDBox";
+import MDTypography from "/src/components/MDTypography";
+import MDButton from "/src/components/MDButton";
+import MDBadgeDot from "/src/components/MDBadgeDot";
+import PieChart from "/src/examples/Charts/PieChart";
 
 // Data
-import channelChartData from "/pagesComponents/dashboards/sales/components/ChannelsChart/data";
+import channelChartData from "/src/pagesComponents/dashboards/sales/components/ChannelsChart/data";
 
 // NextJS Material Dashboard 2 PRO contexts
-import { useMaterialUIController } from "/context";
+import { useMaterialUIController } from "/src/context";
 
 function ChannelsChart() {
   const [controller] = useMaterialUIController();

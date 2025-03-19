@@ -22,11 +22,11 @@ import Link from "@mui/material/Link";
 import Icon from "@mui/material/Icon";
 
 // NextJS Material Dashboard 2 PRO components
-import MDBox from "/components/MDBox";
-import MDTypography from "/components/MDTypography";
+import MDBox from "/src/components/MDBox";
+import MDTypography from "/src/components/MDTypography";
 
 // NextJS Material Dashboard 2 PRO base styles
-import typography from "/assets/theme/base/typography";
+import typography from "/src/assets/theme/base/typography";
 
 function Footer({ light }) {
   const { size } = typography;

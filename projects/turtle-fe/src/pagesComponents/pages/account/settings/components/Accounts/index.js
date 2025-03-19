@@ -23,20 +23,20 @@ import Tooltip from "@mui/material/Tooltip";
 import Divider from "@mui/material/Divider";
 
 // NextJS Material Dashboard 2 PRO components
-import MDBox from "/components/MDBox";
-import MDTypography from "/components/MDTypography";
-import MDAvatar from "/components/MDAvatar";
-import MDInput from "/components/MDInput";
-import MDButton from "/components/MDButton";
+import MDBox from "/src/components/MDBox";
+import MDTypography from "/src/components/MDTypography";
+import MDAvatar from "/src/components/MDAvatar";
+import MDInput from "/src/components/MDInput";
+import MDButton from "/src/components/MDButton";
 
 // Images
-import logoSlack from "/assets/images/small-logos/logo-slack.svg";
-import logoSpotify from "/assets/images/small-logos/logo-spotify.svg";
-import logoAtlassian from "/assets/images/small-logos/logo-atlassian.svg";
-import logoAsana from "/assets/images/small-logos/logo-asana.svg";
+import logoSlack from "/src/assets/images/small-logos/logo-slack.svg";
+import logoSpotify from "/src/assets/images/small-logos/logo-spotify.svg";
+import logoAtlassian from "/src/assets/images/small-logos/logo-atlassian.svg";
+import logoAsana from "/src/assets/images/small-logos/logo-asana.svg";
 
 // NextJS Material Dashboard 2 PRO components
-import { useMaterialUIController } from "/context";
+import { useMaterialUIController } from "/src/context";
 
 function Accounts() {
   const [controller] = useMaterialUIController();

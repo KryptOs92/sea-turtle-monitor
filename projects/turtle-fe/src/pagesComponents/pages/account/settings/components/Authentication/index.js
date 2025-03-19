@@ -18,10 +18,10 @@ import Card from "@mui/material/Card";
 import Divider from "@mui/material/Divider";
 
 // NextJS Material Dashboard 2 PRO components
-import MDBox from "/components/MDBox";
-import MDTypography from "/components/MDTypography";
-import MDButton from "/components/MDButton";
-import MDBadge from "/components/MDBadge";
+import MDBox from "/src/components/MDBox";
+import MDTypography from "/src/components/MDTypography";
+import MDButton from "/src/components/MDButton";
+import MDBadge from "/src/components/MDBadge";
 
 function Authentication() {
   return (

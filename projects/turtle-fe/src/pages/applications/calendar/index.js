@@ -21,21 +21,21 @@ import dynamic from "next/dynamic";
 import Grid from "@mui/material/Grid";
 
 // NextJS Material Dashboard 2 PRO components
-import MDBox from "/components/MDBox";
+import MDBox from "/src/components/MDBox";
 
 // NextJS Material Dashboard 2 PRO examples
-import DashboardLayout from "/examples/LayoutContainers/DashboardLayout";
-import DashboardNavbar from "/examples/Navbars/DashboardNavbar";
-import Footer from "/examples/Footer";
-import EventCalendar from "/examples/Calendar";
+import DashboardLayout from "/src/examples/LayoutContainers/DashboardLayout";
+import DashboardNavbar from "/src/examples/Navbars/DashboardNavbar";
+import Footer from "/src/examples/Footer";
+import EventCalendar from "/src/examples/Calendar";
 
 // Calendar application components
-import Header from "/pagesComponents/applications/calendar/components/Header";
-import NextEvents from "/pagesComponents/applications/calendar/components/NextEvents";
-import ProductivityChart from "/pagesComponents/applications/calendar/components/ProductivityChart";
+import Header from "/src/pagesComponents/applications/calendar/components/Header";
+import NextEvents from "/src/pagesComponents/applications/calendar/components/NextEvents";
+import ProductivityChart from "/src/pagesComponents/applications/calendar/components/ProductivityChart";
 
 // Data
-import calendarEventsData from "/pagesComponents/applications/calendar/data/calendarEventsData";
+import calendarEventsData from "/src/pagesComponents/applications/calendar/data/calendarEventsData";
 
 function Calendar() {
   return (

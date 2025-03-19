@@ -17,19 +17,19 @@ Coded by www.creative-tim.com
 import Grid from "@mui/material/Grid";
 
 // NextJS Material Dashboard 2 PRO components
-import MDBox from "/components/MDBox";
+import MDBox from "/src/components/MDBox";
 
 // Settings page components
-import BaseLayout from "/pagesComponents/pages/account/components/BaseLayout";
-import Sidenav from "/pagesComponents/pages/account/settings/components/Sidenav";
-import Header from "/pagesComponents/pages/account/settings/components/Header";
-import BasicInfo from "/pagesComponents/pages/account/settings/components/BasicInfo";
-import ChangePassword from "/pagesComponents/pages/account/settings/components/ChangePassword";
-import Authentication from "/pagesComponents/pages/account/settings/components/Authentication";
-import Accounts from "/pagesComponents/pages/account/settings/components/Accounts";
-import Notifications from "/pagesComponents/pages/account/settings/components/Notifications";
-import Sessions from "/pagesComponents/pages/account/settings/components/Sessions";
-import DeleteAccount from "/pagesComponents/pages/account/settings/components/DeleteAccount";
+import BaseLayout from "/src/pagesComponents/pages/account/components/BaseLayout";
+import Sidenav from "/src/pagesComponents/pages/account/settings/components/Sidenav";
+import Header from "/src/pagesComponents/pages/account/settings/components/Header";
+import BasicInfo from "/src/pagesComponents/pages/account/settings/components/BasicInfo";
+import ChangePassword from "/src/pagesComponents/pages/account/settings/components/ChangePassword";
+import Authentication from "/src/pagesComponents/pages/account/settings/components/Authentication";
+import Accounts from "/src/pagesComponents/pages/account/settings/components/Accounts";
+import Notifications from "/src/pagesComponents/pages/account/settings/components/Notifications";
+import Sessions from "/src/pagesComponents/pages/account/settings/components/Sessions";
+import DeleteAccount from "/src/pagesComponents/pages/account/settings/components/DeleteAccount";
 
 function Settings() {
   return (

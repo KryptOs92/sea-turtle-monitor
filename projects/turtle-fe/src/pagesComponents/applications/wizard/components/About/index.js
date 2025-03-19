@@ -19,16 +19,16 @@ import Icon from "@mui/material/Icon";
 import Tooltip from "@mui/material/Tooltip";
 
 // NextJS Material Dashboard 2 PRO components
-import MDBox from "/components/MDBox";
-import MDTypography from "/components/MDTypography";
-import MDAvatar from "/components/MDAvatar";
-import MDButton from "/components/MDButton";
+import MDBox from "/src/components/MDBox";
+import MDTypography from "/src/components/MDTypography";
+import MDAvatar from "/src/components/MDAvatar";
+import MDButton from "/src/components/MDButton";
 
 // Wizard application components
-import FormField from "/pagesComponents/applications/wizard/components/FormField";
+import FormField from "/src/pagesComponents/applications/wizard/components/FormField";
 
 // Images
-import team2 from "/assets/images/team-2.jpg";
+import team2 from "/src/assets/images/team-2.jpg";
 
 function About() {
   return (

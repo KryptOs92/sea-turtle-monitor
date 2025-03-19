@@ -19,7 +19,7 @@ Coded by www.creative-tim.com
  */
 
 // NextJS Material Dashboard 2 PRO helper functions
-import hexToRgb from "/assets/theme-dark/functions/hexToRgb";
+import hexToRgb from "/src/assets/theme-dark/functions/hexToRgb";
 
 function rgba(color, opacity) {
   return `rgba(${hexToRgb(color)}, ${opacity})`;

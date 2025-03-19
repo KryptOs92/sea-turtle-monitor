@@ -22,13 +22,13 @@ import PropTypes from "prop-types";
 import "dropzone/dist/dropzone.css";
 
 // NextJS Material Dashboard 2 PRO components
-import MDBox from "/components/MDBox";
+import MDBox from "/src/components/MDBox";
 
 // Custom styles for the MDDropzone
-import MDDropzoneRoot from "/components/MDDropzone/MDDropzoneRoot";
+import MDDropzoneRoot from "/src/components/MDDropzone/MDDropzoneRoot";
 
 // NextJS Material Dashboard 2 PRO context
-import { useMaterialUIController } from "/context";
+import { useMaterialUIController } from "/src/context";
 
 function MDDropzone({ options }) {
   const [controller] = useMaterialUIController();

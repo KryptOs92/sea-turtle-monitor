@@ -18,7 +18,7 @@ Coded by www.creative-tim.com
  */
 
 // NextJS Material Dashboard 2 PRO helper functions
-import rgba from "/assets/theme/functions/rgba";
+import rgba from "/src/assets/theme/functions/rgba";
 
 function gradientChartLine(chart, color, opacity = 0.2) {
   const gradientStroke = chart.createLinearGradient(0, 230, 0, 50);

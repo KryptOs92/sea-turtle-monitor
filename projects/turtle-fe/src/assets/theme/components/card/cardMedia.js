@@ -14,10 +14,10 @@ Coded by www.creative-tim.com
 */
 
 // NextJS Material Dashboard 2 PRO Base Styles
-import borders from "/assets/theme/base/borders";
+import borders from "/src/assets/theme/base/borders";
 
 // NextJS Material Dashboard 2 PRO Helper Functions
-import pxToRem from "/assets/theme/functions/pxToRem";
+import pxToRem from "/src/assets/theme/functions/pxToRem";
 
 const { borderRadius } = borders;
 

@@ -17,35 +17,35 @@ Coded by www.creative-tim.com
 import Grid from "@mui/material/Grid";
 
 // NextJS Material Dashboard 2 PRO components
-import MDBox from "/components/MDBox";
-import MDTypography from "/components/MDTypography";
+import MDBox from "/src/components/MDBox";
+import MDTypography from "/src/components/MDTypography";
 
 // NextJS Material Dashboard 2 PRO examples
-import DashboardLayout from "/examples/LayoutContainers/DashboardLayout";
-import DashboardNavbar from "/examples/Navbars/DashboardNavbar";
-import Footer from "/examples/Footer";
-import DefaultLineChart from "/examples/Charts/LineCharts/DefaultLineChart";
-import GradientLineChart from "/examples/Charts/LineCharts/GradientLineChart";
-import VerticalBarChart from "/examples/Charts/BarCharts/VerticalBarChart";
-import HorizontalBarChart from "/examples/Charts/BarCharts/HorizontalBarChart";
-import MixedChart from "/examples/Charts/MixedChart";
-import BubbleChart from "/examples/Charts/BubbleChart";
-import DefaultDoughnutChart from "/examples/Charts/DoughnutCharts/DefaultDoughnutChart";
-import PieChart from "/examples/Charts/PieChart";
-import RadarChart from "/examples/Charts/RadarChart";
-import PolarChart from "/examples/Charts/PolarChart";
+import DashboardLayout from "/src/examples/LayoutContainers/DashboardLayout";
+import DashboardNavbar from "/src/examples/Navbars/DashboardNavbar";
+import Footer from "/src/examples/Footer";
+import DefaultLineChart from "/src/examples/Charts/LineCharts/DefaultLineChart";
+import GradientLineChart from "/src/examples/Charts/LineCharts/GradientLineChart";
+import VerticalBarChart from "/src/examples/Charts/BarCharts/VerticalBarChart";
+import HorizontalBarChart from "/src/examples/Charts/BarCharts/HorizontalBarChart";
+import MixedChart from "/src/examples/Charts/MixedChart";
+import BubbleChart from "/src/examples/Charts/BubbleChart";
+import DefaultDoughnutChart from "/src/examples/Charts/DoughnutCharts/DefaultDoughnutChart";
+import PieChart from "/src/examples/Charts/PieChart";
+import RadarChart from "/src/examples/Charts/RadarChart";
+import PolarChart from "/src/examples/Charts/PolarChart";
 
 // Data
-import defaultLineChartData from "/pagesComponents/pages/charts/data/defaultLineChartData";
-import gradientLineChartData from "/pagesComponents/pages/charts/data/gradientLineChartData";
-import verticalBarChartData from "/pagesComponents/pages/charts/data/verticalBarChartData";
-import horizontalBarChartData from "/pagesComponents/pages/charts/data/horizontalBarChartData";
-import mixedChartData from "/pagesComponents/pages/charts/data/mixedChartData";
-import bubbleChartData from "/pagesComponents/pages/charts/data/bubbleChartData";
-import defaultDoughnutChartData from "/pagesComponents/pages/charts/data/defaultDoughnutChartData";
-import pieChartData from "/pagesComponents/pages/charts/data/pieChartData";
-import radarChartData from "/pagesComponents/pages/charts/data/radarChartData";
-import polarChartData from "/pagesComponents/pages/charts/data/polarChartData";
+import defaultLineChartData from "/src/pagesComponents/pages/charts/data/defaultLineChartData";
+import gradientLineChartData from "/src/pagesComponents/pages/charts/data/gradientLineChartData";
+import verticalBarChartData from "/src/pagesComponents/pages/charts/data/verticalBarChartData";
+import horizontalBarChartData from "/src/pagesComponents/pages/charts/data/horizontalBarChartData";
+import mixedChartData from "/src/pagesComponents/pages/charts/data/mixedChartData";
+import bubbleChartData from "/src/pagesComponents/pages/charts/data/bubbleChartData";
+import defaultDoughnutChartData from "/src/pagesComponents/pages/charts/data/defaultDoughnutChartData";
+import pieChartData from "/src/pagesComponents/pages/charts/data/pieChartData";
+import radarChartData from "/src/pagesComponents/pages/charts/data/radarChartData";
+import polarChartData from "/src/pagesComponents/pages/charts/data/polarChartData";
 
 function Charts() {
   return (

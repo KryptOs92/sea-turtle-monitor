@@ -27,16 +27,16 @@ import Tab from "@mui/material/Tab";
 import Icon from "@mui/material/Icon";
 
 // NextJS Material Dashboard 2 PRO components
-import MDBox from "/components/MDBox";
-import MDTypography from "/components/MDTypography";
-import MDAvatar from "/components/MDAvatar";
+import MDBox from "/src/components/MDBox";
+import MDTypography from "/src/components/MDTypography";
+import MDAvatar from "/src/components/MDAvatar";
 
 // NextJS Material Dashboard 2 PRO base styles
-import breakpoints from "/assets/theme/base/breakpoints";
+import breakpoints from "/src/assets/theme/base/breakpoints";
 
 // Images
-import burceMars from "/assets/images/bruce-mars.jpg";
-import backgroundImage from "/assets/images/bg-profile.jpeg";
+import burceMars from "/src/assets/images/bruce-mars.jpg";
+import backgroundImage from "/src/assets/images/bg-profile.jpeg";
 
 function Header({ children }) {
   const [tabsOrientation, setTabsOrientation] = useState("horizontal");
@@ -50,7 +50,7 @@ function Header({ children }) {
         : setTabsOrientation("horizontal");
     }
 
-    /** 
+    /**
      The event listener that's calling the handleTabsOrientation function when resizing the window.
     */
     window.addEventListener("resize", handleTabsOrientation);

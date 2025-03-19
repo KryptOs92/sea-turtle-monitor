@@ -17,11 +17,11 @@ Coded by www.creative-tim.com
 import Grid from "@mui/material/Grid";
 
 // NextJS Material Dashboard 2 PRO components
-import MDBox from "/components/MDBox";
-import MDTypography from "/components/MDTypography";
+import MDBox from "/src/components/MDBox";
+import MDTypography from "/src/components/MDTypography";
 
 // NewProduct page components
-import FormField from "/pagesComponents/ecommerce/products/new-product/components/FormField";
+import FormField from "/src/pagesComponents/ecommerce/products/new-product/components/FormField";
 
 function Socials() {
   return (

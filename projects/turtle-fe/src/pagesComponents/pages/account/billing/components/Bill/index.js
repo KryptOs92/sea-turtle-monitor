@@ -20,12 +20,12 @@ import PropTypes from "prop-types";
 import Icon from "@mui/material/Icon";
 
 // NextJS Material Dashboard 2 PRO components
-import MDBox from "/components/MDBox";
-import MDTypography from "/components/MDTypography";
-import MDButton from "/components/MDButton";
+import MDBox from "/src/components/MDBox";
+import MDTypography from "/src/components/MDTypography";
+import MDButton from "/src/components/MDButton";
 
 // NextJS Material Dashboard 2 PRO context
-import { useMaterialUIController } from "/context";
+import { useMaterialUIController } from "/src/context";
 
 function Bill({ name, company, email, vat, noGutter }) {
   const [controller] = useMaterialUIController();

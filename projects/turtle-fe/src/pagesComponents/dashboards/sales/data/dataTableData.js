@@ -14,16 +14,16 @@ Coded by www.creative-tim.com
 */
 
 // Sales dashboard components
-import ProductCell from "/pagesComponents/dashboards/sales/components/ProductCell";
-import RefundsCell from "/pagesComponents/dashboards/sales/components/RefundsCell";
-import DefaultCell from "/pagesComponents/dashboards/sales/components/DefaultCell";
+import ProductCell from "/src/pagesComponents/dashboards/sales/components/ProductCell";
+import RefundsCell from "/src/pagesComponents/dashboards/sales/components/RefundsCell";
+import DefaultCell from "/src/pagesComponents/dashboards/sales/components/DefaultCell";
 
 // Images
-import nikeV22 from "/assets/images/ecommerce/blue-shoe.jpeg";
-import businessKit from "/assets/images/ecommerce/black-mug.jpeg";
-import blackChair from "/assets/images/ecommerce/black-chair.jpeg";
-import wirelessCharger from "/assets/images/ecommerce/bang-sound.jpeg";
-import tripKit from "/assets/images/ecommerce/photo-tools.jpeg";
+import nikeV22 from "/src/assets/images/ecommerce/blue-shoe.jpeg";
+import businessKit from "/src/assets/images/ecommerce/black-mug.jpeg";
+import blackChair from "/src/assets/images/ecommerce/black-chair.jpeg";
+import wirelessCharger from "/src/assets/images/ecommerce/bang-sound.jpeg";
+import tripKit from "/src/assets/images/ecommerce/photo-tools.jpeg";
 
 const dataTableData = {
   columns: [

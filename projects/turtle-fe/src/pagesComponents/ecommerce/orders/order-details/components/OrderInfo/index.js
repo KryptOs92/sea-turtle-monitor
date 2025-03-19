@@ -17,14 +17,14 @@ Coded by www.creative-tim.com
 import Grid from "@mui/material/Grid";
 
 // NextJS Material Dashboard 2 PRO components
-import MDBox from "/components/MDBox";
-import MDTypography from "/components/MDTypography";
-import MDButton from "/components/MDButton";
-import MDAvatar from "/components/MDAvatar";
-import MDBadge from "/components/MDBadge";
+import MDBox from "/src/components/MDBox";
+import MDTypography from "/src/components/MDTypography";
+import MDButton from "/src/components/MDButton";
+import MDAvatar from "/src/components/MDAvatar";
+import MDBadge from "/src/components/MDBadge";
 
 // Images
-import orderImage from "/assets/images/product-12.jpg";
+import orderImage from "/src/assets/images/product-12.jpg";
 
 function OrderInfo() {
   return (

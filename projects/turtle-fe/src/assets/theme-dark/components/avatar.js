@@ -14,7 +14,7 @@ Coded by www.creative-tim.com
 */
 
 // NextJS Material Dashboard 2 PRO base styles
-import borders from "/assets/theme-dark/base/borders";
+import borders from "/src/assets/theme-dark/base/borders";
 
 const { borderRadius } = borders;
 

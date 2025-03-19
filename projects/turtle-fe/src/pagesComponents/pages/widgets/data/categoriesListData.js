@@ -14,7 +14,7 @@ Coded by www.creative-tim.com
 */
 
 // NextJS Material Dashboard 2 PRO components
-import MDTypography from "/components/MDTypography";
+import MDTypography from "/src/components/MDTypography";
 
 const categoriesListData = [
   {

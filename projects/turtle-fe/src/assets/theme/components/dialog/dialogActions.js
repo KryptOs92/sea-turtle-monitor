@@ -14,7 +14,7 @@ Coded by www.creative-tim.com
 */
 
 // NextJS Material Dashboard 2 PRO helper functions
-import pxToRem from "/assets/theme/functions/pxToRem";
+import pxToRem from "/src/assets/theme/functions/pxToRem";
 
 const dialogActions = {
   styleOverrides: {

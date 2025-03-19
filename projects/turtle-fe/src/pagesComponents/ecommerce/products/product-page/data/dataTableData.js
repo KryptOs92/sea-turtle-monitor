@@ -14,19 +14,19 @@ Coded by www.creative-tim.com
 */
 
 // NextJS Material Dashboard 2 PRO components
-import MDBox from "/components/MDBox";
-import MDProgress from "/components/MDProgress";
+import MDBox from "/src/components/MDBox";
+import MDProgress from "/src/components/MDProgress";
 
 // ProductPage page components
-import ProductCell from "/pagesComponents/ecommerce/products/product-page/components/ProductCell";
-import ReviewCell from "/pagesComponents/ecommerce/products/product-page/components/ReviewCell";
-import DefaultCell from "/pagesComponents/ecommerce/products/product-page/components/DefaultCell";
+import ProductCell from "/src/pagesComponents/ecommerce/products/product-page/components/ProductCell";
+import ReviewCell from "/src/pagesComponents/ecommerce/products/product-page/components/ReviewCell";
+import DefaultCell from "/src/pagesComponents/ecommerce/products/product-page/components/DefaultCell";
 
 // Images
-import blackChair from "/assets/images/ecommerce/black-chair.jpeg";
-import chairPink from "/assets/images/ecommerce/chair-pink.jpeg";
-import chairSteel from "/assets/images/ecommerce/chair-steel.jpeg";
-import chairWood from "/assets/images/ecommerce/chair-wood.jpeg";
+import blackChair from "/src/assets/images/ecommerce/black-chair.jpeg";
+import chairPink from "/src/assets/images/ecommerce/chair-pink.jpeg";
+import chairSteel from "/src/assets/images/ecommerce/chair-steel.jpeg";
+import chairWood from "/src/assets/images/ecommerce/chair-wood.jpeg";
 
 const dataTableData = {
   columns: [

@@ -20,8 +20,8 @@ import PropTypes from "prop-types";
 import Checkbox from "@mui/material/Checkbox";
 
 // NextJS Material Dashboard 2 PRO components
-import MDBox from "/components/MDBox";
-import MDTypography from "/components/MDTypography";
+import MDBox from "/src/components/MDBox";
+import MDTypography from "/src/components/MDTypography";
 
 function IdCell({ id, checked }) {
   return (

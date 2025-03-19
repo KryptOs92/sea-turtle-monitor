@@ -24,17 +24,17 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 
 // NextJS Material Dashboard 2 PRO components
-import MDBox from "/components/MDBox";
-import MDTypography from "/components/MDTypography";
+import MDBox from "/src/components/MDBox";
+import MDTypography from "/src/components/MDTypography";
 
 // NextJS Material Dashboard 2 PRO examples
-import DefaultNavbar from "/examples/Navbars/DefaultNavbar";
+import DefaultNavbar from "/src/examples/Navbars/DefaultNavbar";
 
 // NextJS Material Dashboard 2 PRO page layout routes
-import pageRoutes from "/routes/page.routes";
+import pageRoutes from "/src/routes/page.routes";
 
 // Images
-import bgImage from "/assets/images/bg-pricing.jpg";
+import bgImage from "/src/assets/images/bg-pricing.jpg";
 
 function Header({ tabValue, tabHandler, children }) {
   return (

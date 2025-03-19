@@ -26,24 +26,24 @@ import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 
 // NextJS Material Dashboard 2 PRO components
-import MDBox from "/components/MDBox";
-import MDButton from "/components/MDButton";
+import MDBox from "/src/components/MDBox";
+import MDButton from "/src/components/MDButton";
 
 // NextJS Material Dashboard 2 PRO examples
-import DashboardLayout from "/examples/LayoutContainers/DashboardLayout";
-import DashboardNavbar from "/examples/Navbars/DashboardNavbar";
-import Footer from "/examples/Footer";
+import DashboardLayout from "/src/examples/LayoutContainers/DashboardLayout";
+import DashboardNavbar from "/src/examples/Navbars/DashboardNavbar";
+import Footer from "/src/examples/Footer";
 
 // NewUser page components
-import UserInfo from "/pagesComponents/pages/users/new-user/components/UserInfo";
-import Address from "/pagesComponents/pages/users/new-user/components/Address";
-import Socials from "/pagesComponents/pages/users/new-user/components/Socials";
-import Profile from "/pagesComponents/pages/users/new-user/components/Profile";
+import UserInfo from "/src/pagesComponents/pages/users/new-user/components/UserInfo";
+import Address from "/src/pagesComponents/pages/users/new-user/components/Address";
+import Socials from "/src/pagesComponents/pages/users/new-user/components/Socials";
+import Profile from "/src/pagesComponents/pages/users/new-user/components/Profile";
 
 // NewUser layout schemas for form and form feilds
-import validations from "/pagesComponents/pages/users/new-user/schemas/validations";
-import form from "/pagesComponents/pages/users/new-user/schemas/form";
-import initialValues from "/pagesComponents/pages/users/new-user/schemas/initialValues";
+import validations from "/src/pagesComponents/pages/users/new-user/schemas/validations";
+import form from "/src/pagesComponents/pages/users/new-user/schemas/form";
+import initialValues from "/src/pagesComponents/pages/users/new-user/schemas/initialValues";
 
 function getSteps() {
   return ["User Info", "Address", "Social", "Profile"];

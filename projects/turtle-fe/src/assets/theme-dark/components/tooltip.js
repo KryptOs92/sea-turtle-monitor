@@ -17,12 +17,12 @@ Coded by www.creative-tim.com
 import Fade from "@mui/material/Fade";
 
 // NextJS Material Dashboard 2 PRO base styles
-import colors from "/assets/theme-dark/base/colors";
-import typography from "/assets/theme-dark/base/typography";
-import borders from "/assets/theme-dark/base/borders";
+import colors from "/src/assets/theme-dark/base/colors";
+import typography from "/src/assets/theme-dark/base/typography";
+import borders from "/src/assets/theme-dark/base/borders";
 
 // NextJS Material Dashboard 2 PRO helper functions
-import pxToRem from "/assets/theme-dark/functions/pxToRem";
+import pxToRem from "/src/assets/theme-dark/functions/pxToRem";
 
 const { black, white } = colors;
 const { size, fontWeightRegular } = typography;

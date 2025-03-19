@@ -20,18 +20,18 @@ import PropTypes from "prop-types";
 import Grid from "@mui/material/Grid";
 
 // NextJS Material Dashboard 2 PRO components
-import MDBox from "/components/MDBox";
-import MDTypography from "/components/MDTypography";
+import MDBox from "/src/components/MDBox";
+import MDTypography from "/src/components/MDTypography";
 
 // NextJS Material Dashboard 2 PRO examples
-import DefaultNavbar from "/examples/Navbars/DefaultNavbar";
-import PageLayout from "/examples/LayoutContainers/PageLayout";
+import DefaultNavbar from "/src/examples/Navbars/DefaultNavbar";
+import PageLayout from "/src/examples/LayoutContainers/PageLayout";
 
 // NextJS Material Dashboard 2 PRO page layout routes
-import pageRoutes from "/routes/page.routes";
+import pageRoutes from "/src/routes/page.routes";
 
 // NextJS Material Dashboard 2 PRO context
-import { useMaterialUIController } from "/context";
+import { useMaterialUIController } from "/src/context";
 
 function IllustrationLayout({
   header,

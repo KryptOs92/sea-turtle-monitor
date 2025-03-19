@@ -19,12 +19,12 @@ import Image from "next/image";
 import Card from "@mui/material/Card";
 
 // NextJS Material Dashboard 2 PRO components
-import MDBox from "/components/MDBox";
-import MDTypography from "/components/MDTypography";
-import MDButton from "/components/MDButton";
+import MDBox from "/src/components/MDBox";
+import MDTypography from "/src/components/MDTypography";
+import MDButton from "/src/components/MDButton";
 
 // Images
-import productImage from "/assets/images/products/product-11.jpg";
+import productImage from "/src/assets/images/products/product-11.jpg";
 
 function ProductImage() {
   return (

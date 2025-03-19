@@ -17,7 +17,7 @@ Coded by www.creative-tim.com
 import PropTypes from "prop-types";
 
 // NextJS Material Dashboard 2 PRO components
-import MDTypography from "/components/MDTypography";
+import MDTypography from "/src/components/MDTypography";
 
 function DefaultCell({ children }) {
   return (

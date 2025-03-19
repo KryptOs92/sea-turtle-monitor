@@ -19,10 +19,10 @@ import { forwardRef } from "react";
 import PropTypes from "prop-types";
 
 // Custom styles for MDButton
-import MDButtonRoot from "/components/MDButton/MDButtonRoot";
+import MDButtonRoot from "/src/components/MDButton/MDButtonRoot";
 
 // NextJS Material Dashboard 2 PRO contexts
-import { useMaterialUIController } from "/context";
+import { useMaterialUIController } from "/src/context";
 
 const MDButton = forwardRef(
   ({ color, variant, size, circular, iconOnly, children, ...rest }, ref) => {

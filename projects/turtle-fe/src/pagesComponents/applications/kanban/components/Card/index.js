@@ -22,11 +22,11 @@ import PropTypes from "prop-types";
 import Icon from "@mui/material/Icon";
 
 // NextJS Material Dashboard 2 PRO components
-import MDBox from "/components/MDBox";
-import MDBadge from "/components/MDBadge";
-import MDTypography from "/components/MDTypography";
-import MDAvatar from "/components/MDAvatar";
-import MDProgress from "/components/MDProgress";
+import MDBox from "/src/components/MDBox";
+import MDBadge from "/src/components/MDBadge";
+import MDTypography from "/src/components/MDTypography";
+import MDAvatar from "/src/components/MDAvatar";
+import MDProgress from "/src/components/MDProgress";
 
 // Custom styles for the Card
 

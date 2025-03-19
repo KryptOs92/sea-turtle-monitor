@@ -20,16 +20,16 @@ import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 
 // NextJS Material Dashboard 2 PRO components
-import MDBox from "/components/MDBox";
-import MDTypography from "/components/MDTypography";
-import MDAlert from "/components/MDAlert";
-import MDButton from "/components/MDButton";
-import MDSnackbar from "/components/MDSnackbar";
+import MDBox from "/src/components/MDBox";
+import MDTypography from "/src/components/MDTypography";
+import MDAlert from "/src/components/MDAlert";
+import MDButton from "/src/components/MDButton";
+import MDSnackbar from "/src/components/MDSnackbar";
 
 // NextJS Material Dashboard 2 PRO examples
-import DashboardLayout from "/examples/LayoutContainers/DashboardLayout";
-import DashboardNavbar from "/examples/Navbars/DashboardNavbar";
-import Footer from "/examples/Footer";
+import DashboardLayout from "/src/examples/LayoutContainers/DashboardLayout";
+import DashboardNavbar from "/src/examples/Navbars/DashboardNavbar";
+import Footer from "/src/examples/Footer";
 
 function Notifications() {
   const [successSB, setSuccessSB] = useState(false);

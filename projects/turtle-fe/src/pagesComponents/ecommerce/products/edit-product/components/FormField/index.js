@@ -17,8 +17,8 @@ Coded by www.creative-tim.com
 import PropTypes from "prop-types";
 
 // NextJS Material Dashboard 2 PRO components
-import MDInput from "/components/MDInput";
-import MDBox from "/components/MDBox";
+import MDInput from "/src/components/MDInput";
+import MDBox from "/src/components/MDBox";
 
 function FormField({ label, ...rest }) {
   return (

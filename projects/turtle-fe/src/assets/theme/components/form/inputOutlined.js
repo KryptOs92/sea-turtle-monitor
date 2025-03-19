@@ -14,12 +14,12 @@ Coded by www.creative-tim.com
 */
 
 // NextJS Material Dashboard 2 PRO Base Styles
-import colors from "/assets/theme/base/colors";
-import borders from "/assets/theme/base/borders";
-import typography from "/assets/theme/base/typography";
+import colors from "/src/assets/theme/base/colors";
+import borders from "/src/assets/theme/base/borders";
+import typography from "/src/assets/theme/base/typography";
 
 // NextJS Material Dashboard 2 PRO helper functions
-import pxToRem from "/assets/theme/functions/pxToRem";
+import pxToRem from "/src/assets/theme/functions/pxToRem";
 
 const { inputBorderColor, dark, grey, transparent } = colors;
 const { borderRadius } = borders;

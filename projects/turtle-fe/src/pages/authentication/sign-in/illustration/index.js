@@ -21,16 +21,16 @@ import Link from "next/link";
 import Switch from "@mui/material/Switch";
 
 // NextJS Material Dashboard 2 PRO components
-import MDBox from "/components/MDBox";
-import MDTypography from "/components/MDTypography";
-import MDInput from "/components/MDInput";
-import MDButton from "/components/MDButton";
+import MDBox from "/src/components/MDBox";
+import MDTypography from "/src/components/MDTypography";
+import MDInput from "/src/components/MDInput";
+import MDButton from "/src/components/MDButton";
 
 // Authentication layout components
-import IllustrationLayout from "/pagesComponents/authentication/components/IllustrationLayout";
+import IllustrationLayout from "/src/pagesComponents/authentication/components/IllustrationLayout";
 
 // Image
-import bgImage from "/assets/images/illustrations/illustration-reset.jpg";
+import bgImage from "/src/assets/images/illustrations/illustration-reset.jpg";
 
 function Illustration() {
   const [rememberMe, setRememberMe] = useState(false);

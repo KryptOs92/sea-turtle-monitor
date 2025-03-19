@@ -14,8 +14,8 @@ Coded by www.creative-tim.com
 */
 
 // NextJS Material Dashboard 2 PRO base styles
-import borders from "/assets/theme/base/borders";
-import boxShadows from "/assets/theme/base/boxShadows";
+import borders from "/src/assets/theme/base/borders";
+import boxShadows from "/src/assets/theme/base/boxShadows";
 
 const { borderRadius } = borders;
 const { xxl } = boxShadows;

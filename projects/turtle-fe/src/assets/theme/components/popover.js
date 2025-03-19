@@ -14,12 +14,12 @@ Coded by www.creative-tim.com
 */
 
 // NextJS Material Dashboard 2 PRO helper functions
-import pxToRem from "/assets/theme/functions/pxToRem";
+import pxToRem from "/src/assets/theme/functions/pxToRem";
 
 // NextJS Material Dashboard 2 PRO base styles
-import colors from "/assets/theme/base/colors";
-import boxShadows from "/assets/theme/base/boxShadows";
-import borders from "/assets/theme/base/borders";
+import colors from "/src/assets/theme/base/colors";
+import boxShadows from "/src/assets/theme/base/boxShadows";
+import borders from "/src/assets/theme/base/borders";
 
 const { transparent } = colors;
 const { lg } = boxShadows;

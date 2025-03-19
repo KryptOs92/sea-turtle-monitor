@@ -19,10 +19,10 @@ import { forwardRef } from "react";
 import PropTypes from "prop-types";
 
 // NextJS Material Dashboard 2 PRO components
-import MDTypography from "/components/MDTypography";
+import MDTypography from "/src/components/MDTypography";
 
 // Custom styles for MDProgress
-import MDProgressRoot from "/components/MDProgress/MDProgressRoot";
+import MDProgressRoot from "/src/components/MDProgress/MDProgressRoot";
 
 const MDProgress = forwardRef(
   ({ variant, color, value, label, ...rest }, ref) => {

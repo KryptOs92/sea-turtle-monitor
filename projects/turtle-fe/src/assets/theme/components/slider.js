@@ -14,13 +14,13 @@ Coded by www.creative-tim.com
 */
 
 // NextJS Material Dashboard 2 PRO base styles
-import colors from "/assets/theme/base/colors";
-import borders from "/assets/theme/base/borders";
-import boxShadows from "/assets/theme/base/boxShadows";
+import colors from "/src/assets/theme/base/colors";
+import borders from "/src/assets/theme/base/borders";
+import boxShadows from "/src/assets/theme/base/boxShadows";
 
 // NextJS Material Dashboard 2 PRO helper functions
-import pxToRem from "/assets/theme/functions/pxToRem";
-import boxShadow from "/assets/theme/functions/boxShadow";
+import pxToRem from "/src/assets/theme/functions/pxToRem";
+import boxShadow from "/src/assets/theme/functions/boxShadow";
 
 const { grey, white, black, dark } = colors;
 const { borderRadius, borderWidth } = borders;

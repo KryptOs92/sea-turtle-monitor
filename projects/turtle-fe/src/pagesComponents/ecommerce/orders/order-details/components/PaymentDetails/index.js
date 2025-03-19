@@ -20,15 +20,15 @@ import Icon from "@mui/material/Icon";
 import Tooltip from "@mui/material/Tooltip";
 
 // NextJS Material Dashboard 2 PRO components
-import MDBox from "/components/MDBox";
-import MDTypography from "/components/MDTypography";
-import MDButton from "/components/MDButton";
+import MDBox from "/src/components/MDBox";
+import MDTypography from "/src/components/MDTypography";
+import MDButton from "/src/components/MDButton";
 
 // NextJS Material Dashboard 2 PRO base styles
-import borders from "/assets/theme/base/borders";
+import borders from "/src/assets/theme/base/borders";
 
 // Images
-import masterCardLogo from "/assets/images/logos/mastercard.png";
+import masterCardLogo from "/src/assets/images/logos/mastercard.png";
 
 function PaymentDetails() {
   const { borderWidth, borderColor } = borders;

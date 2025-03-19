@@ -17,17 +17,17 @@ Coded by www.creative-tim.com
 import Grid from "@mui/material/Grid";
 
 // NextJS Material Dashboard 2 PRO components
-import MDBox from "/components/MDBox";
+import MDBox from "/src/components/MDBox";
 
 // NextJS Material Dashboard 2 PRO examples
-import DashboardLayout from "/examples/LayoutContainers/DashboardLayout";
-import DashboardNavbar from "/examples/Navbars/DashboardNavbar";
-import Footer from "/examples/Footer";
-import TimelineList from "/examples/Timeline/TimelineList";
-import TimelineItem from "/examples/Timeline/TimelineItem";
+import DashboardLayout from "/src/examples/LayoutContainers/DashboardLayout";
+import DashboardNavbar from "/src/examples/Navbars/DashboardNavbar";
+import Footer from "/src/examples/Footer";
+import TimelineList from "/src/examples/Timeline/TimelineList";
+import TimelineItem from "/src/examples/Timeline/TimelineItem";
 
 // Data
-import timelineData from "/pagesComponents/pages/projects/timeline/data/timelineData";
+import timelineData from "/src/pagesComponents/pages/projects/timeline/data/timelineData";
 
 function Timeline() {
   const renderTimelineItems = timelineData.map(

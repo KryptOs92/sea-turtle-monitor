@@ -22,11 +22,11 @@ import PropTypes from "prop-types";
 import Fade from "@mui/material/Fade";
 
 // NextJS Material Dashboard 2 PRO components
-import MDBox from "/components/MDBox";
+import MDBox from "/src/components/MDBox";
 
 // Custom styles for the MDAlert
-import MDAlertRoot from "/components/MDAlert/MDAlertRoot";
-import MDAlertCloseIcon from "/components/MDAlert/MDAlertCloseIcon";
+import MDAlertRoot from "/src/components/MDAlert/MDAlertRoot";
+import MDAlertCloseIcon from "/src/components/MDAlert/MDAlertCloseIcon";
 
 function MDAlert({ color, dismissible, children, ...rest }) {
   const [alertStatus, setAlertStatus] = useState("mount");

@@ -19,9 +19,9 @@ import Icon from "@mui/material/Icon";
 import Divider from "@mui/material/Divider";
 
 // NextJS Material Dashboard 2 PRO components
-import MDBox from "/components/MDBox";
-import MDTypography from "/components/MDTypography";
-import MDBadge from "/components/MDBadge";
+import MDBox from "/src/components/MDBox";
+import MDTypography from "/src/components/MDTypography";
+import MDBadge from "/src/components/MDBadge";
 
 function Sessions() {
   const actionButtonStyles = {

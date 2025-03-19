@@ -19,10 +19,10 @@ import { forwardRef, createContext, useContext, useMemo } from "react";
 import PropTypes from "prop-types";
 
 // NextJS Material Dashboard 2 PRO components
-import MDBox from "/components/MDBox";
+import MDBox from "/src/components/MDBox";
 
 // Custom styles for MDPagination
-import MDPaginationItemRoot from "/components/MDPagination/MDPaginationItemRoot";
+import MDPaginationItemRoot from "/src/components/MDPagination/MDPaginationItemRoot";
 
 // The Pagination main context
 const Context = createContext(null);

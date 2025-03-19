@@ -20,11 +20,11 @@ Coded by www.creative-tim.com
  */
 
 // NextJS Material Dashboard 2 PRO Base Styles
-import colors from "/assets/theme-dark/base/colors";
+import colors from "/src/assets/theme-dark/base/colors";
 
 // NextJS Material Dashboard 2 PRO Helper Functions
-import pxToRem from "/assets/theme-dark/functions/pxToRem";
-import rgba from "/assets/theme-dark/functions/rgba";
+import pxToRem from "/src/assets/theme-dark/functions/pxToRem";
+import rgba from "/src/assets/theme-dark/functions/rgba";
 
 const { white } = colors;
 

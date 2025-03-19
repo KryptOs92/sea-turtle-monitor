@@ -19,14 +19,14 @@ import Grid from "@mui/material/Grid";
 import Autocomplete from "@mui/material/Autocomplete";
 
 // NextJS Material Dashboard 2 PRO components
-import MDBox from "/components/MDBox";
-import MDTypography from "/components/MDTypography";
+import MDBox from "/src/components/MDBox";
+import MDTypography from "/src/components/MDTypography";
 
 // Settings page components
-import FormField from "/pagesComponents/pages/account/components/FormField";
+import FormField from "/src/pagesComponents/pages/account/components/FormField";
 
 // Data
-import selectData from "/pagesComponents/pages/account/settings/components/BasicInfo/data/selectData";
+import selectData from "/src/pagesComponents/pages/account/settings/components/BasicInfo/data/selectData";
 
 function BasicInfo() {
   return (

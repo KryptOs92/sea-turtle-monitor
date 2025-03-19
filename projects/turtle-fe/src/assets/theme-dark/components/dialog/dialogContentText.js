@@ -14,11 +14,11 @@ Coded by www.creative-tim.com
 */
 
 // NextJS Material Dashboard 2 PRO base styles
-import typography from "/assets/theme-dark/base/typography";
-import colors from "/assets/theme-dark/base/colors";
+import typography from "/src/assets/theme-dark/base/typography";
+import colors from "/src/assets/theme-dark/base/colors";
 
 // NextJS Material Dashboard 2 PRO helper functions
-import rgba from "/assets/theme-dark/functions/rgba";
+import rgba from "/src/assets/theme-dark/functions/rgba";
 
 const { size } = typography;
 const { white } = colors;

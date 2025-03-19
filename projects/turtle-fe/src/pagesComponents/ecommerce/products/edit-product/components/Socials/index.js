@@ -18,11 +18,11 @@ import Card from "@mui/material/Card";
 import Grid from "@mui/material/Grid";
 
 // NextJS Material Dashboard 2 PRO components
-import MDBox from "/components/MDBox";
-import MDTypography from "/components/MDTypography";
+import MDBox from "/src/components/MDBox";
+import MDTypography from "/src/components/MDTypography";
 
 // EditProduct page components
-import FormField from "/pagesComponents/ecommerce/products/edit-product/components/FormField";
+import FormField from "/src/pagesComponents/ecommerce/products/edit-product/components/FormField";
 
 function Socials() {
   return (

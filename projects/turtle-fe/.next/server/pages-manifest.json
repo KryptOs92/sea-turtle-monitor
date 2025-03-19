@@ -3,5 +3,7 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/dashboards/analytics": "pages/dashboards/analytics.js",
+  "/dashboards/sales": "pages/dashboards/sales.js",
+  "/applications/wizard": "pages/applications/wizard.js",
   "/404": "pages/404.js"
 }

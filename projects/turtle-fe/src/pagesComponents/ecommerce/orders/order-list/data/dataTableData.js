@@ -15,18 +15,18 @@ Coded by www.creative-tim.com
 
 /* eslint-disable react/prop-types */
 // ProductsList page components
-import IdCell from "/pagesComponents/ecommerce/orders/order-list/components/IdCell";
-import DefaultCell from "/pagesComponents/ecommerce/orders/order-list/components/DefaultCell";
-import StatusCell from "/pagesComponents/ecommerce/orders/order-list/components/StatusCell";
-import CustomerCell from "/pagesComponents/ecommerce/orders/order-list/components/CustomerCell";
+import IdCell from "/src/pagesComponents/ecommerce/orders/order-list/components/IdCell";
+import DefaultCell from "/src/pagesComponents/ecommerce/orders/order-list/components/DefaultCell";
+import StatusCell from "/src/pagesComponents/ecommerce/orders/order-list/components/StatusCell";
+import CustomerCell from "/src/pagesComponents/ecommerce/orders/order-list/components/CustomerCell";
 
 // Images
-import team1 from "/assets/images/team-1.jpg";
-import team2 from "/assets/images/team-2.jpg";
-import team3 from "/assets/images/team-3.jpg";
-import team4 from "/assets/images/team-4.jpg";
-import team5 from "/assets/images/team-5.jpg";
-import ivana from "/assets/images/ivana-squares.jpg";
+import team1 from "/src/assets/images/team-1.jpg";
+import team2 from "/src/assets/images/team-2.jpg";
+import team3 from "/src/assets/images/team-3.jpg";
+import team4 from "/src/assets/images/team-4.jpg";
+import team5 from "/src/assets/images/team-5.jpg";
+import ivana from "/src/assets/images/ivana-squares.jpg";
 
 const dataTableData = {
   columns: [

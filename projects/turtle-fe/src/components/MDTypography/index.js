@@ -19,10 +19,10 @@ import { forwardRef } from "react";
 import PropTypes from "prop-types";
 
 // Custom styles for MDTypography
-import MDTypographyRoot from "/components/MDTypography/MDTypographyRoot";
+import MDTypographyRoot from "/src/components/MDTypography/MDTypographyRoot";
 
 // NextJS Material Dashboard 2 PRO contexts
-import { useMaterialUIController } from "/context";
+import { useMaterialUIController } from "/src/context";
 
 const MDTypography = forwardRef(
   (

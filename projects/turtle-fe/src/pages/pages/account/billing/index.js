@@ -17,18 +17,18 @@ Coded by www.creative-tim.com
 import Grid from "@mui/material/Grid";
 
 // NextJS Material Dashboard 2 PRO components
-import MDBox from "/components/MDBox";
+import MDBox from "/src/components/MDBox";
 
 // NextJS Material Dashboard 2 PRO components
-import MasterCard from "/examples/Cards/MasterCard";
-import DefaultInfoCard from "/examples/Cards/InfoCards/DefaultInfoCard";
+import MasterCard from "/src/examples/Cards/MasterCard";
+import DefaultInfoCard from "/src/examples/Cards/InfoCards/DefaultInfoCard";
 
 // Billing page components
-import BaseLayout from "/pagesComponents/pages/account/components/BaseLayout";
-import PaymentMethod from "/pagesComponents/pages/account/billing/components/PaymentMethod";
-import Invoices from "/pagesComponents/pages/account/billing/components/Invoices";
-import BillingInformation from "/pagesComponents/pages/account/billing/components/BillingInformation";
-import Transactions from "/pagesComponents/pages/account/billing/components/Transactions";
+import BaseLayout from "/src/pagesComponents/pages/account/components/BaseLayout";
+import PaymentMethod from "/src/pagesComponents/pages/account/billing/components/PaymentMethod";
+import Invoices from "/src/pagesComponents/pages/account/billing/components/Invoices";
+import BillingInformation from "/src/pagesComponents/pages/account/billing/components/BillingInformation";
+import Transactions from "/src/pagesComponents/pages/account/billing/components/Transactions";
 
 function Billing() {
   return (

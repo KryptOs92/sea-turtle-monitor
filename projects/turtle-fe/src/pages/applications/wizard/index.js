@@ -23,19 +23,19 @@ import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 
 // NextJS Material Dashboard 2 PRO components
-import MDBox from "/components/MDBox";
-import MDTypography from "/components/MDTypography";
-import MDButton from "/components/MDButton";
+import MDBox from "/src/components/MDBox";
+import MDTypography from "/src/components/MDTypography";
+import MDButton from "/src/components/MDButton";
 
 // NextJS Material Dashboard 2 PRO examples
-import DashboardLayout from "/examples/LayoutContainers/DashboardLayout";
-import DashboardNavbar from "/examples/Navbars/DashboardNavbar";
-import Footer from "/examples/Footer";
+import DashboardLayout from "/src/examples/LayoutContainers/DashboardLayout";
+import DashboardNavbar from "/src/examples/Navbars/DashboardNavbar";
+import Footer from "/src/examples/Footer";
 
 // Wizard page components
-import About from "/pagesComponents/applications/wizard/components/About";
-import Account from "/pagesComponents/applications/wizard/components/Account";
-import Address from "/pagesComponents/applications/wizard/components/Address";
+import About from "/src/pagesComponents/applications/wizard/components/About";
+import Account from "/src/pagesComponents/applications/wizard/components/Account";
+import Address from "/src/pagesComponents/applications/wizard/components/Address";
 
 function getSteps() {
   return ["About", "Account", "Address"];

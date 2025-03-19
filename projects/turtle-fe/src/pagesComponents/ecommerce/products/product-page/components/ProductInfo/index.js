@@ -19,11 +19,11 @@ import Icon from "@mui/material/Icon";
 import Autocomplete from "@mui/material/Autocomplete";
 
 // NextJS Material Dashboard 2 PRO components
-import MDBox from "/components/MDBox";
-import MDTypography from "/components/MDTypography";
-import MDButton from "/components/MDButton";
-import MDBadge from "/components/MDBadge";
-import MDInput from "/components/MDInput";
+import MDBox from "/src/components/MDBox";
+import MDTypography from "/src/components/MDTypography";
+import MDButton from "/src/components/MDButton";
+import MDBadge from "/src/components/MDBadge";
+import MDInput from "/src/components/MDInput";
 
 function ProductInfo() {
   return (

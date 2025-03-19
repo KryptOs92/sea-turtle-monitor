@@ -18,17 +18,17 @@ import Divider from "@mui/material/Divider";
 import Icon from "@mui/material/Icon";
 
 // NextJS Material Dashboard 2 PRO components
-import MDBox from "/components/MDBox";
-import MDTypography from "/components/MDTypography";
-import MDAvatar from "/components/MDAvatar";
-import MDButton from "/components/MDButton";
+import MDBox from "/src/components/MDBox";
+import MDTypography from "/src/components/MDTypography";
+import MDAvatar from "/src/components/MDAvatar";
+import MDButton from "/src/components/MDButton";
 
 // Image
-import team1 from "/assets/images/team-1.jpg";
-import team2 from "/assets/images/team-2.jpg";
-import team3 from "/assets/images/team-3.jpg";
-import team4 from "/assets/images/team-4.jpg";
-import team5 from "/assets/images/team-5.jpg";
+import team1 from "/src/assets/images/team-1.jpg";
+import team2 from "/src/assets/images/team-2.jpg";
+import team3 from "/src/assets/images/team-3.jpg";
+import team4 from "/src/assets/images/team-4.jpg";
+import team5 from "/src/assets/images/team-5.jpg";
 
 function Header() {
   const avatarStyles = {

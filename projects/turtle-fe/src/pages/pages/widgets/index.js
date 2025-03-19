@@ -20,35 +20,35 @@ import Grid from "@mui/material/Grid";
 import Icon from "@mui/material/Icon";
 
 // NextJS Material Dashboard 2 PRO components
-import MDBox from "/components/MDBox";
-import MDTypography from "/components/MDTypography";
+import MDBox from "/src/components/MDBox";
+import MDTypography from "/src/components/MDTypography";
 
 // NextJS Material Dashboard 2 PRO examples
-import DashboardLayout from "/examples/LayoutContainers/DashboardLayout";
-import DashboardNavbar from "/examples/Navbars/DashboardNavbar";
-import Footer from "/examples/Footer";
-import MiniStatisticsCard from "/examples/Cards/StatisticsCards/MiniStatisticsCard";
-import ProgressLineChart from "/examples/Charts/LineCharts/ProgressLineChart";
-import DefaultInfoCard from "/examples/Cards/InfoCards/DefaultInfoCard";
-import MasterCard from "/examples/Cards/MasterCard";
-import MiniInfoCard from "/examples/Cards/InfoCards/MiniInfoCard";
-import ControllerCard from "/examples/Cards/ControllerCard";
-import CategoriesList from "/examples/Lists/CategoriesList";
-import Calendar from "/examples/Calendar";
+import DashboardLayout from "/src/examples/LayoutContainers/DashboardLayout";
+import DashboardNavbar from "/src/examples/Navbars/DashboardNavbar";
+import Footer from "/src/examples/Footer";
+import MiniStatisticsCard from "/src/examples/Cards/StatisticsCards/MiniStatisticsCard";
+import ProgressLineChart from "/src/examples/Charts/LineCharts/ProgressLineChart";
+import DefaultInfoCard from "/src/examples/Cards/InfoCards/DefaultInfoCard";
+import MasterCard from "/src/examples/Cards/MasterCard";
+import MiniInfoCard from "/src/examples/Cards/InfoCards/MiniInfoCard";
+import ControllerCard from "/src/examples/Cards/ControllerCard";
+import CategoriesList from "/src/examples/Lists/CategoriesList";
+import Calendar from "/src/examples/Calendar";
 
 // Widgets page components
-import Steps from "/pagesComponents/pages/widgets/components/Steps";
-import FullBody from "/pagesComponents/pages/widgets/components/FullBody";
-import MediaPlayer from "/pagesComponents/pages/widgets/components/MediaPlayer";
-import OrdersOverview from "/pagesComponents/pages/widgets/components/OrdersOverview";
-import UpcomingEvents from "/pagesComponents/pages/widgets/components/UpcomingEvents";
-import Chart from "/pagesComponents/pages/widgets/components/Chart";
+import Steps from "/src/pagesComponents/pages/widgets/components/Steps";
+import FullBody from "/src/pagesComponents/pages/widgets/components/FullBody";
+import MediaPlayer from "/src/pagesComponents/pages/widgets/components/MediaPlayer";
+import OrdersOverview from "/src/pagesComponents/pages/widgets/components/OrdersOverview";
+import UpcomingEvents from "/src/pagesComponents/pages/widgets/components/UpcomingEvents";
+import Chart from "/src/pagesComponents/pages/widgets/components/Chart";
 
 // Data
-import progressLineChartData from "/pagesComponents/pages/widgets/data/progressLineChartData";
-import calendarEventsData from "/pagesComponents/pages/widgets/data/calendarEventsData";
-import categoriesListData from "/pagesComponents/pages/widgets/data/categoriesListData";
-import caloriesChartData from "/pagesComponents/pages/widgets/data/caloriesChartData";
+import progressLineChartData from "/src/pagesComponents/pages/widgets/data/progressLineChartData";
+import calendarEventsData from "/src/pagesComponents/pages/widgets/data/calendarEventsData";
+import categoriesListData from "/src/pagesComponents/pages/widgets/data/categoriesListData";
+import caloriesChartData from "/src/pagesComponents/pages/widgets/data/caloriesChartData";
 
 function Widgets() {
   const [lights, setLights] = useState(false);

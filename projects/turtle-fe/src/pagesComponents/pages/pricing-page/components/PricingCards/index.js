@@ -20,13 +20,13 @@ import PropTypes from "prop-types";
 import Grid from "@mui/material/Grid";
 
 // NextJS Material Dashboard 2 PRO components
-import MDBox from "/components/MDBox";
+import MDBox from "/src/components/MDBox";
 
 // NextJS Material Dashboard 2 PRO examples
-import DefaultPricingCard from "/examples/Cards/PricingCards/DefaultPricingCard";
+import DefaultPricingCard from "/src/examples/Cards/PricingCards/DefaultPricingCard";
 
 // NextJS Material Dashboard 2 PRO context
-import { useMaterialUIController } from "/context";
+import { useMaterialUIController } from "/src/context";
 
 function PricingCards({ prices }) {
   const [controller] = useMaterialUIController();

@@ -17,8 +17,8 @@ Coded by www.creative-tim.com
 import PropTypes from "prop-types";
 
 // NextJS Material Dashboard 2 PRO components
-import MDBox from "/components/MDBox";
-import MDTypography from "/components/MDTypography";
+import MDBox from "/src/components/MDBox";
+import MDTypography from "/src/components/MDTypography";
 
 function TableCell({ width, align, padding, noBorder, children }) {
   return (

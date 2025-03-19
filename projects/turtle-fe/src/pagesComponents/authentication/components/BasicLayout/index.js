@@ -20,17 +20,17 @@ import PropTypes from "prop-types";
 import Grid from "@mui/material/Grid";
 
 // NextJS Material Dashboard 2 PRO components
-import MDBox from "/components/MDBox";
+import MDBox from "/src/components/MDBox";
 
 // NextJS Material Dashboard 2 PRO examples
-import DefaultNavbar from "/examples/Navbars/DefaultNavbar";
-import PageLayout from "/examples/LayoutContainers/PageLayout";
+import DefaultNavbar from "/src/examples/Navbars/DefaultNavbar";
+import PageLayout from "/src/examples/LayoutContainers/PageLayout";
 
 // NextJS Material Dashboard 2 PRO page layout routes
-import pageRoutes from "/routes/page.routes";
+import pageRoutes from "/src/routes/page.routes";
 
 // Authentication pages components
-import Footer from "/pagesComponents/authentication/components/Footer";
+import Footer from "/src/pagesComponents/authentication/components/Footer";
 
 function BasicLayout({ image, children }) {
   return (

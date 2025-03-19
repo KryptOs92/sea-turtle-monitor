@@ -30,24 +30,24 @@ import { v4 as uuidv4 } from "uuid";
 import Icon from "@mui/material/Icon";
 
 // NextJS Material Dashboard 2 PRO components
-import MDBox from "/components/MDBox";
-import MDButton from "/components/MDButton";
-import MDTypography from "/components/MDTypography";
-import MDInput from "/components/MDInput";
+import MDBox from "/src/components/MDBox";
+import MDButton from "/src/components/MDButton";
+import MDTypography from "/src/components/MDTypography";
+import MDInput from "/src/components/MDInput";
 
 // NextJS Material Dashboard 2 PRO examples
-import DashboardLayout from "/examples/LayoutContainers/DashboardLayout";
-import DashboardNavbar from "/examples/Navbars/DashboardNavbar";
-import Footer from "/examples/Footer";
+import DashboardLayout from "/src/examples/LayoutContainers/DashboardLayout";
+import DashboardNavbar from "/src/examples/Navbars/DashboardNavbar";
+import Footer from "/src/examples/Footer";
 
 // Kanban application components
-import Header from "/pagesComponents/applications/kanban/components/Header";
+import Header from "/src/pagesComponents/applications/kanban/components/Header";
 
 // Data
-import boards from "/pagesComponents/applications/kanban/data";
+import boards from "/src/pagesComponents/applications/kanban/data";
 
 // NextJS Material Dashboard 2 PRO context
-import { useMaterialUIController } from "/context";
+import { useMaterialUIController } from "/src/context";
 
 function Kanban() {
   const [controller] = useMaterialUIController();

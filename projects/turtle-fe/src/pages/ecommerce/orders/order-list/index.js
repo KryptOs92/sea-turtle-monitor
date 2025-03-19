@@ -23,18 +23,18 @@ import MenuItem from "@mui/material/MenuItem";
 import Divider from "@mui/material/Divider";
 
 // NextJS Material Dashboard 2 PRO components
-import MDBox from "/components/MDBox";
-import MDTypography from "/components/MDTypography";
-import MDButton from "/components/MDButton";
+import MDBox from "/src/components/MDBox";
+import MDTypography from "/src/components/MDTypography";
+import MDButton from "/src/components/MDButton";
 
 // NextJS Material Dashboard 2 PRO examples
-import DashboardLayout from "/examples/LayoutContainers/DashboardLayout";
-import DashboardNavbar from "/examples/Navbars/DashboardNavbar";
-import Footer from "/examples/Footer";
-import DataTable from "/examples/Tables/DataTable";
+import DashboardLayout from "/src/examples/LayoutContainers/DashboardLayout";
+import DashboardNavbar from "/src/examples/Navbars/DashboardNavbar";
+import Footer from "/src/examples/Footer";
+import DataTable from "/src/examples/Tables/DataTable";
 
 // Data
-import dataTableData from "/pagesComponents/ecommerce/orders/order-list/data/dataTableData";
+import dataTableData from "/src/pagesComponents/ecommerce/orders/order-list/data/dataTableData";
 
 function OrderList() {
   const [menu, setMenu] = useState(null);

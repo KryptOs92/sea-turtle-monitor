@@ -19,29 +19,29 @@ import Tooltip from "@mui/material/Tooltip";
 import Icon from "@mui/material/Icon";
 
 // NextJS Material Dashboard 2 PRO components
-import MDBox from "/components/MDBox";
-import MDTypography from "/components/MDTypography";
+import MDBox from "/src/components/MDBox";
+import MDTypography from "/src/components/MDTypography";
 
 // NextJS Material Dashboard 2 PRO examples
-import DashboardLayout from "/examples/LayoutContainers/DashboardLayout";
-import DashboardNavbar from "/examples/Navbars/DashboardNavbar";
-import Footer from "/examples/Footer";
-import ReportsBarChart from "/examples/Charts/BarCharts/ReportsBarChart";
-import ReportsLineChart from "/examples/Charts/LineCharts/ReportsLineChart";
-import ComplexStatisticsCard from "/examples/Cards/StatisticsCards/ComplexStatisticsCard";
-import BookingCard from "/examples/Cards/BookingCard";
+import DashboardLayout from "/src/examples/LayoutContainers/DashboardLayout";
+import DashboardNavbar from "/src/examples/Navbars/DashboardNavbar";
+import Footer from "/src/examples/Footer";
+import ReportsBarChart from "/src/examples/Charts/BarCharts/ReportsBarChart";
+import ReportsLineChart from "/src/examples/Charts/LineCharts/ReportsLineChart";
+import ComplexStatisticsCard from "/src/examples/Cards/StatisticsCards/ComplexStatisticsCard";
+import BookingCard from "/src/examples/Cards/BookingCard";
 
 // Anaytics dashboard components
-import SalesByCountry from "/pagesComponents/dashboards/analytics/components/SalesByCountry";
+import SalesByCountry from "/src/pagesComponents/dashboards/analytics/components/SalesByCountry";
 
 // Data
-import reportsBarChartData from "/pagesComponents/dashboards/analytics/data/reportsBarChartData";
-import reportsLineChartData from "/pagesComponents/dashboards/analytics/data/reportsLineChartData";
+import reportsBarChartData from "/src/pagesComponents/dashboards/analytics/data/reportsBarChartData";
+import reportsLineChartData from "/src/pagesComponents/dashboards/analytics/data/reportsLineChartData";
 
 // Images
-import booking1 from "/assets/images/products/product-1-min.jpg";
-import booking2 from "/assets/images/products/product-2-min.jpg";
-import booking3 from "/assets/images/products/product-3-min.jpg";
+import booking1 from "/src/assets/images/products/product-1-min.jpg";
+import booking2 from "/src/assets/images/products/product-2-min.jpg";
+import booking3 from "/src/assets/images/products/product-3-min.jpg";
 
 function Analytics() {
   const { sales, tasks } = reportsLineChartData;

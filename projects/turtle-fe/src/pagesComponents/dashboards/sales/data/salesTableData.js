@@ -14,11 +14,11 @@ Coded by www.creative-tim.com
 */
 
 // Countries flags
-import US from "/assets/images/icons/flags/US.png";
-import DE from "/assets/images/icons/flags/DE.png";
-import GB from "/assets/images/icons/flags/GB.png";
-import BR from "/assets/images/icons/flags/BR.png";
-import AU from "/assets/images/icons/flags/AU.png";
+import US from "/src/assets/images/icons/flags/US.png";
+import DE from "/src/assets/images/icons/flags/DE.png";
+import GB from "/src/assets/images/icons/flags/GB.png";
+import BR from "/src/assets/images/icons/flags/BR.png";
+import AU from "/src/assets/images/icons/flags/AU.png";
 
 const salesTableData = [
   {

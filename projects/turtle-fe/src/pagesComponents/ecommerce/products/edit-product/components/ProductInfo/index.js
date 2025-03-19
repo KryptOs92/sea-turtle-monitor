@@ -21,13 +21,13 @@ import Card from "@mui/material/Card";
 import Autocomplete from "@mui/material/Autocomplete";
 
 // NextJS Material Dashboard 2 PRO components
-import MDBox from "/components/MDBox";
-import MDTypography from "/components/MDTypography";
-import MDEditor from "/components/MDEditor";
-import MDInput from "/components/MDInput";
+import MDBox from "/src/components/MDBox";
+import MDTypography from "/src/components/MDTypography";
+import MDEditor from "/src/components/MDEditor";
+import MDInput from "/src/components/MDInput";
 
 // NewProduct page components
-import FormField from "/pagesComponents/ecommerce/products/edit-product/components/FormField";
+import FormField from "/src/pagesComponents/ecommerce/products/edit-product/components/FormField";
 
 function ProductInfo() {
   return (

@@ -18,8 +18,8 @@ Coded by www.creative-tim.com
  */
 
 // NextJS Material Dashboard 2 PRO helper functions
-import rgba from "/assets/theme-dark/functions/rgba";
-import pxToRem from "/assets/theme-dark/functions/pxToRem";
+import rgba from "/src/assets/theme-dark/functions/rgba";
+import pxToRem from "/src/assets/theme-dark/functions/pxToRem";
 
 function boxShadow(offset = [], radius = [], color, opacity, inset = "") {
   const [x, y] = offset;

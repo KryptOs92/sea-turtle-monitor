@@ -20,11 +20,11 @@ import PropTypes from "prop-types";
 import Grid from "@mui/material/Grid";
 
 // NextJS Material Dashboard 2 PRO components
-import MDBox from "/components/MDBox";
-import MDTypography from "/components/MDTypography";
+import MDBox from "/src/components/MDBox";
+import MDTypography from "/src/components/MDTypography";
 
 // NewUser page components
-import FormField from "/pagesComponents/pages/users/new-user/components/FormField";
+import FormField from "/src/pagesComponents/pages/users/new-user/components/FormField";
 
 function UserInfo({ formData }) {
   const { formField, values, errors, touched } = formData;
