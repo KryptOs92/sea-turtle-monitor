@@ -6,6 +6,9 @@
     },
     {
       "path": "projects/turtle-eggs"
+    },
+    {
+      "path": "projects/turtle-fe"
     }
   ],
   "settings": {
