@@ -6,7 +6,6 @@
     "email": "micheleroma92@gmail.com"
   },
   "private": true,
-  "type": "module",
   "engines": {
     "node": ">=20.0",
     "npm": ">=9.0"
@@ -77,7 +76,11 @@
     "generate:app-clients": "algokit project link --all",
     "dev": "npm run generate:app-clients && vite",
     "build": "npm run generate:app-clients && tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "devnext": "next dev",
+    "buildnext": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "eslintConfig": {
     "extends": [
