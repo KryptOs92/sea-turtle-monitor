@@ -5,9 +5,11 @@ from algopy import (
     Txn,
     itxn,
     op,
-    String, UInt64, Bytes, Approve, Reject, Seq, Condition,subroutine
+    String, UInt64,subroutine, Bytes, log, Asset
 )
 from algopy.arc4 import abimethod, Address
+
+
 class TurtleMonitor(ARC4Contract):
     """
     Esempio di contratto "arc4" (algopy/puya style) con assert invece di Condition/Seq.
@@ -15,21 +17,10 @@ class TurtleMonitor(ARC4Contract):
     - Ruoli 'creator' e 'modifier' sono gestiti con Box: es. box key "creator:<address>"
     """
 
-    def on_create(self):
-        """
-        Alla creazione, salviamo admin = Txn.sender in Global State.
-        """
-        Global.put(b"admin", Txn.sender)
-        return
+    def __init__(self) -> None:
+        self.admin = Txn.sender.bytes
 
-
-    def on_update(self):
-        op.reject()
-        return
-
-    def on_delete(self):
-        op.reject()
-        return
+    
 
     # ----------------------------------------------------------------
     # 1) Metodi di "amministrazione" ruoli: add/remove Creator e Modifier
@@ -37,32 +28,28 @@ class TurtleMonitor(ARC4Contract):
 
     @abimethod
     def add_creator(self, new_creator: Address) -> None:
-        admin = Global.get(b"admin")
-        assert Txn.sender == admin, "Only admin can add creators"
+        assert Txn.sender.bytes == self.admin, "Only admin can add creators"
 
         box_key = b"creator:" + new_creator.bytes
         op.Box.put(box_key, b"1")  # indica che new_creator è un 'creator'
 
     @abimethod
     def remove_creator(self, old_creator: Address) -> None:
-        admin = Global.get(b"admin")
-        assert Txn.sender == admin, "Only admin can remove creators"
+        assert Txn.sender.bytes == self.admin, "Only admin can remove creators"
 
         box_key = b"creator:" + old_creator.bytes
         op.Box.delete(box_key)
 
     @abimethod
     def add_modifier(self, new_modifier: Address) -> None:
-        admin = Global.get(b"admin")
-        assert Txn.sender == admin, "Only admin can add modifiers"
+        assert Txn.sender.bytes == self.admin, "Only admin can add modifiers"
 
         box_key = b"modifier:" + new_modifier.bytes
         op.Box.put(box_key, b"1")
 
     @abimethod
     def remove_modifier(self, old_modifier: Address) -> None:
-        admin = Global.get(b"admin")
-        assert Txn.sender == admin, "Only admin can remove modifiers"
+        assert Txn.sender.bytes == self.admin, "Only admin can remove modifiers"
 
         box_key = b"modifier:" + old_modifier.bytes
         op.Box.delete(box_key)
@@ -71,15 +58,30 @@ class TurtleMonitor(ARC4Contract):
     # 2) Helper: check se sender è creator o modifier
     # ----------------------------------------------------------------
     @subroutine
-    def is_creator(addr) -> bool:
+    def is_creator(self, addr: Bytes) -> bool:
         creator_box_key = b"creator:" + addr
-        creator_val = op.Box.get(creator_box_key)
-        return (creator_val == b"1")
+        value, has_value = op.Box.get(creator_box_key)  # destrutturiamo la tupla
+        
+        # Se non esiste la box, potresti decidere di restituire False
+        # oppure confrontare value con b"" se preferisci.
+        # Ad esempio:
+        if not has_value:
+            return False
+        
+        return (value == b"1")
 
     @subroutine
-    def is_modifier(addr) -> bool:
+    def is_modifier(self, addr: Bytes ) -> bool:
         modifier_box_key = b"modifier:" + addr
-        modifier_val = op.Box.get(modifier_box_key)
+        modifier_val, has_value = op.Box.get(modifier_box_key)
+
+        
+        # Se non esiste la box, potresti decidere di restituire False
+        # oppure confrontare value con b"" se preferisci.
+        # Ad esempio:
+        if not has_value:
+            return False
+        
         return (modifier_val == b"1")
 
     # ----------------------------------------------------------------
@@ -87,7 +89,7 @@ class TurtleMonitor(ARC4Contract):
     # ----------------------------------------------------------------
 
     @abimethod
-    def create_egg_nft(self, name: String, url: String) -> UInt64:
+    def create_egg_nft(self, name: String, url: String, data_blob: String) -> UInt64:
         """
         - Admin o un creator possono chiamare
         - Crea un NFT ASA
@@ -95,9 +97,8 @@ class TurtleMonitor(ARC4Contract):
         - Emette un log
         Ritorna asset_id creato
         """
-        admin = Global.get(b"admin")
-        is_admin = (Txn.sender == admin)
-        is_creat = self.is_creator(Txn.sender)
+        is_admin = (Txn.sender.bytes == self.admin)
+        is_creat = self.is_creator(Txn.sender.bytes)
 
         assert (is_admin or is_creat), "Not authorized to create"
 
@@ -119,33 +120,67 @@ class TurtleMonitor(ARC4Contract):
         egg_key = b"egg:" + op.itob(created_asa_id)
         # Mettiamo un blob di esempio (stato e magari campi futuri)
         # Per semplicità, scriviamo "state=non_schiuso"
-        op.Box.put(egg_key, b"state=non_schiuso")
-
+        op.Box.put(egg_key, data_blob.bytes)
         # 3) Log
-        log_str = b"Created EGG ASA=" + op.itob(created_asa_id) + b" state=non_schiuso"
-        op.log(log_str)
+        log_str = (
+            b"Create ASA=" + op.itob(created_asa_id) +
+            b" from=" +
+            b" to=" + data_blob.bytes +
+            b" initialURL=" + url.bytes
+        )
+        log(log_str)
 
         return created_asa_id
 
-    # ----------------------------------------------------------------
-    # 4) Aggiornamento dello stato di un egg (ASA)
-    # ----------------------------------------------------------------
     @abimethod
-    def update_egg_data(self, asa_id: UInt64, data_blob: String) -> None:
+    def update_egg_data(
+        self,
+        asa_id: UInt64, 
+        new_url: String,  # Link alla nuova immagine
+        data_blob: String # JSON o string con altre info (stato, date, ecc.)
+    ) -> UInt64:
         """
         - Admin o 'modifier'
-        - Sovrascrive la Box "egg:<asa_id>" con i nuovi dati.
-        - 'data_blob' può essere un JSON che contiene {state, data_schiusura, gps, genealogia...}
+        - Riconfigura l'ASA cambiando 'url'
+        - Sovrascrive la Box "egg:<asa_id>" con i nuovi dati (data_blob)
+        - Emette un log
         """
-        # 1) Check ruoli (come prima)
-        admin = Global.get(b"admin")
-        is_admin = (Txn.sender == admin)
-        is_mod = self.is_modifier(Txn.sender)
-        assert (is_admin or is_mod), "Not authorized"
+        # 1) Check ruoli
 
-        # 2) Scrivi in Box
-        egg_key = b"egg:" + op.itob(asa_id.uint64)
+        is_admin = (Txn.sender.bytes == self.admin)
+        is_mod = self.is_modifier(Txn.sender.bytes)
+        assert (is_admin or is_mod), "Not authorized to update"
+        asset_to_update = Asset(asa_id)
+        egg_key = b"egg:" + op.itob(asa_id)
+        old_val, has_old = op.Box.get(egg_key)
+            # Se la box esiste già, la cancelliamo così da "ricrearla" con la nuova lunghezza
+        
+
+        # 2) Esegui la reconfig dell'ASA: cambiamo 'url' in "new_url"
+        #    Nota: se vuoi cambiare anche "assetName" o "metadataHash", fallo qui.
+        itxn_result = itxn.AssetConfig(
+            config_asset=asset_to_update, 
+            url=new_url.bytes,
+            manager=Global.current_application_address,  # ridichiari
+            reserve=Global.current_application_address,  # se serve
+            freeze=Global.current_application_address,   # se serve
+            clawback=Global.current_application_address, # se serve
+            # manager = Global.current_application_address,  # ridichiari se necessario
+            fee=0
+        ).submit()
+        # Ora i wallet, vedendo il campo 'url' dell'asset, mostreranno la nuova immagine.
+
+        # 3) Aggiorna i dati in Box (se vuoi conservare altre info: stato, date, ecc.)
+        if has_old:
+            op.Box.delete(egg_key)
         op.Box.put(egg_key, data_blob.bytes)
 
-        # 3) Log
-        op.log(b"Update ASA=" + op.itob(asa_id.uint64) + b" => updated blob")
+        # 4) Log
+        log_str = (
+            b"Update ASA=" + op.itob(asa_id) +
+            b" from=" + old_val +
+            b" to=" + data_blob.bytes +
+            b" reconfigURL=" + new_url.bytes
+        )
+        log(log_str)
+        return asa_id

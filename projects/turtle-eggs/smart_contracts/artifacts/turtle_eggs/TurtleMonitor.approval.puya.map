@@ -1,0 +1,2718 @@
+{
+  "version": 3,
+  "sources": [
+    "../../turtle_eggs/contract.py"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAmBA;;;AACQ;AAAa;;AAAb;;AARR;;;AAAA;;AAAA;;;AAAA;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAAA;;;AAAA;;;;;;;;;;;;;;AAAA;AAAA;AAgBK;;AAAA;AAAA;AAAA;;AAAA;AAhBL;;;AAgBK;;;AAAA;AAAA;AAOA;;AAAA;AAAA;AAAA;;AAAA;AAvBL;;;AAuBK;;;AAAA;AAAA;AAOA;;AAAA;AAAA;AAAA;;AAAA;AA9BL;;;AA8BK;;;AAAA;AAAA;AAOA;;AAAA;AAAA;AAAA;;AAAA;AArCL;;;AAqCK;;;AAAA;AAAA;AAyCA;;AAAA;AAAA;AAAA;;AAAA;AA9EL;;;AAAA;;;AAAA;;;AAAA;;;AAAA;;;AAAA;;;AA8EK;;;AAAA;AAAA;;AAAA;AAAA;AAAA;AAAA;AAAA;AA4CA;;AAAA;AAAA;AAAA;;AAAA;AA1HL;;;AAAA;AAAA;;;AAAA;;;AAAA;;;AAAA;;;AA0HK;;;AAAA;AAAA;;AAAA;AAAA;AAAA;AAAA;AAAA;AA1HL;;AAAA;;;;;;;;;AAAA;AAAA;AAgBA;;;AAEe;;AAAoB;AAAA;AAAA;AAAA;AAApB;AAAP;AAEU;AAAV;;AAAU;AACU;AAApB;;AAER;;;AAEe;;AAAoB;AAAA;AAAA;AAAA;AAApB;AAAP;AAEU;AAAV;;AAAU;AACV;;;AAER;;;AAEe;;AAAoB;AAAA;AAAA;AAAA;AAApB;AAAP;AAEU;AAAV;;AAAU;AACU;AAApB;;AAER;;;AAEe;;AAAoB;AAAA;AAAA;AAAA;AAApB;AAAP;AAEU;AAAV;;AAAU;AACV;;;AAoCR;;;AASoB;;AAAoB;AAAA;AAAA;AAAA;AAApB;AACe;;AAAhB;;;AAEH;AAAR;AAGc;AAKF;;AACA;;;;;;;;;;;;;;;;;;AAJC;;;AADH;;;AADI;;;AAAA;;;AAAA;;;AAcM;AAAA;AAAV;;AAAV;;AAAU;AAGV;;AAAA;AAGI;;;;;;;;;;;;;AAAA;AAAA;AACA;;AADA;AAEA;;AAFA;AAAA;;AAAA;AAGA;;;;;;;;;;;;;;AAHA;AADJ;;AACI;AAKJ;AAEA;AAzER;;;AAE0B;AAAlB;;AAAkB;AACC;AAKhB;;;AACQ;AAAP;AAAA;AAEI;;AAAS;AAAT;AAAR;AAAA;AAgER;;;AAeoB;;AAAoB;AAAA;AAAA;AAAA;AAApB;AACc;;AAAjB;;;AACD;AAAR;AAEoB;;AAAA;AAAA;AAAV;;AAAV;AAAU;AAAV;AACmB;AAML;AAGF;;AACA;;;;;;;;;;;;;;;;;;AAJE;;;AAQN;;;AARM;AAatB;;;AACY;;AAAA;;AACJ;;AAAA;;AAAA;AAII;;;;;;;;;;;;;AAAA;;AAAA;AACA;;AADA;AAAA;;AAAA;AAEA;;AAFA;AAAA;;AAAA;AAGA;;;;;;;;;;;;;;;AAHA;AADJ;;AACI;AAKJ;AACA;;AAAA;;AAAA;AAjHR;;;AAE2B;AAAnB;;AAAmB;AACO;AAMvB;;;AACQ;AAAP;AAAA;AAEI;;AAAgB;AAAhB;AAAR;AAAA",
+  "op_pc_offset": 0,
+  "pc_events": {
+    "1": {
+      "subroutine": "smart_contracts.turtle_eggs.contract.TurtleMonitor.approval_program",
+      "params": {},
+      "block": "smart_contracts.turtle_eggs.contract.TurtleMonitor.approval_program",
+      "stack_in": [],
+      "op": "intcblock 0 1 3"
+    },
+    "6": {
+      "op": "bytecblock \"admin\" 0x31 0x63726561746f723a 0x6d6f6469666965723a 0x151f7c75 0x6567673a 0x2066726f6d3d 0x20746f3d"
+    },
+    "57": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "59": {
+      "op": "bnz main_after_if_else@2",
+      "stack_out": []
+    },
+    "62": {
+      "callsub": "smart_contracts.turtle_eggs.contract.TurtleMonitor.__init__",
+      "op": "callsub __init__"
+    },
+    "65": {
+      "block": "main_after_if_else@2",
+      "stack_in": [],
+      "callsub": "smart_contracts.turtle_eggs.contract.TurtleMonitor.__puya_arc4_router__",
+      "op": "callsub __puya_arc4_router__",
+      "defined_out": [
+        "tmp%1#0"
+      ],
+      "stack_out": [
+        "tmp%1#0"
+      ]
+    },
+    "68": {
+      "op": "return",
+      "stack_out": []
+    },
+    "69": {
+      "subroutine": "smart_contracts.turtle_eggs.contract.TurtleMonitor.__init__",
+      "params": {},
+      "block": "__init__",
+      "stack_in": [],
+      "op": "proto 0 0"
+    },
+    "72": {
+      "op": "bytec_0 // \"admin\""
+    },
+    "73": {
+      "op": "txn Sender",
+      "defined_out": [
+        "\"admin\"",
+        "new_state_value%0#0"
+      ],
+      "stack_out": [
+        "\"admin\"",
+        "new_state_value%0#0"
+      ]
+    },
+    "75": {
+      "op": "app_global_put",
+      "stack_out": []
+    },
+    "76": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "77": {
+      "subroutine": "smart_contracts.turtle_eggs.contract.TurtleMonitor.__puya_arc4_router__",
+      "params": {},
+      "block": "__puya_arc4_router__",
+      "stack_in": [],
+      "op": "proto 0 1"
+    },
+    "80": {
+      "op": "txn NumAppArgs",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "82": {
+      "op": "bz __puya_arc4_router___bare_routing@10",
+      "stack_out": []
+    },
+    "85": {
+      "op": "pushbytess 0x0378a0d1 0xd318c166 0x33fd2504 0x0fd6d7dd 0xc8f9bbd5 0xc40477b8 // method \"add_creator(address)void\", method \"remove_creator(address)void\", method \"add_modifier(address)void\", method \"remove_modifier(address)void\", method \"create_egg_nft(string,string,string)uint64\", method \"update_egg_data(uint64,string,string)uint64\""
+    },
+    "117": {
+      "op": "txna ApplicationArgs 0",
+      "defined_out": [
+        "Method(add_creator(address)void)",
+        "Method(add_modifier(address)void)",
+        "Method(create_egg_nft(string,string,string)uint64)",
+        "Method(remove_creator(address)void)",
+        "Method(remove_modifier(address)void)",
+        "Method(update_egg_data(uint64,string,string)uint64)",
+        "tmp%2#0"
+      ],
+      "stack_out": [
+        "Method(add_creator(address)void)",
+        "Method(remove_creator(address)void)",
+        "Method(add_modifier(address)void)",
+        "Method(remove_modifier(address)void)",
+        "Method(create_egg_nft(string,string,string)uint64)",
+        "Method(update_egg_data(uint64,string,string)uint64)",
+        "tmp%2#0"
+      ]
+    },
+    "120": {
+      "op": "match __puya_arc4_router___add_creator_route@2 __puya_arc4_router___remove_creator_route@3 __puya_arc4_router___add_modifier_route@4 __puya_arc4_router___remove_modifier_route@5 __puya_arc4_router___create_egg_nft_route@6 __puya_arc4_router___update_egg_data_route@7",
+      "stack_out": []
+    },
+    "134": {
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "0"
+      ],
+      "stack_out": [
+        "0"
+      ]
+    },
+    "135": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "136": {
+      "block": "__puya_arc4_router___add_creator_route@2",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%3#0"
+      ],
+      "stack_out": [
+        "tmp%3#0"
+      ]
+    },
+    "138": {
+      "op": "!",
+      "defined_out": [
+        "tmp%4#0"
+      ],
+      "stack_out": [
+        "tmp%4#0"
+      ]
+    },
+    "139": {
+      "error": "OnCompletion is not NoOp",
+      "op": "assert // OnCompletion is not NoOp",
+      "stack_out": []
+    },
+    "140": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%5#0"
+      ],
+      "stack_out": [
+        "tmp%5#0"
+      ]
+    },
+    "142": {
+      "error": "can only call when not creating",
+      "op": "assert // can only call when not creating",
+      "stack_out": []
+    },
+    "143": {
+      "op": "txna ApplicationArgs 1",
+      "defined_out": [
+        "tmp%7#0"
+      ],
+      "stack_out": [
+        "tmp%7#0"
+      ]
+    },
+    "146": {
+      "callsub": "smart_contracts.turtle_eggs.contract.TurtleMonitor.add_creator",
+      "op": "callsub add_creator",
+      "stack_out": []
+    },
+    "149": {
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "1"
+      ],
+      "stack_out": [
+        "1"
+      ]
+    },
+    "150": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "151": {
+      "block": "__puya_arc4_router___remove_creator_route@3",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%8#0"
+      ],
+      "stack_out": [
+        "tmp%8#0"
+      ]
+    },
+    "153": {
+      "op": "!",
+      "defined_out": [
+        "tmp%9#0"
+      ],
+      "stack_out": [
+        "tmp%9#0"
+      ]
+    },
+    "154": {
+      "error": "OnCompletion is not NoOp",
+      "op": "assert // OnCompletion is not NoOp",
+      "stack_out": []
+    },
+    "155": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%10#0"
+      ],
+      "stack_out": [
+        "tmp%10#0"
+      ]
+    },
+    "157": {
+      "error": "can only call when not creating",
+      "op": "assert // can only call when not creating",
+      "stack_out": []
+    },
+    "158": {
+      "op": "txna ApplicationArgs 1",
+      "defined_out": [
+        "tmp%12#0"
+      ],
+      "stack_out": [
+        "tmp%12#0"
+      ]
+    },
+    "161": {
+      "callsub": "smart_contracts.turtle_eggs.contract.TurtleMonitor.remove_creator",
+      "op": "callsub remove_creator",
+      "stack_out": []
+    },
+    "164": {
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "1"
+      ],
+      "stack_out": [
+        "1"
+      ]
+    },
+    "165": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "166": {
+      "block": "__puya_arc4_router___add_modifier_route@4",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%13#0"
+      ],
+      "stack_out": [
+        "tmp%13#0"
+      ]
+    },
+    "168": {
+      "op": "!",
+      "defined_out": [
+        "tmp%14#0"
+      ],
+      "stack_out": [
+        "tmp%14#0"
+      ]
+    },
+    "169": {
+      "error": "OnCompletion is not NoOp",
+      "op": "assert // OnCompletion is not NoOp",
+      "stack_out": []
+    },
+    "170": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%15#0"
+      ],
+      "stack_out": [
+        "tmp%15#0"
+      ]
+    },
+    "172": {
+      "error": "can only call when not creating",
+      "op": "assert // can only call when not creating",
+      "stack_out": []
+    },
+    "173": {
+      "op": "txna ApplicationArgs 1",
+      "defined_out": [
+        "tmp%17#0"
+      ],
+      "stack_out": [
+        "tmp%17#0"
+      ]
+    },
+    "176": {
+      "callsub": "smart_contracts.turtle_eggs.contract.TurtleMonitor.add_modifier",
+      "op": "callsub add_modifier",
+      "stack_out": []
+    },
+    "179": {
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "1"
+      ],
+      "stack_out": [
+        "1"
+      ]
+    },
+    "180": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "181": {
+      "block": "__puya_arc4_router___remove_modifier_route@5",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%18#0"
+      ],
+      "stack_out": [
+        "tmp%18#0"
+      ]
+    },
+    "183": {
+      "op": "!",
+      "defined_out": [
+        "tmp%19#0"
+      ],
+      "stack_out": [
+        "tmp%19#0"
+      ]
+    },
+    "184": {
+      "error": "OnCompletion is not NoOp",
+      "op": "assert // OnCompletion is not NoOp",
+      "stack_out": []
+    },
+    "185": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%20#0"
+      ],
+      "stack_out": [
+        "tmp%20#0"
+      ]
+    },
+    "187": {
+      "error": "can only call when not creating",
+      "op": "assert // can only call when not creating",
+      "stack_out": []
+    },
+    "188": {
+      "op": "txna ApplicationArgs 1",
+      "defined_out": [
+        "tmp%22#0"
+      ],
+      "stack_out": [
+        "tmp%22#0"
+      ]
+    },
+    "191": {
+      "callsub": "smart_contracts.turtle_eggs.contract.TurtleMonitor.remove_modifier",
+      "op": "callsub remove_modifier",
+      "stack_out": []
+    },
+    "194": {
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "1"
+      ],
+      "stack_out": [
+        "1"
+      ]
+    },
+    "195": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "196": {
+      "block": "__puya_arc4_router___create_egg_nft_route@6",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%23#0"
+      ],
+      "stack_out": [
+        "tmp%23#0"
+      ]
+    },
+    "198": {
+      "op": "!",
+      "defined_out": [
+        "tmp%24#0"
+      ],
+      "stack_out": [
+        "tmp%24#0"
+      ]
+    },
+    "199": {
+      "error": "OnCompletion is not NoOp",
+      "op": "assert // OnCompletion is not NoOp",
+      "stack_out": []
+    },
+    "200": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%25#0"
+      ],
+      "stack_out": [
+        "tmp%25#0"
+      ]
+    },
+    "202": {
+      "error": "can only call when not creating",
+      "op": "assert // can only call when not creating",
+      "stack_out": []
+    },
+    "203": {
+      "op": "txna ApplicationArgs 1",
+      "defined_out": [
+        "tmp%27#0"
+      ],
+      "stack_out": [
+        "tmp%27#0"
+      ]
+    },
+    "206": {
+      "op": "extract 2 0",
+      "defined_out": [
+        "tmp%28#0"
+      ],
+      "stack_out": [
+        "tmp%28#0"
+      ]
+    },
+    "209": {
+      "op": "txna ApplicationArgs 2",
+      "defined_out": [
+        "tmp%28#0",
+        "tmp%29#0"
+      ],
+      "stack_out": [
+        "tmp%28#0",
+        "tmp%29#0"
+      ]
+    },
+    "212": {
+      "op": "extract 2 0",
+      "defined_out": [
+        "tmp%28#0",
+        "tmp%30#0"
+      ],
+      "stack_out": [
+        "tmp%28#0",
+        "tmp%30#0"
+      ]
+    },
+    "215": {
+      "op": "txna ApplicationArgs 3",
+      "defined_out": [
+        "tmp%28#0",
+        "tmp%30#0",
+        "tmp%31#0"
+      ],
+      "stack_out": [
+        "tmp%28#0",
+        "tmp%30#0",
+        "tmp%31#0"
+      ]
+    },
+    "218": {
+      "op": "extract 2 0",
+      "defined_out": [
+        "tmp%28#0",
+        "tmp%30#0",
+        "tmp%32#0"
+      ],
+      "stack_out": [
+        "tmp%28#0",
+        "tmp%30#0",
+        "tmp%32#0"
+      ]
+    },
+    "221": {
+      "callsub": "smart_contracts.turtle_eggs.contract.TurtleMonitor.create_egg_nft",
+      "op": "callsub create_egg_nft",
+      "defined_out": [
+        "to_encode%0#0"
+      ],
+      "stack_out": [
+        "to_encode%0#0"
+      ]
+    },
+    "224": {
+      "op": "itob",
+      "defined_out": [
+        "val_as_bytes%0#0"
+      ],
+      "stack_out": [
+        "val_as_bytes%0#0"
+      ]
+    },
+    "225": {
+      "op": "bytec 4 // 0x151f7c75",
+      "defined_out": [
+        "0x151f7c75",
+        "val_as_bytes%0#0"
+      ],
+      "stack_out": [
+        "val_as_bytes%0#0",
+        "0x151f7c75"
+      ]
+    },
+    "227": {
+      "op": "swap",
+      "stack_out": [
+        "0x151f7c75",
+        "val_as_bytes%0#0"
+      ]
+    },
+    "228": {
+      "op": "concat",
+      "defined_out": [
+        "tmp%33#0"
+      ],
+      "stack_out": [
+        "tmp%33#0"
+      ]
+    },
+    "229": {
+      "op": "log",
+      "stack_out": []
+    },
+    "230": {
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "1"
+      ],
+      "stack_out": [
+        "1"
+      ]
+    },
+    "231": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "232": {
+      "block": "__puya_arc4_router___update_egg_data_route@7",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%34#0"
+      ],
+      "stack_out": [
+        "tmp%34#0"
+      ]
+    },
+    "234": {
+      "op": "!",
+      "defined_out": [
+        "tmp%35#0"
+      ],
+      "stack_out": [
+        "tmp%35#0"
+      ]
+    },
+    "235": {
+      "error": "OnCompletion is not NoOp",
+      "op": "assert // OnCompletion is not NoOp",
+      "stack_out": []
+    },
+    "236": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%36#0"
+      ],
+      "stack_out": [
+        "tmp%36#0"
+      ]
+    },
+    "238": {
+      "error": "can only call when not creating",
+      "op": "assert // can only call when not creating",
+      "stack_out": []
+    },
+    "239": {
+      "op": "txna ApplicationArgs 1",
+      "defined_out": [
+        "tmp%38#0"
+      ],
+      "stack_out": [
+        "tmp%38#0"
+      ]
+    },
+    "242": {
+      "op": "btoi",
+      "defined_out": [
+        "tmp%39#0"
+      ],
+      "stack_out": [
+        "tmp%39#0"
+      ]
+    },
+    "243": {
+      "op": "txna ApplicationArgs 2",
+      "defined_out": [
+        "tmp%39#0",
+        "tmp%40#0"
+      ],
+      "stack_out": [
+        "tmp%39#0",
+        "tmp%40#0"
+      ]
+    },
+    "246": {
+      "op": "extract 2 0",
+      "defined_out": [
+        "tmp%39#0",
+        "tmp%41#0"
+      ],
+      "stack_out": [
+        "tmp%39#0",
+        "tmp%41#0"
+      ]
+    },
+    "249": {
+      "op": "txna ApplicationArgs 3",
+      "defined_out": [
+        "tmp%39#0",
+        "tmp%41#0",
+        "tmp%42#0"
+      ],
+      "stack_out": [
+        "tmp%39#0",
+        "tmp%41#0",
+        "tmp%42#0"
+      ]
+    },
+    "252": {
+      "op": "extract 2 0",
+      "defined_out": [
+        "tmp%39#0",
+        "tmp%41#0",
+        "tmp%43#0"
+      ],
+      "stack_out": [
+        "tmp%39#0",
+        "tmp%41#0",
+        "tmp%43#0"
+      ]
+    },
+    "255": {
+      "callsub": "smart_contracts.turtle_eggs.contract.TurtleMonitor.update_egg_data",
+      "op": "callsub update_egg_data",
+      "defined_out": [
+        "to_encode%1#0"
+      ],
+      "stack_out": [
+        "to_encode%1#0"
+      ]
+    },
+    "258": {
+      "op": "itob",
+      "defined_out": [
+        "val_as_bytes%1#0"
+      ],
+      "stack_out": [
+        "val_as_bytes%1#0"
+      ]
+    },
+    "259": {
+      "op": "bytec 4 // 0x151f7c75",
+      "defined_out": [
+        "0x151f7c75",
+        "val_as_bytes%1#0"
+      ],
+      "stack_out": [
+        "val_as_bytes%1#0",
+        "0x151f7c75"
+      ]
+    },
+    "261": {
+      "op": "swap",
+      "stack_out": [
+        "0x151f7c75",
+        "val_as_bytes%1#0"
+      ]
+    },
+    "262": {
+      "op": "concat",
+      "defined_out": [
+        "tmp%44#0"
+      ],
+      "stack_out": [
+        "tmp%44#0"
+      ]
+    },
+    "263": {
+      "op": "log",
+      "stack_out": []
+    },
+    "264": {
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "1"
+      ],
+      "stack_out": [
+        "1"
+      ]
+    },
+    "265": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "266": {
+      "block": "__puya_arc4_router___bare_routing@10",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%45#0"
+      ],
+      "stack_out": [
+        "tmp%45#0"
+      ]
+    },
+    "268": {
+      "op": "bnz __puya_arc4_router___after_if_else@14",
+      "stack_out": []
+    },
+    "271": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%46#0"
+      ],
+      "stack_out": [
+        "tmp%46#0"
+      ]
+    },
+    "273": {
+      "op": "!",
+      "defined_out": [
+        "tmp%47#0"
+      ],
+      "stack_out": [
+        "tmp%47#0"
+      ]
+    },
+    "274": {
+      "error": "can only call when creating",
+      "op": "assert // can only call when creating",
+      "stack_out": []
+    },
+    "275": {
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "1"
+      ],
+      "stack_out": [
+        "1"
+      ]
+    },
+    "276": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "277": {
+      "block": "__puya_arc4_router___after_if_else@14",
+      "stack_in": [],
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "0"
+      ],
+      "stack_out": [
+        "0"
+      ]
+    },
+    "278": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "279": {
+      "subroutine": "smart_contracts.turtle_eggs.contract.TurtleMonitor.add_creator",
+      "params": {
+        "new_creator#0": "bytes"
+      },
+      "block": "add_creator",
+      "stack_in": [],
+      "op": "proto 1 0"
+    },
+    "282": {
+      "op": "txn Sender",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "284": {
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "0"
+      ]
+    },
+    "285": {
+      "op": "bytec_0 // \"admin\"",
+      "defined_out": [
+        "\"admin\"",
+        "0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "0",
+        "\"admin\""
+      ]
+    },
+    "286": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%0#0",
+        "maybe_value%0#0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "maybe_value%0#0",
+        "maybe_exists%0#0"
+      ]
+    },
+    "287": {
+      "error": "check self.admin exists",
+      "op": "assert // check self.admin exists",
+      "stack_out": [
+        "tmp%0#0",
+        "maybe_value%0#0"
+      ]
+    },
+    "288": {
+      "op": "==",
+      "defined_out": [
+        "tmp%1#0"
+      ],
+      "stack_out": [
+        "tmp%1#0"
+      ]
+    },
+    "289": {
+      "error": "Only admin can add creators",
+      "op": "assert // Only admin can add creators",
+      "stack_out": []
+    },
+    "290": {
+      "op": "bytec_2 // 0x63726561746f723a",
+      "defined_out": [
+        "0x63726561746f723a"
+      ],
+      "stack_out": [
+        "0x63726561746f723a"
+      ]
+    },
+    "291": {
+      "op": "frame_dig -1",
+      "defined_out": [
+        "0x63726561746f723a",
+        "new_creator#0 (copy)"
+      ],
+      "stack_out": [
+        "0x63726561746f723a",
+        "new_creator#0 (copy)"
+      ]
+    },
+    "293": {
+      "op": "concat",
+      "defined_out": [
+        "box_key#0"
+      ],
+      "stack_out": [
+        "box_key#0"
+      ]
+    },
+    "294": {
+      "op": "bytec_1 // 0x31",
+      "defined_out": [
+        "0x31",
+        "box_key#0"
+      ],
+      "stack_out": [
+        "box_key#0",
+        "0x31"
+      ]
+    },
+    "295": {
+      "op": "box_put",
+      "stack_out": []
+    },
+    "296": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "297": {
+      "subroutine": "smart_contracts.turtle_eggs.contract.TurtleMonitor.remove_creator",
+      "params": {
+        "old_creator#0": "bytes"
+      },
+      "block": "remove_creator",
+      "stack_in": [],
+      "op": "proto 1 0"
+    },
+    "300": {
+      "op": "txn Sender",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "302": {
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "0"
+      ]
+    },
+    "303": {
+      "op": "bytec_0 // \"admin\"",
+      "defined_out": [
+        "\"admin\"",
+        "0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "0",
+        "\"admin\""
+      ]
+    },
+    "304": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%0#0",
+        "maybe_value%0#0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "maybe_value%0#0",
+        "maybe_exists%0#0"
+      ]
+    },
+    "305": {
+      "error": "check self.admin exists",
+      "op": "assert // check self.admin exists",
+      "stack_out": [
+        "tmp%0#0",
+        "maybe_value%0#0"
+      ]
+    },
+    "306": {
+      "op": "==",
+      "defined_out": [
+        "tmp%1#0"
+      ],
+      "stack_out": [
+        "tmp%1#0"
+      ]
+    },
+    "307": {
+      "error": "Only admin can remove creators",
+      "op": "assert // Only admin can remove creators",
+      "stack_out": []
+    },
+    "308": {
+      "op": "bytec_2 // 0x63726561746f723a",
+      "defined_out": [
+        "0x63726561746f723a"
+      ],
+      "stack_out": [
+        "0x63726561746f723a"
+      ]
+    },
+    "309": {
+      "op": "frame_dig -1",
+      "defined_out": [
+        "0x63726561746f723a",
+        "old_creator#0 (copy)"
+      ],
+      "stack_out": [
+        "0x63726561746f723a",
+        "old_creator#0 (copy)"
+      ]
+    },
+    "311": {
+      "op": "concat",
+      "defined_out": [
+        "box_key#0"
+      ],
+      "stack_out": [
+        "box_key#0"
+      ]
+    },
+    "312": {
+      "op": "box_del",
+      "defined_out": [
+        "{box_del}"
+      ],
+      "stack_out": [
+        "{box_del}"
+      ]
+    },
+    "313": {
+      "op": "pop",
+      "stack_out": []
+    },
+    "314": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "315": {
+      "subroutine": "smart_contracts.turtle_eggs.contract.TurtleMonitor.add_modifier",
+      "params": {
+        "new_modifier#0": "bytes"
+      },
+      "block": "add_modifier",
+      "stack_in": [],
+      "op": "proto 1 0"
+    },
+    "318": {
+      "op": "txn Sender",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "320": {
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "0"
+      ]
+    },
+    "321": {
+      "op": "bytec_0 // \"admin\"",
+      "defined_out": [
+        "\"admin\"",
+        "0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "0",
+        "\"admin\""
+      ]
+    },
+    "322": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%0#0",
+        "maybe_value%0#0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "maybe_value%0#0",
+        "maybe_exists%0#0"
+      ]
+    },
+    "323": {
+      "error": "check self.admin exists",
+      "op": "assert // check self.admin exists",
+      "stack_out": [
+        "tmp%0#0",
+        "maybe_value%0#0"
+      ]
+    },
+    "324": {
+      "op": "==",
+      "defined_out": [
+        "tmp%1#0"
+      ],
+      "stack_out": [
+        "tmp%1#0"
+      ]
+    },
+    "325": {
+      "error": "Only admin can add modifiers",
+      "op": "assert // Only admin can add modifiers",
+      "stack_out": []
+    },
+    "326": {
+      "op": "bytec_3 // 0x6d6f6469666965723a",
+      "defined_out": [
+        "0x6d6f6469666965723a"
+      ],
+      "stack_out": [
+        "0x6d6f6469666965723a"
+      ]
+    },
+    "327": {
+      "op": "frame_dig -1",
+      "defined_out": [
+        "0x6d6f6469666965723a",
+        "new_modifier#0 (copy)"
+      ],
+      "stack_out": [
+        "0x6d6f6469666965723a",
+        "new_modifier#0 (copy)"
+      ]
+    },
+    "329": {
+      "op": "concat",
+      "defined_out": [
+        "box_key#0"
+      ],
+      "stack_out": [
+        "box_key#0"
+      ]
+    },
+    "330": {
+      "op": "bytec_1 // 0x31",
+      "defined_out": [
+        "0x31",
+        "box_key#0"
+      ],
+      "stack_out": [
+        "box_key#0",
+        "0x31"
+      ]
+    },
+    "331": {
+      "op": "box_put",
+      "stack_out": []
+    },
+    "332": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "333": {
+      "subroutine": "smart_contracts.turtle_eggs.contract.TurtleMonitor.remove_modifier",
+      "params": {
+        "old_modifier#0": "bytes"
+      },
+      "block": "remove_modifier",
+      "stack_in": [],
+      "op": "proto 1 0"
+    },
+    "336": {
+      "op": "txn Sender",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "338": {
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "0"
+      ]
+    },
+    "339": {
+      "op": "bytec_0 // \"admin\"",
+      "defined_out": [
+        "\"admin\"",
+        "0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "0",
+        "\"admin\""
+      ]
+    },
+    "340": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%0#0",
+        "maybe_value%0#0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "maybe_value%0#0",
+        "maybe_exists%0#0"
+      ]
+    },
+    "341": {
+      "error": "check self.admin exists",
+      "op": "assert // check self.admin exists",
+      "stack_out": [
+        "tmp%0#0",
+        "maybe_value%0#0"
+      ]
+    },
+    "342": {
+      "op": "==",
+      "defined_out": [
+        "tmp%1#0"
+      ],
+      "stack_out": [
+        "tmp%1#0"
+      ]
+    },
+    "343": {
+      "error": "Only admin can remove modifiers",
+      "op": "assert // Only admin can remove modifiers",
+      "stack_out": []
+    },
+    "344": {
+      "op": "bytec_3 // 0x6d6f6469666965723a",
+      "defined_out": [
+        "0x6d6f6469666965723a"
+      ],
+      "stack_out": [
+        "0x6d6f6469666965723a"
+      ]
+    },
+    "345": {
+      "op": "frame_dig -1",
+      "defined_out": [
+        "0x6d6f6469666965723a",
+        "old_modifier#0 (copy)"
+      ],
+      "stack_out": [
+        "0x6d6f6469666965723a",
+        "old_modifier#0 (copy)"
+      ]
+    },
+    "347": {
+      "op": "concat",
+      "defined_out": [
+        "box_key#0"
+      ],
+      "stack_out": [
+        "box_key#0"
+      ]
+    },
+    "348": {
+      "op": "box_del",
+      "defined_out": [
+        "{box_del}"
+      ],
+      "stack_out": [
+        "{box_del}"
+      ]
+    },
+    "349": {
+      "op": "pop",
+      "stack_out": []
+    },
+    "350": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "351": {
+      "subroutine": "smart_contracts.turtle_eggs.contract.TurtleMonitor.create_egg_nft",
+      "params": {
+        "name#0": "bytes",
+        "url#0": "bytes",
+        "data_blob#0": "bytes"
+      },
+      "block": "create_egg_nft",
+      "stack_in": [],
+      "op": "proto 3 1"
+    },
+    "354": {
+      "op": "txn Sender",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "356": {
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "0"
+      ]
+    },
+    "357": {
+      "op": "bytec_0 // \"admin\"",
+      "defined_out": [
+        "\"admin\"",
+        "0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "0",
+        "\"admin\""
+      ]
+    },
+    "358": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%0#0",
+        "maybe_value%0#0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "maybe_value%0#0",
+        "maybe_exists%0#0"
+      ]
+    },
+    "359": {
+      "error": "check self.admin exists",
+      "op": "assert // check self.admin exists",
+      "stack_out": [
+        "tmp%0#0",
+        "maybe_value%0#0"
+      ]
+    },
+    "360": {
+      "op": "==",
+      "defined_out": [
+        "is_admin#0"
+      ],
+      "stack_out": [
+        "is_admin#0"
+      ]
+    },
+    "361": {
+      "op": "txn Sender",
+      "defined_out": [
+        "is_admin#0",
+        "tmp%1#0"
+      ],
+      "stack_out": [
+        "is_admin#0",
+        "tmp%1#0"
+      ]
+    },
+    "363": {
+      "callsub": "smart_contracts.turtle_eggs.contract.TurtleMonitor.is_creator",
+      "op": "callsub is_creator",
+      "defined_out": [
+        "is_admin#0",
+        "is_creat#0"
+      ],
+      "stack_out": [
+        "is_admin#0",
+        "is_creat#0"
+      ]
+    },
+    "366": {
+      "op": "||",
+      "defined_out": [
+        "tmp%2#0"
+      ],
+      "stack_out": [
+        "tmp%2#0"
+      ]
+    },
+    "367": {
+      "error": "Not authorized to create",
+      "op": "assert // Not authorized to create",
+      "stack_out": []
+    },
+    "368": {
+      "op": "itxn_begin"
+    },
+    "369": {
+      "op": "global CurrentApplicationAddress",
+      "defined_out": [
+        "inner_txn_params%0%%param_ConfigAssetManager_idx_0#0"
+      ],
+      "stack_out": [
+        "inner_txn_params%0%%param_ConfigAssetManager_idx_0#0"
+      ]
+    },
+    "371": {
+      "op": "dupn 3",
+      "defined_out": [
+        "inner_txn_params%0%%param_ConfigAssetClawback_idx_0#0",
+        "inner_txn_params%0%%param_ConfigAssetFreeze_idx_0#0",
+        "inner_txn_params%0%%param_ConfigAssetManager_idx_0#0",
+        "inner_txn_params%0%%param_ConfigAssetReserve_idx_0#0"
+      ],
+      "stack_out": [
+        "inner_txn_params%0%%param_ConfigAssetManager_idx_0#0",
+        "inner_txn_params%0%%param_ConfigAssetReserve_idx_0#0",
+        "inner_txn_params%0%%param_ConfigAssetFreeze_idx_0#0",
+        "inner_txn_params%0%%param_ConfigAssetClawback_idx_0#0"
+      ]
+    },
+    "373": {
+      "op": "itxn_field ConfigAssetClawback",
+      "stack_out": [
+        "inner_txn_params%0%%param_ConfigAssetManager_idx_0#0",
+        "inner_txn_params%0%%param_ConfigAssetReserve_idx_0#0",
+        "inner_txn_params%0%%param_ConfigAssetFreeze_idx_0#0"
+      ]
+    },
+    "375": {
+      "op": "itxn_field ConfigAssetFreeze",
+      "stack_out": [
+        "inner_txn_params%0%%param_ConfigAssetManager_idx_0#0",
+        "inner_txn_params%0%%param_ConfigAssetReserve_idx_0#0"
+      ]
+    },
+    "377": {
+      "op": "itxn_field ConfigAssetReserve",
+      "stack_out": [
+        "inner_txn_params%0%%param_ConfigAssetManager_idx_0#0"
+      ]
+    },
+    "379": {
+      "op": "itxn_field ConfigAssetManager",
+      "stack_out": []
+    },
+    "381": {
+      "op": "frame_dig -2",
+      "defined_out": [
+        "url#0 (copy)"
+      ],
+      "stack_out": [
+        "url#0 (copy)"
+      ]
+    },
+    "383": {
+      "op": "itxn_field ConfigAssetURL",
+      "stack_out": []
+    },
+    "385": {
+      "op": "frame_dig -3",
+      "defined_out": [
+        "name#0 (copy)"
+      ],
+      "stack_out": [
+        "name#0 (copy)"
+      ]
+    },
+    "387": {
+      "op": "itxn_field ConfigAssetName",
+      "stack_out": []
+    },
+    "389": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "0"
+      ]
+    },
+    "390": {
+      "op": "itxn_field ConfigAssetDecimals",
+      "stack_out": []
+    },
+    "392": {
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "1"
+      ],
+      "stack_out": [
+        "1"
+      ]
+    },
+    "393": {
+      "op": "itxn_field ConfigAssetTotal",
+      "stack_out": []
+    },
+    "395": {
+      "op": "intc_2 // acfg",
+      "defined_out": [
+        "acfg"
+      ],
+      "stack_out": [
+        "acfg"
+      ]
+    },
+    "396": {
+      "op": "itxn_field TypeEnum",
+      "stack_out": []
+    },
+    "398": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "0"
+      ]
+    },
+    "399": {
+      "op": "itxn_field Fee",
+      "stack_out": []
+    },
+    "401": {
+      "op": "itxn_submit"
+    },
+    "402": {
+      "op": "itxn CreatedAssetID"
+    },
+    "404": {
+      "op": "dup",
+      "defined_out": [
+        "itxn_result.CreatedAssetID#0",
+        "itxn_result.CreatedAssetID#0 (copy)"
+      ],
+      "stack_out": [
+        "itxn_result.CreatedAssetID#0",
+        "itxn_result.CreatedAssetID#0 (copy)"
+      ]
+    },
+    "405": {
+      "op": "itob",
+      "defined_out": [
+        "itxn_result.CreatedAssetID#0",
+        "tmp%3#0"
+      ],
+      "stack_out": [
+        "itxn_result.CreatedAssetID#0",
+        "tmp%3#0"
+      ]
+    },
+    "406": {
+      "op": "bytec 5 // 0x6567673a",
+      "defined_out": [
+        "0x6567673a",
+        "itxn_result.CreatedAssetID#0",
+        "tmp%3#0"
+      ],
+      "stack_out": [
+        "itxn_result.CreatedAssetID#0",
+        "tmp%3#0",
+        "0x6567673a"
+      ]
+    },
+    "408": {
+      "op": "dig 1",
+      "defined_out": [
+        "0x6567673a",
+        "itxn_result.CreatedAssetID#0",
+        "tmp%3#0",
+        "tmp%3#0 (copy)"
+      ],
+      "stack_out": [
+        "itxn_result.CreatedAssetID#0",
+        "tmp%3#0",
+        "0x6567673a",
+        "tmp%3#0 (copy)"
+      ]
+    },
+    "410": {
+      "op": "concat",
+      "defined_out": [
+        "egg_key#0",
+        "itxn_result.CreatedAssetID#0",
+        "tmp%3#0"
+      ],
+      "stack_out": [
+        "itxn_result.CreatedAssetID#0",
+        "tmp%3#0",
+        "egg_key#0"
+      ]
+    },
+    "411": {
+      "op": "frame_dig -1",
+      "defined_out": [
+        "data_blob#0 (copy)",
+        "egg_key#0",
+        "itxn_result.CreatedAssetID#0",
+        "tmp%3#0"
+      ],
+      "stack_out": [
+        "itxn_result.CreatedAssetID#0",
+        "tmp%3#0",
+        "egg_key#0",
+        "data_blob#0 (copy)"
+      ]
+    },
+    "413": {
+      "op": "box_put",
+      "stack_out": [
+        "itxn_result.CreatedAssetID#0",
+        "tmp%3#0"
+      ]
+    },
+    "414": {
+      "op": "pushbytes 0x437265617465204153413d",
+      "defined_out": [
+        "0x437265617465204153413d",
+        "itxn_result.CreatedAssetID#0",
+        "tmp%3#0"
+      ],
+      "stack_out": [
+        "itxn_result.CreatedAssetID#0",
+        "tmp%3#0",
+        "0x437265617465204153413d"
+      ]
+    },
+    "427": {
+      "op": "swap",
+      "stack_out": [
+        "itxn_result.CreatedAssetID#0",
+        "0x437265617465204153413d",
+        "tmp%3#0"
+      ]
+    },
+    "428": {
+      "op": "concat",
+      "defined_out": [
+        "itxn_result.CreatedAssetID#0",
+        "tmp%5#0"
+      ],
+      "stack_out": [
+        "itxn_result.CreatedAssetID#0",
+        "tmp%5#0"
+      ]
+    },
+    "429": {
+      "op": "bytec 6 // 0x2066726f6d3d",
+      "defined_out": [
+        "0x2066726f6d3d",
+        "itxn_result.CreatedAssetID#0",
+        "tmp%5#0"
+      ],
+      "stack_out": [
+        "itxn_result.CreatedAssetID#0",
+        "tmp%5#0",
+        "0x2066726f6d3d"
+      ]
+    },
+    "431": {
+      "op": "concat",
+      "defined_out": [
+        "itxn_result.CreatedAssetID#0",
+        "tmp%6#0"
+      ],
+      "stack_out": [
+        "itxn_result.CreatedAssetID#0",
+        "tmp%6#0"
+      ]
+    },
+    "432": {
+      "op": "bytec 7 // 0x20746f3d",
+      "defined_out": [
+        "0x20746f3d",
+        "itxn_result.CreatedAssetID#0",
+        "tmp%6#0"
+      ],
+      "stack_out": [
+        "itxn_result.CreatedAssetID#0",
+        "tmp%6#0",
+        "0x20746f3d"
+      ]
+    },
+    "434": {
+      "op": "concat",
+      "defined_out": [
+        "itxn_result.CreatedAssetID#0",
+        "tmp%7#0"
+      ],
+      "stack_out": [
+        "itxn_result.CreatedAssetID#0",
+        "tmp%7#0"
+      ]
+    },
+    "435": {
+      "op": "frame_dig -1",
+      "stack_out": [
+        "itxn_result.CreatedAssetID#0",
+        "tmp%7#0",
+        "data_blob#0 (copy)"
+      ]
+    },
+    "437": {
+      "op": "concat",
+      "defined_out": [
+        "itxn_result.CreatedAssetID#0",
+        "tmp%8#0"
+      ],
+      "stack_out": [
+        "itxn_result.CreatedAssetID#0",
+        "tmp%8#0"
+      ]
+    },
+    "438": {
+      "op": "pushbytes 0x20696e697469616c55524c3d",
+      "defined_out": [
+        "0x20696e697469616c55524c3d",
+        "itxn_result.CreatedAssetID#0",
+        "tmp%8#0"
+      ],
+      "stack_out": [
+        "itxn_result.CreatedAssetID#0",
+        "tmp%8#0",
+        "0x20696e697469616c55524c3d"
+      ]
+    },
+    "452": {
+      "op": "concat",
+      "defined_out": [
+        "itxn_result.CreatedAssetID#0",
+        "tmp%9#0"
+      ],
+      "stack_out": [
+        "itxn_result.CreatedAssetID#0",
+        "tmp%9#0"
+      ]
+    },
+    "453": {
+      "op": "frame_dig -2",
+      "stack_out": [
+        "itxn_result.CreatedAssetID#0",
+        "tmp%9#0",
+        "url#0 (copy)"
+      ]
+    },
+    "455": {
+      "op": "concat",
+      "defined_out": [
+        "itxn_result.CreatedAssetID#0",
+        "log_str#0"
+      ],
+      "stack_out": [
+        "itxn_result.CreatedAssetID#0",
+        "log_str#0"
+      ]
+    },
+    "456": {
+      "op": "log",
+      "stack_out": [
+        "itxn_result.CreatedAssetID#0"
+      ]
+    },
+    "457": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "458": {
+      "subroutine": "smart_contracts.turtle_eggs.contract.TurtleMonitor.is_creator",
+      "params": {
+        "addr#0": "bytes"
+      },
+      "block": "is_creator",
+      "stack_in": [],
+      "op": "proto 1 1"
+    },
+    "461": {
+      "op": "bytec_2 // 0x63726561746f723a",
+      "defined_out": [
+        "0x63726561746f723a"
+      ],
+      "stack_out": [
+        "0x63726561746f723a"
+      ]
+    },
+    "462": {
+      "op": "frame_dig -1",
+      "defined_out": [
+        "0x63726561746f723a",
+        "addr#0 (copy)"
+      ],
+      "stack_out": [
+        "0x63726561746f723a",
+        "addr#0 (copy)"
+      ]
+    },
+    "464": {
+      "op": "concat",
+      "defined_out": [
+        "creator_box_key#0"
+      ],
+      "stack_out": [
+        "creator_box_key#0"
+      ]
+    },
+    "465": {
+      "op": "box_get",
+      "defined_out": [
+        "has_value#0",
+        "value#0"
+      ],
+      "stack_out": [
+        "value#0",
+        "has_value#0"
+      ]
+    },
+    "466": {
+      "op": "bnz is_creator_after_if_else@2",
+      "stack_out": [
+        "value#0"
+      ]
+    },
+    "469": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "value#0",
+        "0"
+      ]
+    },
+    "470": {
+      "op": "swap"
+    },
+    "471": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "472": {
+      "block": "is_creator_after_if_else@2",
+      "stack_in": [
+        "value#0"
+      ],
+      "op": "frame_dig 0",
+      "defined_out": [
+        "value#0"
+      ],
+      "stack_out": [
+        "value#0",
+        "value#0"
+      ]
+    },
+    "474": {
+      "op": "bytec_1 // 0x31",
+      "defined_out": [
+        "0x31",
+        "value#0"
+      ],
+      "stack_out": [
+        "value#0",
+        "value#0",
+        "0x31"
+      ]
+    },
+    "475": {
+      "op": "==",
+      "defined_out": [
+        "tmp%0#0",
+        "value#0"
+      ],
+      "stack_out": [
+        "value#0",
+        "tmp%0#0"
+      ]
+    },
+    "476": {
+      "op": "swap"
+    },
+    "477": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "478": {
+      "subroutine": "smart_contracts.turtle_eggs.contract.TurtleMonitor.update_egg_data",
+      "params": {
+        "asa_id#0": "uint64",
+        "new_url#0": "bytes",
+        "data_blob#0": "bytes"
+      },
+      "block": "update_egg_data",
+      "stack_in": [],
+      "op": "proto 3 1"
+    },
+    "481": {
+      "op": "txn Sender",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "483": {
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "0"
+      ]
+    },
+    "484": {
+      "op": "bytec_0 // \"admin\"",
+      "defined_out": [
+        "\"admin\"",
+        "0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "0",
+        "\"admin\""
+      ]
+    },
+    "485": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%0#0",
+        "maybe_value%0#0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "maybe_value%0#0",
+        "maybe_exists%0#0"
+      ]
+    },
+    "486": {
+      "error": "check self.admin exists",
+      "op": "assert // check self.admin exists",
+      "stack_out": [
+        "tmp%0#0",
+        "maybe_value%0#0"
+      ]
+    },
+    "487": {
+      "op": "==",
+      "defined_out": [
+        "is_admin#0"
+      ],
+      "stack_out": [
+        "is_admin#0"
+      ]
+    },
+    "488": {
+      "op": "txn Sender",
+      "defined_out": [
+        "is_admin#0",
+        "tmp%1#0"
+      ],
+      "stack_out": [
+        "is_admin#0",
+        "tmp%1#0"
+      ]
+    },
+    "490": {
+      "callsub": "smart_contracts.turtle_eggs.contract.TurtleMonitor.is_modifier",
+      "op": "callsub is_modifier",
+      "defined_out": [
+        "is_admin#0",
+        "is_mod#0"
+      ],
+      "stack_out": [
+        "is_admin#0",
+        "is_mod#0"
+      ]
+    },
+    "493": {
+      "op": "||",
+      "defined_out": [
+        "tmp%2#0"
+      ],
+      "stack_out": [
+        "tmp%2#0"
+      ]
+    },
+    "494": {
+      "error": "Not authorized to update",
+      "op": "assert // Not authorized to update",
+      "stack_out": []
+    },
+    "495": {
+      "op": "frame_dig -3",
+      "defined_out": [
+        "asa_id#0 (copy)"
+      ],
+      "stack_out": [
+        "asa_id#0 (copy)"
+      ]
+    },
+    "497": {
+      "op": "itob",
+      "defined_out": [
+        "tmp%3#0"
+      ],
+      "stack_out": [
+        "tmp%3#0"
+      ]
+    },
+    "498": {
+      "op": "dup",
+      "defined_out": [
+        "tmp%3#0"
+      ],
+      "stack_out": [
+        "tmp%3#0",
+        "tmp%3#0"
+      ]
+    },
+    "499": {
+      "op": "bytec 5 // 0x6567673a",
+      "defined_out": [
+        "0x6567673a",
+        "tmp%3#0"
+      ],
+      "stack_out": [
+        "tmp%3#0",
+        "tmp%3#0",
+        "0x6567673a"
+      ]
+    },
+    "501": {
+      "op": "swap",
+      "stack_out": [
+        "tmp%3#0",
+        "0x6567673a",
+        "tmp%3#0"
+      ]
+    },
+    "502": {
+      "op": "concat",
+      "defined_out": [
+        "egg_key#0",
+        "tmp%3#0"
+      ],
+      "stack_out": [
+        "tmp%3#0",
+        "egg_key#0"
+      ]
+    },
+    "503": {
+      "op": "dup",
+      "defined_out": [
+        "egg_key#0",
+        "tmp%3#0"
+      ],
+      "stack_out": [
+        "tmp%3#0",
+        "egg_key#0",
+        "egg_key#0"
+      ]
+    },
+    "504": {
+      "op": "box_get",
+      "defined_out": [
+        "egg_key#0",
+        "has_old#0",
+        "old_val#0",
+        "tmp%3#0"
+      ],
+      "stack_out": [
+        "tmp%3#0",
+        "egg_key#0",
+        "old_val#0",
+        "has_old#0"
+      ]
+    },
+    "505": {
+      "op": "itxn_begin"
+    },
+    "506": {
+      "op": "global CurrentApplicationAddress",
+      "defined_out": [
+        "egg_key#0",
+        "has_old#0",
+        "inner_txn_params%0%%param_ConfigAssetManager_idx_0#0",
+        "old_val#0",
+        "tmp%3#0"
+      ],
+      "stack_out": [
+        "tmp%3#0",
+        "egg_key#0",
+        "old_val#0",
+        "has_old#0",
+        "inner_txn_params%0%%param_ConfigAssetManager_idx_0#0"
+      ]
+    },
+    "508": {
+      "op": "dupn 3",
+      "defined_out": [
+        "egg_key#0",
+        "has_old#0",
+        "inner_txn_params%0%%param_ConfigAssetClawback_idx_0#0",
+        "inner_txn_params%0%%param_ConfigAssetFreeze_idx_0#0",
+        "inner_txn_params%0%%param_ConfigAssetManager_idx_0#0",
+        "inner_txn_params%0%%param_ConfigAssetReserve_idx_0#0",
+        "old_val#0",
+        "tmp%3#0"
+      ],
+      "stack_out": [
+        "tmp%3#0",
+        "egg_key#0",
+        "old_val#0",
+        "has_old#0",
+        "inner_txn_params%0%%param_ConfigAssetManager_idx_0#0",
+        "inner_txn_params%0%%param_ConfigAssetReserve_idx_0#0",
+        "inner_txn_params%0%%param_ConfigAssetFreeze_idx_0#0",
+        "inner_txn_params%0%%param_ConfigAssetClawback_idx_0#0"
+      ]
+    },
+    "510": {
+      "op": "itxn_field ConfigAssetClawback",
+      "stack_out": [
+        "tmp%3#0",
+        "egg_key#0",
+        "old_val#0",
+        "has_old#0",
+        "inner_txn_params%0%%param_ConfigAssetManager_idx_0#0",
+        "inner_txn_params%0%%param_ConfigAssetReserve_idx_0#0",
+        "inner_txn_params%0%%param_ConfigAssetFreeze_idx_0#0"
+      ]
+    },
+    "512": {
+      "op": "itxn_field ConfigAssetFreeze",
+      "stack_out": [
+        "tmp%3#0",
+        "egg_key#0",
+        "old_val#0",
+        "has_old#0",
+        "inner_txn_params%0%%param_ConfigAssetManager_idx_0#0",
+        "inner_txn_params%0%%param_ConfigAssetReserve_idx_0#0"
+      ]
+    },
+    "514": {
+      "op": "itxn_field ConfigAssetReserve",
+      "stack_out": [
+        "tmp%3#0",
+        "egg_key#0",
+        "old_val#0",
+        "has_old#0",
+        "inner_txn_params%0%%param_ConfigAssetManager_idx_0#0"
+      ]
+    },
+    "516": {
+      "op": "itxn_field ConfigAssetManager",
+      "stack_out": [
+        "tmp%3#0",
+        "egg_key#0",
+        "old_val#0",
+        "has_old#0"
+      ]
+    },
+    "518": {
+      "op": "frame_dig -2",
+      "defined_out": [
+        "egg_key#0",
+        "has_old#0",
+        "new_url#0 (copy)",
+        "old_val#0",
+        "tmp%3#0"
+      ],
+      "stack_out": [
+        "tmp%3#0",
+        "egg_key#0",
+        "old_val#0",
+        "has_old#0",
+        "new_url#0 (copy)"
+      ]
+    },
+    "520": {
+      "op": "itxn_field ConfigAssetURL",
+      "stack_out": [
+        "tmp%3#0",
+        "egg_key#0",
+        "old_val#0",
+        "has_old#0"
+      ]
+    },
+    "522": {
+      "op": "frame_dig -3",
+      "stack_out": [
+        "tmp%3#0",
+        "egg_key#0",
+        "old_val#0",
+        "has_old#0",
+        "asa_id#0 (copy)"
+      ]
+    },
+    "524": {
+      "op": "itxn_field ConfigAsset",
+      "stack_out": [
+        "tmp%3#0",
+        "egg_key#0",
+        "old_val#0",
+        "has_old#0"
+      ]
+    },
+    "526": {
+      "op": "intc_2 // acfg",
+      "defined_out": [
+        "acfg",
+        "egg_key#0",
+        "has_old#0",
+        "old_val#0",
+        "tmp%3#0"
+      ],
+      "stack_out": [
+        "tmp%3#0",
+        "egg_key#0",
+        "old_val#0",
+        "has_old#0",
+        "acfg"
+      ]
+    },
+    "527": {
+      "op": "itxn_field TypeEnum",
+      "stack_out": [
+        "tmp%3#0",
+        "egg_key#0",
+        "old_val#0",
+        "has_old#0"
+      ]
+    },
+    "529": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "tmp%3#0",
+        "egg_key#0",
+        "old_val#0",
+        "has_old#0",
+        "0"
+      ]
+    },
+    "530": {
+      "op": "itxn_field Fee",
+      "stack_out": [
+        "tmp%3#0",
+        "egg_key#0",
+        "old_val#0",
+        "has_old#0"
+      ]
+    },
+    "532": {
+      "op": "itxn_submit"
+    },
+    "533": {
+      "op": "bz update_egg_data_after_if_else@3",
+      "stack_out": [
+        "tmp%3#0",
+        "egg_key#0",
+        "old_val#0"
+      ]
+    },
+    "536": {
+      "op": "frame_dig 1",
+      "stack_out": [
+        "tmp%3#0",
+        "egg_key#0",
+        "old_val#0",
+        "egg_key#0"
+      ]
+    },
+    "538": {
+      "op": "box_del",
+      "defined_out": [
+        "egg_key#0",
+        "old_val#0",
+        "tmp%3#0",
+        "{box_del}"
+      ],
+      "stack_out": [
+        "tmp%3#0",
+        "egg_key#0",
+        "old_val#0",
+        "{box_del}"
+      ]
+    },
+    "539": {
+      "op": "pop",
+      "stack_out": [
+        "tmp%3#0",
+        "egg_key#0",
+        "old_val#0"
+      ]
+    },
+    "540": {
+      "block": "update_egg_data_after_if_else@3",
+      "stack_in": [
+        "tmp%3#0",
+        "egg_key#0",
+        "old_val#0"
+      ],
+      "op": "frame_dig 1",
+      "defined_out": [
+        "egg_key#0"
+      ],
+      "stack_out": [
+        "tmp%3#0",
+        "egg_key#0",
+        "old_val#0",
+        "egg_key#0"
+      ]
+    },
+    "542": {
+      "op": "frame_dig -1",
+      "defined_out": [
+        "data_blob#0 (copy)",
+        "egg_key#0"
+      ],
+      "stack_out": [
+        "tmp%3#0",
+        "egg_key#0",
+        "old_val#0",
+        "egg_key#0",
+        "data_blob#0 (copy)"
+      ]
+    },
+    "544": {
+      "op": "box_put",
+      "stack_out": [
+        "tmp%3#0",
+        "egg_key#0",
+        "old_val#0"
+      ]
+    },
+    "545": {
+      "op": "pushbytes 0x557064617465204153413d",
+      "defined_out": [
+        "0x557064617465204153413d",
+        "egg_key#0"
+      ],
+      "stack_out": [
+        "tmp%3#0",
+        "egg_key#0",
+        "old_val#0",
+        "0x557064617465204153413d"
+      ]
+    },
+    "558": {
+      "op": "frame_dig 0",
+      "defined_out": [
+        "0x557064617465204153413d",
+        "egg_key#0",
+        "tmp%3#0"
+      ],
+      "stack_out": [
+        "tmp%3#0",
+        "egg_key#0",
+        "old_val#0",
+        "0x557064617465204153413d",
+        "tmp%3#0"
+      ]
+    },
+    "560": {
+      "op": "concat",
+      "defined_out": [
+        "egg_key#0",
+        "tmp%3#0",
+        "tmp%5#0"
+      ],
+      "stack_out": [
+        "tmp%3#0",
+        "egg_key#0",
+        "old_val#0",
+        "tmp%5#0"
+      ]
+    },
+    "561": {
+      "op": "bytec 6 // 0x2066726f6d3d",
+      "defined_out": [
+        "0x2066726f6d3d",
+        "egg_key#0",
+        "tmp%3#0",
+        "tmp%5#0"
+      ],
+      "stack_out": [
+        "tmp%3#0",
+        "egg_key#0",
+        "old_val#0",
+        "tmp%5#0",
+        "0x2066726f6d3d"
+      ]
+    },
+    "563": {
+      "op": "concat",
+      "defined_out": [
+        "egg_key#0",
+        "tmp%3#0",
+        "tmp%6#0"
+      ],
+      "stack_out": [
+        "tmp%3#0",
+        "egg_key#0",
+        "old_val#0",
+        "tmp%6#0"
+      ]
+    },
+    "564": {
+      "op": "frame_dig 2",
+      "defined_out": [
+        "egg_key#0",
+        "old_val#0",
+        "tmp%3#0",
+        "tmp%6#0"
+      ],
+      "stack_out": [
+        "tmp%3#0",
+        "egg_key#0",
+        "old_val#0",
+        "tmp%6#0",
+        "old_val#0"
+      ]
+    },
+    "566": {
+      "op": "concat",
+      "defined_out": [
+        "egg_key#0",
+        "old_val#0",
+        "tmp%3#0",
+        "tmp%7#0"
+      ],
+      "stack_out": [
+        "tmp%3#0",
+        "egg_key#0",
+        "old_val#0",
+        "tmp%7#0"
+      ]
+    },
+    "567": {
+      "op": "bytec 7 // 0x20746f3d",
+      "defined_out": [
+        "0x20746f3d",
+        "egg_key#0",
+        "old_val#0",
+        "tmp%3#0",
+        "tmp%7#0"
+      ],
+      "stack_out": [
+        "tmp%3#0",
+        "egg_key#0",
+        "old_val#0",
+        "tmp%7#0",
+        "0x20746f3d"
+      ]
+    },
+    "569": {
+      "op": "concat",
+      "defined_out": [
+        "egg_key#0",
+        "old_val#0",
+        "tmp%3#0",
+        "tmp%8#0"
+      ],
+      "stack_out": [
+        "tmp%3#0",
+        "egg_key#0",
+        "old_val#0",
+        "tmp%8#0"
+      ]
+    },
+    "570": {
+      "op": "frame_dig -1",
+      "stack_out": [
+        "tmp%3#0",
+        "egg_key#0",
+        "old_val#0",
+        "tmp%8#0",
+        "data_blob#0 (copy)"
+      ]
+    },
+    "572": {
+      "op": "concat",
+      "defined_out": [
+        "egg_key#0",
+        "old_val#0",
+        "tmp%3#0",
+        "tmp%9#0"
+      ],
+      "stack_out": [
+        "tmp%3#0",
+        "egg_key#0",
+        "old_val#0",
+        "tmp%9#0"
+      ]
+    },
+    "573": {
+      "op": "pushbytes 0x207265636f6e66696755524c3d",
+      "defined_out": [
+        "0x207265636f6e66696755524c3d",
+        "egg_key#0",
+        "old_val#0",
+        "tmp%3#0",
+        "tmp%9#0"
+      ],
+      "stack_out": [
+        "tmp%3#0",
+        "egg_key#0",
+        "old_val#0",
+        "tmp%9#0",
+        "0x207265636f6e66696755524c3d"
+      ]
+    },
+    "588": {
+      "op": "concat",
+      "defined_out": [
+        "egg_key#0",
+        "old_val#0",
+        "tmp%10#0",
+        "tmp%3#0"
+      ],
+      "stack_out": [
+        "tmp%3#0",
+        "egg_key#0",
+        "old_val#0",
+        "tmp%10#0"
+      ]
+    },
+    "589": {
+      "op": "frame_dig -2",
+      "defined_out": [
+        "egg_key#0",
+        "new_url#0 (copy)",
+        "old_val#0",
+        "tmp%10#0",
+        "tmp%3#0"
+      ],
+      "stack_out": [
+        "tmp%3#0",
+        "egg_key#0",
+        "old_val#0",
+        "tmp%10#0",
+        "new_url#0 (copy)"
+      ]
+    },
+    "591": {
+      "op": "concat",
+      "defined_out": [
+        "egg_key#0",
+        "log_str#0",
+        "old_val#0",
+        "tmp%3#0"
+      ],
+      "stack_out": [
+        "tmp%3#0",
+        "egg_key#0",
+        "old_val#0",
+        "log_str#0"
+      ]
+    },
+    "592": {
+      "op": "log",
+      "stack_out": [
+        "tmp%3#0",
+        "egg_key#0",
+        "old_val#0"
+      ]
+    },
+    "593": {
+      "op": "frame_dig -3",
+      "defined_out": [
+        "asa_id#0 (copy)",
+        "egg_key#0",
+        "old_val#0",
+        "tmp%3#0"
+      ],
+      "stack_out": [
+        "tmp%3#0",
+        "egg_key#0",
+        "old_val#0",
+        "asa_id#0 (copy)"
+      ]
+    },
+    "595": {
+      "op": "frame_bury 0"
+    },
+    "597": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "598": {
+      "subroutine": "smart_contracts.turtle_eggs.contract.TurtleMonitor.is_modifier",
+      "params": {
+        "addr#0": "bytes"
+      },
+      "block": "is_modifier",
+      "stack_in": [],
+      "op": "proto 1 1"
+    },
+    "601": {
+      "op": "bytec_3 // 0x6d6f6469666965723a",
+      "defined_out": [
+        "0x6d6f6469666965723a"
+      ],
+      "stack_out": [
+        "0x6d6f6469666965723a"
+      ]
+    },
+    "602": {
+      "op": "frame_dig -1",
+      "defined_out": [
+        "0x6d6f6469666965723a",
+        "addr#0 (copy)"
+      ],
+      "stack_out": [
+        "0x6d6f6469666965723a",
+        "addr#0 (copy)"
+      ]
+    },
+    "604": {
+      "op": "concat",
+      "defined_out": [
+        "modifier_box_key#0"
+      ],
+      "stack_out": [
+        "modifier_box_key#0"
+      ]
+    },
+    "605": {
+      "op": "box_get",
+      "defined_out": [
+        "has_value#0",
+        "modifier_val#0"
+      ],
+      "stack_out": [
+        "modifier_val#0",
+        "has_value#0"
+      ]
+    },
+    "606": {
+      "op": "bnz is_modifier_after_if_else@2",
+      "stack_out": [
+        "modifier_val#0"
+      ]
+    },
+    "609": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "modifier_val#0",
+        "0"
+      ]
+    },
+    "610": {
+      "op": "swap"
+    },
+    "611": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "612": {
+      "block": "is_modifier_after_if_else@2",
+      "stack_in": [
+        "modifier_val#0"
+      ],
+      "op": "frame_dig 0",
+      "defined_out": [
+        "modifier_val#0"
+      ],
+      "stack_out": [
+        "modifier_val#0",
+        "modifier_val#0"
+      ]
+    },
+    "614": {
+      "op": "bytec_1 // 0x31",
+      "defined_out": [
+        "0x31",
+        "modifier_val#0"
+      ],
+      "stack_out": [
+        "modifier_val#0",
+        "modifier_val#0",
+        "0x31"
+      ]
+    },
+    "615": {
+      "op": "==",
+      "defined_out": [
+        "modifier_val#0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "modifier_val#0",
+        "tmp%0#0"
+      ]
+    },
+    "616": {
+      "op": "swap"
+    },
+    "617": {
+      "retsub": true,
+      "op": "retsub"
+    }
+  }
+}
