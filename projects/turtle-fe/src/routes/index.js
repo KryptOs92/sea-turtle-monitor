@@ -79,10 +79,21 @@ const routes = [
         key: "analytics",
         route: "/dashboards/analytics",
       },
+
       {
         name: "Sales",
         key: "sales",
         route: "/dashboards/sales",
+      },
+      {
+        name: "Turtle Overview",
+        key: "overview",
+        route: "/dashboards/turtles/overview",
+      },
+      {
+        name: "Turtle Home",
+        key: "home",
+        route: "/dashboards/turtles/home",
       },
     ],
   },

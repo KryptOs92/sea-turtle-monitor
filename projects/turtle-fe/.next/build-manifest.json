@@ -27,20 +27,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/applications/wizard": [
+    "/dashboards/turtles/home": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/applications/wizard.js"
-    ],
-    "/dashboards/analytics": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/dashboards/analytics.js"
-    ],
-    "/dashboards/sales": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/dashboards/sales.js"
+      "static/chunks/pages/dashboards/turtles/home.js"
     ]
   },
   "ampFirstPages": []

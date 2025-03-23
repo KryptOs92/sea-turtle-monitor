@@ -13,8 +13,9 @@
     "emitDecoratorMetadata": true /* Enables experimental support for emitting type metadata for decorators. */,
     "skipLibCheck": true /* Skip type checking of declaration files. */,
     "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */,
-    "allowJs": false,
+    "allowJs": true,
     "allowSyntheticDefaultImports": true,
+     "checkJs": false,
     "moduleResolution": "Node",
     "resolveJsonModule": true,
     "isolatedModules": true,
@@ -35,7 +36,7 @@
     "src/utils/",
     "src/utils/",
     "src/main.tsx"
-  ],
+, "src/pages/dashboards/turtles/home/index.tsx"  ],
   "references": [
     {
       "path": "./tsconfig.node.json"

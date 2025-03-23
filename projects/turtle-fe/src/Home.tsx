@@ -1,23 +1,23 @@
 // src/components/Home.tsx
-import { useWallet } from '@txnlab/use-wallet-react'
-import React, { useState } from 'react'
-import ConnectWallet from './components/ConnectWallet'
-import Transact from './components/Transact'
+import { useWallet } from "@txnlab/use-wallet-react";
+import React, { useState } from "react";
+import ConnectWallet from "./components/ConnectWallet";
+import Transact from "./components/Transact";
 
 interface HomeProps {}
 
 const Home: React.FC<HomeProps> = () => {
-  const [openWalletModal, setOpenWalletModal] = useState<boolean>(false)
-  const [openDemoModal, setOpenDemoModal] = useState<boolean>(false)
-  const { activeAddress } = useWallet()
+  const [openWalletModal, setOpenWalletModal] = useState<boolean>(false);
+  const [openDemoModal, setOpenDemoModal] = useState<boolean>(false);
+  const { activeAddress } = useWallet();
 
   const toggleWalletModal = () => {
-    setOpenWalletModal(!openWalletModal)
-  }
+    setOpenWalletModal(!openWalletModal);
+  };
 
   const toggleDemoModal = () => {
-    setOpenDemoModal(!openDemoModal)
-  }
+    setOpenDemoModal(!openDemoModal);
+  };
 
   return (
     <div className="hero min-h-screen bg-teal-400">
@@ -57,7 +57,7 @@ const Home: React.FC<HomeProps> = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
