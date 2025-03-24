@@ -3,5 +3,6 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/dashboards/turtles/home": "pages/dashboards/turtles/home.js",
-  "/404": "pages/404.js"
+  "/dashboards/analytics": "pages/dashboards/analytics.js",
+  "/dashboards/sales": "pages/dashboards/sales.js"
 }

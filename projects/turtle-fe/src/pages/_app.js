@@ -49,7 +49,7 @@ import rtlPlugin from "stylis-plugin-rtl";
 
 // NextJS Material Dashboard 2 PRO routes
 import routes from "/src/routes";
-
+import "../styles/App.css"
 // NextJS Material Dashboard 2 PRO Context Provider
 import {
   MaterialUIControllerProvider,

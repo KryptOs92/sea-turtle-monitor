@@ -5,7 +5,7 @@ import { SupportedWallet, WalletId, WalletManager, WalletProvider } from "@txnla
 import { SnackbarProvider } from "notistack";
 import Home from "../../../../Home";
 import { getAlgodConfigFromViteEnvironment, getKmdConfigFromViteEnvironment } from "../../../../utils/network/getAlgoClientConfigs";
-import "./home.module.scss";
+import DashboardTurtle from "/src/examples/Navbars/DashboardTurtle";
 
 let supportedWallets: SupportedWallet[];
 if (process.env.NEXT_PUBLIC_VITE_ALGOD_NETWORK === "localnet") {
@@ -51,6 +51,7 @@ function TurtleHome() {
 
   return (
     <DashboardLayout>
+      <DashboardTurtle />
       <SnackbarProvider maxSnack={3}>
         <WalletProvider manager={walletManager}>
           <Home />
