@@ -1,8 +1,0 @@
-{
-  "/_app": "pages/_app.js",
-  "/_error": "pages/_error.js",
-  "/_document": "pages/_document.js",
-  "/dashboards/turtles/home": "pages/dashboards/turtles/home.js",
-  "/dashboards/analytics": "pages/dashboards/analytics.js",
-  "/dashboards/sales": "pages/dashboards/sales.js"
-}
