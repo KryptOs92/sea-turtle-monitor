@@ -1,0 +1,10 @@
+{
+  "it": {
+    "title": "Ciao tartaruga!",
+    "description": "Benvenuto nella dashboard delle tartarughe."
+  },
+  "en-US": {
+    "title": "Hello turtle!",
+    "description": "Welcome to the turtle dashboard."
+  }
+}

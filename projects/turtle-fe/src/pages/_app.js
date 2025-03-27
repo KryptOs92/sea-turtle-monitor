@@ -63,7 +63,7 @@ import favicon from "/src/assets/images/favicon.png";
 import appleIcon from "/src/assets/images/apple-icon.png";
 import brandWhite from "/src/assets/images/logo-ct.png";
 import brandDark from "/src/assets/images/logo-ct-dark.png";
-
+import StoreProvider from "../components/StoreProvider"
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createCache({ key: "css", prepend: true });
 
@@ -202,17 +202,19 @@ function MyApp({
   emotionCache = clientSideEmotionCache,
 }) {
   return (
-    <MaterialUIControllerProvider>
-      <CacheProvider value={emotionCache}>
-        <Head>
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <link rel="shortcut icon" href={favicon.src} />
-          <link rel="apple-touch-icon" sizes="76x76" href={appleIcon.src} />
-          <title>Next Material Dashboard 2 PRO</title>
-        </Head>
-        <Main Component={Component} pageProps={pageProps} />
-      </CacheProvider>
-    </MaterialUIControllerProvider>
+    <StoreProvider>
+      <MaterialUIControllerProvider>
+        <CacheProvider value={emotionCache}>
+          <Head>
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <link rel="shortcut icon" href={favicon.src} />
+            <link rel="apple-touch-icon" sizes="76x76" href={appleIcon.src} />
+            <title>Next Material Dashboard 2 PRO</title>
+          </Head>
+          <Main Component={Component} pageProps={pageProps} />
+        </CacheProvider>
+      </MaterialUIControllerProvider>
+    </StoreProvider>
   );
 }
 

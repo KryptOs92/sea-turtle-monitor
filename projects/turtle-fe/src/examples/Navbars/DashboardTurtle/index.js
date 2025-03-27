@@ -45,7 +45,7 @@ import {
   navbarDesktopMenu,
   navbarMobileMenu,
 } from "/src/examples/Navbars/DashboardTurtle/styles";
-
+import translations from "./translations.json";
 // NextJS Material Dashboard 2 PRO context
 import {
   useMaterialUIController,
@@ -53,8 +53,11 @@ import {
   setMiniSidenav,
   setOpenConfigurator,
 } from "/src/context";
+import { useSelector } from "react-redux";
 
 function DashboardTurtle({ absolute, light, isMini }) {
+  const lang = useSelector((state) => state.lang.value) || "it";
+  const t = translations[lang] ?? translations["it"];
   const [navbarType, setNavbarType] = useState();
   const [controller, dispatch] = useMaterialUIController();
   const {
@@ -151,6 +154,7 @@ function DashboardTurtle({ absolute, light, isMini }) {
         navbar(theme, { transparentNavbar, absolute, light, darkMode })
       }
     >
+      <h1>{t.title}</h1>
       <Toolbar sx={(theme) => navbarContainer(theme)}>
         <MDBox
           color="inherit"
