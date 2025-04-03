@@ -1,10 +1,12 @@
 {
   "it": {
     "title": "Ciao tartaruga!",
-    "description": "Benvenuto nella dashboard delle tartarughe."
+    "description": "Benvenuto nella dashboard delle tartarughe.",
+    "connect_wallet": "Connetti"
   },
   "en-US": {
     "title": "Hello turtle!",
-    "description": "Welcome to the turtle dashboard."
+    "description": "Welcome to the turtle dashboard.",
+    "connect_wallet": "Connect"
   }
 }

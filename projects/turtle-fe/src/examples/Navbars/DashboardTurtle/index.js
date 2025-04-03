@@ -35,7 +35,8 @@ import MDButton from "/src/components/MDButton";
 // NextJS Material Dashboard 2 PRO examples
 import Breadcrumbs from "/src/examples/Breadcrumbs";
 import NotificationItem from "/src/examples/Items/NotificationItem";
-
+import ConnectWallet from "/src/components/ConnectWallet.tsx";
+import TurtleConnectWallet from "../../../components/TurtleConnectWallet";
 // Custom styles for DashboardTurtle
 import {
   navbar,
@@ -47,12 +48,7 @@ import {
 } from "/src/examples/Navbars/DashboardTurtle/styles";
 import translations from "./translations.json";
 // NextJS Material Dashboard 2 PRO context
-import {
-  useMaterialUIController,
-  setTransparentNavbar,
-  setMiniSidenav,
-  setOpenConfigurator,
-} from "/src/context";
+import { useMaterialUIController, setTransparentNavbar, setMiniSidenav, setOpenConfigurator } from "/src/context";
 import { useSelector } from "react-redux";
 
 function DashboardTurtle({ absolute, light, isMini }) {
@@ -60,13 +56,7 @@ function DashboardTurtle({ absolute, light, isMini }) {
   const t = translations[lang] ?? translations["it"];
   const [navbarType, setNavbarType] = useState();
   const [controller, dispatch] = useMaterialUIController();
-  const {
-    miniSidenav,
-    transparentNavbar,
-    fixedNavbar,
-    openConfigurator,
-    darkMode,
-  } = controller;
+  const { miniSidenav, transparentNavbar, fixedNavbar, openConfigurator, darkMode } = controller;
   const [openMenu, setOpenMenu] = useState(false);
   const route = useRouter().pathname.split("/").slice(1);
 
@@ -80,10 +70,7 @@ function DashboardTurtle({ absolute, light, isMini }) {
 
     // A function that sets the transparent state of the navbar.
     function handleTransparentNavbar() {
-      setTransparentNavbar(
-        dispatch,
-        (fixedNavbar && window.scrollY === 0) || !fixedNavbar
-      );
+      setTransparentNavbar(dispatch, (fixedNavbar && window.scrollY === 0) || !fixedNavbar);
     }
 
     /**
@@ -98,43 +85,19 @@ function DashboardTurtle({ absolute, light, isMini }) {
     // Remove event listener on cleanup
     return () => window.removeEventListener("scroll", handleTransparentNavbar);
   }, [dispatch, fixedNavbar]);
+  const [openWalletModal, setOpenWalletModal] = useState(false);
 
   const handleMiniSidenav = () => setMiniSidenav(dispatch, !miniSidenav);
-  const handleConfiguratorOpen = () =>
-    setOpenConfigurator(dispatch, !openConfigurator);
+  const handleConfiguratorOpen = () => setOpenConfigurator(dispatch, !openConfigurator);
   const handleOpenMenu = (event) => setOpenMenu(event.currentTarget);
   const handleCloseMenu = () => setOpenMenu(false);
-
+  const toggleWalletModal = () => {
+    setOpenWalletModal(!openWalletModal);
+  };
   // Render the notifications menu
-  const renderMenu = () => (
-    <Menu
-      anchorEl={openMenu}
-      anchorReference={null}
-      anchorOrigin={{
-        vertical: "bottom",
-        horizontal: "left",
-      }}
-      open={Boolean(openMenu)}
-      onClose={handleCloseMenu}
-      sx={{ mt: 2 }}
-    >
-      <NotificationItem icon={<Icon>email</Icon>} title="Check new messages" />
-      <NotificationItem
-        icon={<Icon>podcasts</Icon>}
-        title="Manage Podcast sessions"
-      />
-      <NotificationItem
-        icon={<Icon>shopping_cart</Icon>}
-        title="Payment successfully completed"
-      />
-    </Menu>
-  );
 
   // Styles for the navbar icons
-  const iconsStyle = ({
-    palette: { dark, white, text },
-    functions: { rgba },
-  }) => ({
+  const iconsStyle = ({ palette: { dark, white, text }, functions: { rgba } }) => ({
     color: () => {
       let colorValue = light || darkMode ? white.main : dark.main;
 
@@ -150,29 +113,12 @@ function DashboardTurtle({ absolute, light, isMini }) {
     <AppBar
       position={absolute ? "absolute" : navbarType}
       color="inherit"
-      sx={(theme) =>
-        navbar(theme, { transparentNavbar, absolute, light, darkMode })
-      }
+      sx={(theme) => navbar(theme, { transparentNavbar, absolute, light, darkMode })}
     >
       <h1>{t.title}</h1>
       <Toolbar sx={(theme) => navbarContainer(theme)}>
-        <MDBox
-          color="inherit"
-          mb={{ xs: 1, md: 0 }}
-          sx={(theme) => navbarRow(theme, { isMini })}
-        >
-          <Breadcrumbs
-            icon="home"
-            title={route[route.length - 1]}
-            route={route}
-            light={light}
-          />
-          <IconButton
-            sx={navbarDesktopMenu}
-            onClick={handleMiniSidenav}
-            size="small"
-            disableRipple
-          >
+        <MDBox color="inherit" mb={{ xs: 1, md: 0 }} sx={(theme) => navbarRow(theme, { isMini })}>
+          <IconButton sx={navbarDesktopMenu} onClick={handleMiniSidenav} size="small" disableRipple>
             <Icon fontSize="medium" sx={iconsStyle}>
               {miniSidenav ? "menu_open" : "menu"}
             </Icon>
@@ -180,45 +126,24 @@ function DashboardTurtle({ absolute, light, isMini }) {
         </MDBox>
         {isMini ? null : (
           <MDBox sx={(theme) => navbarRow(theme, { isMini })}>
-            <MDBox pr={1}>
-              <MDInput label="Search here" />
-            </MDBox>
             <MDBox color={light ? "white" : "inherit"}>
-              <Link
-                href="/authentication/sign-in/basic"
-                passHref
-                legacyBehavior
-              >
-                <IconButton sx={navbarIconButton} size="small" disableRipple>
-                  <Icon sx={iconsStyle}>account_circle</Icon>
-                </IconButton>
-              </Link>
-              <IconButton
-                size="small"
-                disableRipple
-                color="inherit"
-                sx={navbarMobileMenu}
-                onClick={handleMiniSidenav}
-              >
+              <IconButton size="small" disableRipple color="inherit" sx={navbarMobileMenu} onClick={handleMiniSidenav}>
                 <Icon sx={iconsStyle} fontSize="medium">
                   {miniSidenav ? "menu_open" : "menu"}
                 </Icon>
               </IconButton>
-              <IconButton
-                size="small"
-                disableRipple
-                color="inherit"
-                sx={navbarIconButton}
-                onClick={handleConfiguratorOpen}
-              >
+              <IconButton size="small" disableRipple color="inherit" sx={navbarIconButton} onClick={handleConfiguratorOpen}>
                 <Icon sx={iconsStyle}>settings</Icon>
               </IconButton>
-              <MDButton>Button</MDButton>
-              {renderMenu()}
+              <MDButton onClick={toggleWalletModal}>{t.connect_wallet}</MDButton>
             </MDBox>
           </MDBox>
         )}
       </Toolbar>
+
+      <TurtleConnectWallet openModal={openWalletModal} closeModal={toggleWalletModal} />
+
+      {/* <ConnectWallet openModal={openWalletModal} closeModal={toggleWalletModal} /> */}
     </AppBar>
   );
 }

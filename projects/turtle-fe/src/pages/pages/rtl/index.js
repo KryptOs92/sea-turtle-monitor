@@ -106,37 +106,16 @@ function RTL() {
                 direction="left"
               />
             </Grid>
-            <Grid
-              item
-              xs={12}
-              sm={3}
-              lg={5}
-              display="flex"
-              flexDirection={{ xs: "column", sm: "row" }}
-            >
+            <Grid item xs={12} sm={3} lg={5} display="flex" flexDirection={{ xs: "column", sm: "row" }}>
               <MDBox width="100%" mr={{ xs: 0, sm: 3 }} mb={{ xs: 3, sm: 0 }}>
-                <DefaultInfoCard
-                  icon="account_balance"
-                  title="مرتب"
-                  description="تنتمي التفاعلية"
-                  value="+$2000"
-                />
+                <DefaultInfoCard icon="account_balance" title="مرتب" description="تنتمي التفاعلية" value="+$2000" />
               </MDBox>
               <MDBox width="100%">
-                <DefaultInfoCard
-                  icon="paypal"
-                  title="باي بال"
-                  description="دفع لحسابهم الخاص"
-                  value="$455.00"
-                />
+                <DefaultInfoCard icon="paypal" title="باي بال" description="دفع لحسابهم الخاص" value="$455.00" />
               </MDBox>
             </Grid>
             <Grid item xs={12} lg={4}>
-              <MasterCard
-                number={4562112245947852}
-                holder="جاك بيترسون"
-                expires="11/22"
-              />
+              <MasterCard number={4562112245947852} holder="جاك بيترسون" expires="11/22" />
             </Grid>
           </Grid>
         </MDBox>
@@ -149,24 +128,16 @@ function RTL() {
               <ControllerCard
                 state={lights}
                 icon={
-                  <Icon
-                    className={lights ? "text-white" : "text-dark"}
-                    fontSize="large"
-                  >
+                  <Icon className={lights ? "text-white" : "text-dark"} fontSize="large">
                     lightbulb
                   </Icon>
                 }
-                title="درجة حرارة"
+                title="درجة hhhh"
                 onChange={handleSetLights}
               />
             </Grid>
             <Grid item xs={12} lg={3}>
-              <Chart
-                title="سعرات حراريه"
-                count={97}
-                percentage={{ color: "success", label: "+5%" }}
-                chart={caloriesChartData}
-              />
+              <Chart title="سعرات حراريه" count={97} percentage={{ color: "success", label: "+5%" }} chart={caloriesChartData} />
             </Grid>
             <Grid item xs={12} md={6} lg={2}>
               <MiniInfoCard
@@ -174,11 +145,7 @@ function RTL() {
                 title={
                   <>
                     754&nbsp;
-                    <MDTypography
-                      variant="button"
-                      color="secondary"
-                      fontWeight="medium"
-                    >
+                    <MDTypography variant="button" color="secondary" fontWeight="medium">
                       م
                     </MDTypography>
                   </>

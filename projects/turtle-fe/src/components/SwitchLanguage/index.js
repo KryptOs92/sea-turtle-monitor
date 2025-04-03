@@ -42,7 +42,7 @@ export default function SwitchLanguage() {
   });
 
   return (
-    <div class="switch-language-container">
+    <div className="switch-language-container">
       <MDBox
         sx={{
           display: "flex",

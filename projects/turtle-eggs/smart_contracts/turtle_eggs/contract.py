@@ -89,6 +89,20 @@ class TurtleMonitor(ARC4Contract):
     # ----------------------------------------------------------------
 
     @abimethod
+    def is_modifier_addr(self, check_addr: Address) -> bool:
+        """
+        Metodo ABI per controllare se 'check_addr' e' un modifier registrato.
+        """
+        return self.is_modifier(check_addr.bytes)
+
+    @abimethod
+    def is_creator_addr(self, check_addr: Address) -> bool:
+        """
+        Metodo ABI per controllare se 'check_addr' e' un creator registrato.
+        """
+        return self.is_creator(check_addr.bytes)
+
+    @abimethod
     def create_egg_nft(self, name: String, url: String, data_blob: String) -> UInt64:
         """
         - Admin o un creator possono chiamare
