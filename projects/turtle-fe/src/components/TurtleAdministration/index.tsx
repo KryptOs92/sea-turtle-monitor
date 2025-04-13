@@ -44,9 +44,7 @@ function TurtleAdministration() {
     const is_smart_contract_creator: boolean = await methods.check_is_smart_contract_creator(algorand, newCreatorAddress, 1001);
     if (!is_smart_contract_creator) {
       let res = await methods.addCreator(turtleClient, newCreatorAddress);
-      console.log("EEEEEEEEEEEEEEEEEEEEEEE ", res);
     }
-    console.log("EEEEEEEEEEEEEEEEEEEEEEE ");
   };
 
   const getTurtleCreators = async () => {
