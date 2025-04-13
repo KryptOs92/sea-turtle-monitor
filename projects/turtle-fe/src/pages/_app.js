@@ -49,40 +49,27 @@ import rtlPlugin from "stylis-plugin-rtl";
 
 // NextJS Material Dashboard 2 PRO routes
 import routes from "/src/routes";
-import "../styles/App.css"
+import "../styles/App.css";
 // NextJS Material Dashboard 2 PRO Context Provider
-import {
-  MaterialUIControllerProvider,
-  useMaterialUIController,
-  setMiniSidenav,
-  setOpenConfigurator,
-} from "/src/context";
+import { MaterialUIControllerProvider, useMaterialUIController, setMiniSidenav, setOpenConfigurator } from "/src/context";
 
 // Images
 import favicon from "/src/assets/images/favicon.png";
 import appleIcon from "/src/assets/images/apple-icon.png";
 import brandWhite from "/src/assets/images/logo-ct.png";
 import brandDark from "/src/assets/images/logo-ct-dark.png";
-import StoreProvider from "../components/StoreProvider"
+import StoreProvider from "../components/StoreProvider";
+import { Config } from "@algorandfoundation/algokit-utils";
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createCache({ key: "css", prepend: true });
 
 function Main({ Component, pageProps }) {
   const [controller, dispatch] = useMaterialUIController();
-  const {
-    miniSidenav,
-    direction,
-    layout,
-    openConfigurator,
-    sidenavColor,
-    transparentSidenav,
-    whiteSidenav,
-    darkMode,
-  } = controller;
+  const { miniSidenav, direction, layout, openConfigurator, sidenavColor, transparentSidenav, whiteSidenav, darkMode } = controller;
   const [onMouseEnter, setOnMouseEnter] = useState(false);
   const [rtlCache, setRtlCache] = useState(null);
   const { pathname } = useRouter();
-
+  Config.configure({ debug: true });
   // Cache for the rtl
   useMemo(() => {
     const cacheRtl = createCache({
@@ -110,8 +97,7 @@ function Main({ Component, pageProps }) {
   };
 
   // Change the openConfigurator state
-  const handleConfiguratorOpen = () =>
-    setOpenConfigurator(dispatch, !openConfigurator);
+  const handleConfiguratorOpen = () => setOpenConfigurator(dispatch, !openConfigurator);
 
   // Setting the dir attribute for the body element
   useEffect(() => {
@@ -124,8 +110,7 @@ function Main({ Component, pageProps }) {
     document.scrollingElement.scrollTop = 0;
   }, [pathname]);
 
-  const brandIcon =
-    (transparentSidenav && !darkMode) || whiteSidenav ? brandDark : brandWhite;
+  const brandIcon = (transparentSidenav && !darkMode) || whiteSidenav ? brandDark : brandWhite;
 
   const configsButton = (
     <MDBox
@@ -196,11 +181,7 @@ function Main({ Component, pageProps }) {
   );
 }
 
-function MyApp({
-  Component,
-  pageProps,
-  emotionCache = clientSideEmotionCache,
-}) {
+function MyApp({ Component, pageProps, emotionCache = clientSideEmotionCache }) {
   return (
     <StoreProvider>
       <MaterialUIControllerProvider>

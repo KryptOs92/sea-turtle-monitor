@@ -1,6 +1,6 @@
 import * as algokit from "@algorandfoundation/algokit-utils";
 import { TurtleMonitorClient } from "./contracts/TurtleMonitor";
-import { encodeAddress } from "algosdk";
+import { encodeAddress, decodeAddress } from "algosdk";
 
 /**
  * Create the application and opt it into the desired asset
@@ -42,35 +42,32 @@ export async function check_is_smart_contract_creator(algorand: algokit.Algorand
   return smart_contract_creator_address === address;
 }
 
-export async function check_is_creator(algorand: algokit.AlgorandClient, address: string, appId) {
-  //OTTENGO RIFERIMENTO DELL APP ALGOKIT
-  const app = await algorand.app.getById(appId);
+export async function get_turtle_creators(algorand: algokit.AlgorandClient, appId): Promise<boolean> {
+  let turtle_creators = [];
+  let boxNames = await algorand.app.getBoxNames(appId);
+  console.log("ADDDDDDD ", boxNames);
 
-  //OTTENDO ADDRESS ENCODATO DEL CREATORE DEL CONTRATTO
-  const smart_contract_creator_address = encodeAddress(app.creator.publicKey);
-
-  //const names = await algorand.app.getBoxNames(appId);
-  //console.log("NAMES ", names);
-  console.log("APP ", encodeAddress(app.creator.publicKey) === address);
+  boxNames.map(async (name) => {
+    let value = await algorand.app.getBoxValue(appId, name);
+    console.log("ADDDDDDD ", value);
+  });
 }
 
 export async function addCreator(
-  algorand: algokit.AlgorandClient,
-  appId: number,
-  tmClient: TurtleMonitor,
-  sender: string,
-  newCreator: string // Indirizzo base32
+  tmClient: TurtleMonitorClient,
+
+  newCreator: string // Indirizzo base32,
 ) {
-  // tipicamente: appId e sender devono essere passati come "params" all'ABIMethod
-  // In Algokit i metodi ABI generati hanno la firma di default, es:
-  //   tmClient.add_creator(args..., { sender, appId, ... })
-  await tmClient.add_creator(
-    { new_creator: newCreator }, // Argomenti ABI
-    {
-      sender,
-      appId, // Indichiamo su quale App ID chiamare
-    }
-  );
+  await tmClient.send.addCreator({
+    args: { newCreator: newCreator },
+    populateAppCallResources: true,
+    /*  signer: transactionSigner,
+    sender: sender,
+ */
+    // boxReferences: [boxKey],
+    /*  sender,
+    appId,  */
+  });
 }
 
 export async function createEggNft(

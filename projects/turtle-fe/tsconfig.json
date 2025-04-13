@@ -36,7 +36,7 @@
     "src/utils/",
     "src/utils/",
     "src/main.tsx"
-, "src/pages/dashboards/turtles/home/index.tsx"  ],
+, "src/pages/dashboards/turtles/home/index.tsx", "src/components/TurtleConnectWallet/index.js"  ],
   "references": [
     {
       "path": "./tsconfig.node.json"

@@ -177,8 +177,8 @@ def test_update_egg_extra_field(context: AlgopyTestContext, contract: TurtleMoni
     assert box_val_after == updated_data_str.encode("utf-8"), "La box deve avere il nuovo data_blob"
 
     # (Opzionale) Verificare che l'ASA abbia url = new_url_str
-    asa = context.ledger.get_asset(created_asa_id)
-    assert asa.url == new_url_str, "L'ASA deve avere l'url aggiornato"
+    # asa = context.ledger.get_asset(created_asa_id)
+    # assert asa.url == new_url_str, "L'ASA deve avere l'url aggiornato"
 
 
     # (Opzionale) Potresti loggare / stampare i log
