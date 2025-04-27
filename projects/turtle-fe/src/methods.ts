@@ -1,6 +1,7 @@
 import * as algokit from "@algorandfoundation/algokit-utils";
 import { TurtleMonitorClient } from "./contracts/TurtleMonitor";
 import { encodeAddress, decodeAddress, decodeUint64 } from "algosdk";
+import { AlgoAmount } from "@algorandfoundation/algokit-utils/types/amount";
 
 /**
  * Create the application and opt it into the desired asset
@@ -75,29 +76,16 @@ export async function addCreator(
   });
 }
 
-export async function createEggNft(
-  algorand: algokit.AlgorandClient,
-  appId: number,
-  tmClient: TurtleMonitor,
-  sender: string,
-  name: string,
-  url: string,
-  dataBlob: string
-): Promise<number> {
+export async function createEggNft(tmClient: TurtleMonitorClient, name: string, url: string, dataBlob: string): Promise<number> {
   // Chiamiamo il metodo "create_egg_nft"
-  const result = await tmClient.create_egg_nft(
-    {
-      name,
-      url,
-      data_blob: dataBlob,
-    },
-    {
-      sender,
-      appId,
-    }
-  );
+  const result = await tmClient.send.createEggNft({
+    args: { name: name, url: url, dataBlob: dataBlob },
+    populateAppCallResources: true,
+    coverAppCallInnerTransactionFees: true,
+    maxFee: new AlgoAmount({ microAlgos: 5_000 }),
+  });
   // result return_value conterrà l'ASA ID creato
-  const createdAsaId = Number(result.returnValue);
+  const createdAsaId = Number(result.return);
   return createdAsaId;
 }
 

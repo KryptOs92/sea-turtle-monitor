@@ -1,6 +1,7 @@
 import { useWallet, Wallet, WalletId } from "@txnlab/use-wallet-react";
 import { AlgorandClient, Config } from "@algorandfoundation/algokit-utils";
 import React, { useState, useEffect } from "react";
+import TurtleCreation from "../TurtleCreation";
 import MethodCall from "../MethodCall";
 import * as methods from "../../methods";
 import { getAlgodConfigFromViteEnvironment } from "../../utils/network/getAlgoClientConfigs";
@@ -67,7 +68,6 @@ function TurtleAdministration() {
 
   return (
     <div className="turtle-administration-container">
-      ciao
       {activeAddress ? (
         <React.Fragment>
           {activeAddress}
@@ -87,6 +87,8 @@ function TurtleAdministration() {
           ) : null}
           <br /> <br />
           <MDButton onClick={getTurtleCreators}>GET CREATOR</MDButton>
+          <br /> <br />
+          <TurtleCreation />
           {/* <MethodCall methodFunction={() => methods.check_is_creator(algorand, activeAddress, 1001)} text="TEST" /> */}
         </React.Fragment>
       ) : (

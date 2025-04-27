@@ -50,22 +50,12 @@ function TurtleOverview() {
   const actionButtons = (
     <>
       <Tooltip title="Refresh" placement="bottom">
-        <MDTypography
-          variant="body1"
-          color="primary"
-          lineHeight={1}
-          sx={{ cursor: "pointer", mx: 3 }}
-        >
+        <MDTypography variant="body1" color="primary" lineHeight={1} sx={{ cursor: "pointer", mx: 3 }}>
           <Icon color="inherit">refresh</Icon>
         </MDTypography>
       </Tooltip>
       <Tooltip title="Edit" placement="bottom">
-        <MDTypography
-          variant="body1"
-          color="dark"
-          lineHeight={1}
-          sx={{ cursor: "pointer", mx: 3 }}
-        >
+        <MDTypography variant="body1" color="dark" lineHeight={1} sx={{ cursor: "pointer", mx: 3 }}>
           <Icon color="inherit">edit</Icon>
         </MDTypography>
       </Tooltip>
@@ -76,8 +66,6 @@ function TurtleOverview() {
     <DashboardLayout>
       <DashboardNavbar />
       <MDBox py={3}>
-
-
         <MDBox mt={2}>
           <Grid container spacing={3}>
             <Grid item xs={12} md={6} lg={4}>

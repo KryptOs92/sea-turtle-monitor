@@ -1,0 +1,21 @@
+{
+  "it": {
+    "name": "Nome",
+    "latitude": "Latitudine",
+    "longitude": "Longitudine",
+    "altitude": "Altitudine",
+    "birthDate": "Data di nascita",
+    "birthTime": "Orario di nascita",
+    "createNFT": "Genera NFT"
+  },
+  "en-US": {
+    "name": "Name",
+    "latitude": "Latitude",
+    "longitude": "Longitude",
+    "altitude": "Altitude",
+    "birthDate": "Birthday",
+    "birthTime": "Birth time",
+    "createNFT": "Generate NFT"
+
+  }
+}

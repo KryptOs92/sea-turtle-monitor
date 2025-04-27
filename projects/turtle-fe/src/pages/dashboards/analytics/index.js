@@ -50,22 +50,12 @@ function Analytics() {
   const actionButtons = (
     <>
       <Tooltip title="Refresh" placement="bottom">
-        <MDTypography
-          variant="body1"
-          color="primary"
-          lineHeight={1}
-          sx={{ cursor: "pointer", mx: 3 }}
-        >
+        <MDTypography variant="body1" color="primary" lineHeight={1} sx={{ cursor: "pointer", mx: 3 }}>
           <Icon color="inherit">refresh</Icon>
         </MDTypography>
       </Tooltip>
       <Tooltip title="Edit" placement="bottom">
-        <MDTypography
-          variant="body1"
-          color="dark"
-          lineHeight={1}
-          sx={{ cursor: "pointer", mx: 3 }}
-        >
+        <MDTypography variant="body1" color="dark" lineHeight={1} sx={{ cursor: "pointer", mx: 3 }}>
           <Icon color="inherit">edit</Icon>
         </MDTypography>
       </Tooltip>

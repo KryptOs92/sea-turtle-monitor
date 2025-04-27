@@ -126,6 +126,7 @@ class TurtleMonitor(ARC4Contract):
             reserve=Global.current_application_address,
             freeze=Global.current_application_address,
             clawback=Global.current_application_address,
+            fee=0
         ).submit()
 
         created_asa_id = itxn_result.created_asset.id
