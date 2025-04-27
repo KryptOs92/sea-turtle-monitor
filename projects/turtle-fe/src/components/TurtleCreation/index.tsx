@@ -100,12 +100,8 @@ function TurtleCreation() {
       birthTime.length === 0 ? setBirthTimeIsOk(false) : null;
     }
 
-    console.log("DATA BLOBBBB ", dataBlob, birthTime);
-    console.log("TARTARUGA EEEEEEEEEEEEEEE ", areInputsOk);
-
     if (areInputsOk) {
       let res = await methods.createEggNft(turtleClient, name, url, dataBlob);
-      console.log("TARTARUGA CREATA ", res);
     }
   };
 

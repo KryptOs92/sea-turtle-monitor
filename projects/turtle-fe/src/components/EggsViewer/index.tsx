@@ -1,22 +1,25 @@
 import { useWallet, Wallet, WalletId } from "@txnlab/use-wallet-react";
 import { AlgorandClient, Config } from "@algorandfoundation/algokit-utils";
 import React, { useState, useEffect } from "react";
-import TurtleCreation from "../TurtleCreation";
-import EggsViewer from "../EggsViewer";
-
 import MethodCall from "../MethodCall";
+import DataTable from "../../examples/Tables/DataTable";
 import * as methods from "../../methods";
 import { getAlgodConfigFromViteEnvironment } from "../../utils/network/getAlgoClientConfigs";
 import { TurtleMonitorClient } from "../../contracts/TurtleMonitor";
 import { useDispatch, useSelector } from "react-redux";
 import { setUserAuthorityScCreator } from "../../lib/turtleSCslice";
+import MDBox from "../MDBox";
 import MDButton from "../MDButton";
-import MDInput from "../MDInput";
+import formatItalianDateTime from "../../lib/utils";
 
-function TurtleAdministration() {
+import MDInput from "../MDInput";
+import translations from "./translations.json";
+
+function EggsViewer() {
   const [appId, setAppId] = useState(1001);
   const [loading, setLoading] = useState(false);
-  const [turtleCreators, setTurtleCreators] = useState([]);
+  const lang = useSelector((state) => state.lang.value) || "it";
+  const t = translations[lang] ?? translations["it"];
   const dispatchStore = useDispatch();
   const { activeAddress, transactionSigner } = useWallet();
   const algodConfig = getAlgodConfigFromViteEnvironment();
@@ -26,6 +29,7 @@ function TurtleAdministration() {
   algorand.setDefaultSigner(transactionSigner);
   const [mounted, setMounted] = React.useState(false);
   const [newCreatorAddress, setNewCreatorAddress] = useState("");
+  const [eggs, setEggs] = useState([]);
 
   const turtleClient = new TurtleMonitorClient({
     algorand,
@@ -33,6 +37,42 @@ function TurtleAdministration() {
     defaultSender: activeAddress,
     defaultSigner: transactionSigner,
   });
+  const parseEggData = (asaId, dataBlob) => {
+    let eggData = {};
+
+    eggData.id = asaId;
+
+    const parsedBlob = Object.fromEntries(
+      dataBlob // 1. stringa originale
+        .split(";") // 2. ["latitude=23", "longitude=23", ... , ""]
+        .filter(Boolean) // 3. rimuove l’ultima voce vuota
+        .map((pair) => {
+          const [key, raw] = pair.split("="); // 4. ["latitude", "23"]
+          const value =
+            key === "birthDate"
+              ? formatItalianDateTime(new Date(raw)) // 5. parse ISO in Date
+              : isNaN(raw)
+              ? raw //    lascia stringhe non-numero
+              : Number(raw); //    converte in numero
+          return [key, value]; // 6. [["latitude", 23], ...]
+        })
+    );
+
+    eggData = { ...eggData, ...parsedBlob };
+    return eggData;
+  };
+
+  const getEggsBoxes = async () => {
+    let eggs = await methods.get_turtles_ids(algorand, 1001);
+    let eggsTableData = [];
+    let eggsIds = Object.keys(eggs);
+    eggsIds.map((asaId) => {
+      let dataBlob = eggs[asaId];
+      let itemData = parseEggData(asaId, dataBlob);
+      eggsTableData.push(itemData);
+    });
+    setEggs(eggsTableData);
+  };
 
   const getUserAuthority = async () => {
     setLoading(true);
@@ -43,20 +83,10 @@ function TurtleAdministration() {
     setLoading(false);
   };
 
-  const addCreator = async () => {
-    const is_smart_contract_creator: boolean = await methods.check_is_smart_contract_creator(algorand, newCreatorAddress, 1001);
-    if (!is_smart_contract_creator) {
-      let res = await methods.addCreator(turtleClient, newCreatorAddress);
-    }
-  };
-
-  const getTurtleCreators = async () => {
-    await methods.get_turtle_creators(algorand, 1001);
-  };
-
   useEffect(() => {
     // Esempio: fetch iniziale
     getUserAuthority();
+    getEggsBoxes();
     setMounted(true);
     // return simile a componentWillUnmount
     return () => {
@@ -72,28 +102,27 @@ function TurtleAdministration() {
     <div className="turtle-administration-container">
       {activeAddress ? (
         <React.Fragment>
-          {activeAddress}
-          <br /> <br />
-          {loading ? <span className="loading loading-spinner" /> : user_authority}
-          <br /> <br />
-          {user_authority === "sc_creator" ? (
-            <div>
-              <MDInput
-                variant="outlined"
-                fullWidth
-                value={newCreatorAddress}
-                onChange={(event) => setNewCreatorAddress(event.target.value)}
-              />
-              <MDButton onClick={addCreator}>AGGIUNGI CREATOR</MDButton>
-            </div>
-          ) : null}
-          <br /> <br />
-          <MDButton onClick={getTurtleCreators}>GET CREATOR</MDButton>
-          <br /> <br />
-          <TurtleCreation />
-          <br /> <br />
-          <EggsViewer />
-          {/* <MethodCall methodFunction={() => methods.check_is_creator(algorand, activeAddress, 1001)} text="TEST" /> */}
+          <MDBox
+            sx={{ display: "flex", flexDirection: "column", gap: "10px" }}
+            variant="gradient"
+            borderRadius="lg"
+            shadow="lg"
+            opacity={1}
+            p={2}
+          >
+            <DataTable
+              table={{
+                columns: [
+                  { Header: "ASA ID", accessor: "id", width: "25%" },
+                  { Header: "LATITUDE", accessor: "latitude", width: "30%" },
+                  { Header: "LONGITUDE", accessor: "longitude" },
+                  { Header: "ALTITUDE", accessor: "altitude", width: "12%" },
+                  { Header: "DATA REGISTRAZIONE", accessor: "birthDate", width: "12%" },
+                ],
+                rows: eggs,
+              }}
+            />
+          </MDBox>
         </React.Fragment>
       ) : (
         <React.Fragment>Non sei connesso </React.Fragment>
@@ -102,4 +131,4 @@ function TurtleAdministration() {
   );
 }
 
-export default TurtleAdministration;
+export default EggsViewer;
