@@ -110,14 +110,15 @@ function EggsViewer() {
             opacity={1}
             p={2}
           >
+            <h3>{t.boxHeading}</h3>
             <DataTable
               table={{
                 columns: [
                   { Header: "ASA ID", accessor: "id", width: "25%" },
-                  { Header: "LATITUDE", accessor: "latitude", width: "30%" },
-                  { Header: "LONGITUDE", accessor: "longitude" },
-                  { Header: "ALTITUDE", accessor: "altitude", width: "12%" },
-                  { Header: "DATA REGISTRAZIONE", accessor: "birthDate", width: "12%" },
+                  { Header: t.latitude, accessor: "latitude", width: "30%" },
+                  { Header: t.longitude, accessor: "longitude" },
+                  { Header: t.altitude, accessor: "altitude", width: "12%" },
+                  { Header: t.birthDate, accessor: "birthDate", width: "12%" },
                 ],
                 rows: eggs,
               }}

@@ -140,6 +140,7 @@ function TurtleCreation() {
             opacity={1}
             p={2}
           >
+            <h3>{t.boxHeading}</h3>
             <MDInput
               type="text"
               label={t.name}

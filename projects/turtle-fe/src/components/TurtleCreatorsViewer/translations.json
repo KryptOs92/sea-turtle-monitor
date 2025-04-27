@@ -4,20 +4,20 @@
     "latitude": "Latitudine",
     "longitude": "Longitudine",
     "altitude": "Altitudine",
-    "birthDate": "Data di nascita",
-    "birthTime": "Orario di nascita",
+    "birthDate": "Data registrazione",
+    "birthTime": "Orario registrazione",
     "createNFT": "Genera NFT",
-    "boxHeading": "Registra uovo"
+    "boxHeading": "Turtle creators"
+
   },
   "en-US": {
     "name": "Name",
     "latitude": "Latitude",
     "longitude": "Longitude",
     "altitude": "Altitude",
-    "birthDate": "Birthday",
-    "birthTime": "Birth time",
+    "birthDate": "Registration date",
+    "birthTime": "Registration time",
     "createNFT": "Generate NFT",
-    "boxHeading": "Register egg"
-
+    "boxHeading": "Turtle creators"
   }
 }
