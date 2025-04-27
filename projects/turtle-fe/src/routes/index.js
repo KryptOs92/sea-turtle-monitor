@@ -44,7 +44,7 @@ import Icon from "@mui/material/Icon";
 import profilePicture from "/src/assets/images/team-3.jpg";
 
 const routes = [
-  {
+  /*  {
     type: "collapse",
     name: "Brooklyn Alice",
     key: "brooklyn-alice",
@@ -66,15 +66,15 @@ const routes = [
         route: "/authentication/sign-in/basic",
       },
     ],
-  },
-  { type: "divider", key: "divider-0" },
+  }, */
+  /*  { type: "divider", key: "divider-0" }, */
   {
     type: "collapse",
     name: "Dashboards",
     key: "dashboards",
     icon: <Icon fontSize="medium">dashboard</Icon>,
     collapse: [
-      {
+      /*    {
         name: "Analytics",
         key: "analytics",
         route: "/dashboards/analytics",
@@ -89,7 +89,7 @@ const routes = [
         name: "Turtle Overview",
         key: "overview",
         route: "/dashboards/turtles/overview",
-      },
+      }, */
       {
         name: "Turtle Home",
         key: "home",
@@ -97,7 +97,7 @@ const routes = [
       },
     ],
   },
-  { type: "title", title: "Pages", key: "title-pages" },
+  /*  { type: "title", title: "Pages", key: "title-pages" },
   {
     type: "collapse",
     name: "Pages",
@@ -477,7 +477,7 @@ const routes = [
     href: "https://github.com/creativetimofficial/ct-nextjs-material-dashboard-pro/blob/main/CHANGELOG.md",
     icon: <Icon fontSize="medium">receipt_long</Icon>,
     noCollapse: true,
-  },
+  }, */
 ];
 
 export default routes;
