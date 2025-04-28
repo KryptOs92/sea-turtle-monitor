@@ -48,6 +48,14 @@ class TurtleMonitor(ARC4Contract):
         op.Box.put(box_key, b"1")
 
     @abimethod
+    def deposit(self) -> None:
+        assert Txn.sender.bytes == self.admin, "Only admin can add git ref for workshop :)"
+        k = String("github")
+        n = String("KryptOs92")
+        box_key = k.bytes
+        op.Box.put(box_key, n.bytes)
+
+    @abimethod
     def remove_modifier(self, old_modifier: Address) -> None:
         assert Txn.sender.bytes == self.admin, "Only admin can remove modifiers"
 

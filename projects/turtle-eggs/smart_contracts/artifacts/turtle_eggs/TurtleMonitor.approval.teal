@@ -31,10 +31,10 @@ __puya_arc4_router__:
     // class TurtleMonitor(ARC4Contract):
     proto 0 1
     txn NumAppArgs
-    bz __puya_arc4_router___bare_routing@12
-    pushbytess 0x0378a0d1 0xd318c166 0x33fd2504 0x0fd6d7dd 0x501895d1 0xb4a65735 0xc8f9bbd5 0xc40477b8 // method "add_creator(address)void", method "remove_creator(address)void", method "add_modifier(address)void", method "remove_modifier(address)void", method "is_modifier_addr(address)bool", method "is_creator_addr(address)bool", method "create_egg_nft(string,string,string)uint64", method "update_egg_data(uint64,string,string)uint64"
+    bz __puya_arc4_router___bare_routing@13
+    pushbytess 0x0378a0d1 0xd318c166 0x33fd2504 0x92e03b1c 0x0fd6d7dd 0x501895d1 0xb4a65735 0xc8f9bbd5 0xc40477b8 // method "add_creator(address)void", method "remove_creator(address)void", method "add_modifier(address)void", method "deposit()void", method "remove_modifier(address)void", method "is_modifier_addr(address)bool", method "is_creator_addr(address)bool", method "create_egg_nft(string,string,string)uint64", method "update_egg_data(uint64,string,string)uint64"
     txna ApplicationArgs 0
-    match __puya_arc4_router___add_creator_route@2 __puya_arc4_router___remove_creator_route@3 __puya_arc4_router___add_modifier_route@4 __puya_arc4_router___remove_modifier_route@5 __puya_arc4_router___is_modifier_addr_route@6 __puya_arc4_router___is_creator_addr_route@7 __puya_arc4_router___create_egg_nft_route@8 __puya_arc4_router___update_egg_data_route@9
+    match __puya_arc4_router___add_creator_route@2 __puya_arc4_router___remove_creator_route@3 __puya_arc4_router___add_modifier_route@4 __puya_arc4_router___deposit_route@5 __puya_arc4_router___remove_modifier_route@6 __puya_arc4_router___is_modifier_addr_route@7 __puya_arc4_router___is_creator_addr_route@8 __puya_arc4_router___create_egg_nft_route@9 __puya_arc4_router___update_egg_data_route@10
     intc_0 // 0
     retsub
 
@@ -89,8 +89,20 @@ __puya_arc4_router___add_modifier_route@4:
     intc_1 // 1
     retsub
 
-__puya_arc4_router___remove_modifier_route@5:
+__puya_arc4_router___deposit_route@5:
     // smart_contracts/turtle_eggs/contract.py:50
+    // @abimethod
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    callsub deposit
+    intc_1 // 1
+    retsub
+
+__puya_arc4_router___remove_modifier_route@6:
+    // smart_contracts/turtle_eggs/contract.py:58
     // @abimethod
     txn OnCompletion
     !
@@ -100,14 +112,14 @@ __puya_arc4_router___remove_modifier_route@5:
     // smart_contracts/turtle_eggs/contract.py:13
     // class TurtleMonitor(ARC4Contract):
     txna ApplicationArgs 1
-    // smart_contracts/turtle_eggs/contract.py:50
+    // smart_contracts/turtle_eggs/contract.py:58
     // @abimethod
     callsub remove_modifier
     intc_1 // 1
     retsub
 
-__puya_arc4_router___is_modifier_addr_route@6:
-    // smart_contracts/turtle_eggs/contract.py:91
+__puya_arc4_router___is_modifier_addr_route@7:
+    // smart_contracts/turtle_eggs/contract.py:99
     // @abimethod
     txn OnCompletion
     !
@@ -117,7 +129,7 @@ __puya_arc4_router___is_modifier_addr_route@6:
     // smart_contracts/turtle_eggs/contract.py:13
     // class TurtleMonitor(ARC4Contract):
     txna ApplicationArgs 1
-    // smart_contracts/turtle_eggs/contract.py:91
+    // smart_contracts/turtle_eggs/contract.py:99
     // @abimethod
     callsub is_modifier_addr
     pushbytes 0x00
@@ -131,8 +143,8 @@ __puya_arc4_router___is_modifier_addr_route@6:
     intc_1 // 1
     retsub
 
-__puya_arc4_router___is_creator_addr_route@7:
-    // smart_contracts/turtle_eggs/contract.py:98
+__puya_arc4_router___is_creator_addr_route@8:
+    // smart_contracts/turtle_eggs/contract.py:106
     // @abimethod
     txn OnCompletion
     !
@@ -142,7 +154,7 @@ __puya_arc4_router___is_creator_addr_route@7:
     // smart_contracts/turtle_eggs/contract.py:13
     // class TurtleMonitor(ARC4Contract):
     txna ApplicationArgs 1
-    // smart_contracts/turtle_eggs/contract.py:98
+    // smart_contracts/turtle_eggs/contract.py:106
     // @abimethod
     callsub is_creator_addr
     pushbytes 0x00
@@ -156,8 +168,8 @@ __puya_arc4_router___is_creator_addr_route@7:
     intc_1 // 1
     retsub
 
-__puya_arc4_router___create_egg_nft_route@8:
-    // smart_contracts/turtle_eggs/contract.py:105
+__puya_arc4_router___create_egg_nft_route@9:
+    // smart_contracts/turtle_eggs/contract.py:113
     // @abimethod
     txn OnCompletion
     !
@@ -172,7 +184,7 @@ __puya_arc4_router___create_egg_nft_route@8:
     extract 2 0
     txna ApplicationArgs 3
     extract 2 0
-    // smart_contracts/turtle_eggs/contract.py:105
+    // smart_contracts/turtle_eggs/contract.py:113
     // @abimethod
     callsub create_egg_nft
     itob
@@ -183,8 +195,8 @@ __puya_arc4_router___create_egg_nft_route@8:
     intc_1 // 1
     retsub
 
-__puya_arc4_router___update_egg_data_route@9:
-    // smart_contracts/turtle_eggs/contract.py:150
+__puya_arc4_router___update_egg_data_route@10:
+    // smart_contracts/turtle_eggs/contract.py:158
     // @abimethod
     txn OnCompletion
     !
@@ -199,7 +211,7 @@ __puya_arc4_router___update_egg_data_route@9:
     extract 2 0
     txna ApplicationArgs 3
     extract 2 0
-    // smart_contracts/turtle_eggs/contract.py:150
+    // smart_contracts/turtle_eggs/contract.py:158
     // @abimethod
     callsub update_egg_data
     itob
@@ -210,18 +222,18 @@ __puya_arc4_router___update_egg_data_route@9:
     intc_1 // 1
     retsub
 
-__puya_arc4_router___bare_routing@12:
+__puya_arc4_router___bare_routing@13:
     // smart_contracts/turtle_eggs/contract.py:13
     // class TurtleMonitor(ARC4Contract):
     txn OnCompletion
-    bnz __puya_arc4_router___after_if_else@16
+    bnz __puya_arc4_router___after_if_else@17
     txn ApplicationID
     !
     assert // can only call when creating
     intc_1 // 1
     retsub
 
-__puya_arc4_router___after_if_else@16:
+__puya_arc4_router___after_if_else@17:
     // smart_contracts/turtle_eggs/contract.py:13
     // class TurtleMonitor(ARC4Contract):
     intc_0 // 0
@@ -309,13 +321,38 @@ add_modifier:
     retsub
 
 
+// smart_contracts.turtle_eggs.contract.TurtleMonitor.deposit() -> void:
+deposit:
+    // smart_contracts/turtle_eggs/contract.py:50-51
+    // @abimethod
+    // def deposit(self) -> None:
+    proto 0 0
+    // smart_contracts/turtle_eggs/contract.py:52
+    // assert Txn.sender.bytes == self.admin, "Only admin can add git ref for workshop :)"
+    txn Sender
+    intc_0 // 0
+    bytec_0 // "admin"
+    app_global_get_ex
+    assert // check self.admin exists
+    ==
+    assert // Only admin can add git ref for workshop :)
+    // smart_contracts/turtle_eggs/contract.py:53-54
+    // k = String("github")
+    // n = String("KryptOs92")
+    pushbytess "github" "KryptOs92" // "github", "KryptOs92"
+    // smart_contracts/turtle_eggs/contract.py:56
+    // op.Box.put(box_key, n.bytes)
+    box_put
+    retsub
+
+
 // smart_contracts.turtle_eggs.contract.TurtleMonitor.remove_modifier(old_modifier: bytes) -> void:
 remove_modifier:
-    // smart_contracts/turtle_eggs/contract.py:50-51
+    // smart_contracts/turtle_eggs/contract.py:58-59
     // @abimethod
     // def remove_modifier(self, old_modifier: Address) -> None:
     proto 1 0
-    // smart_contracts/turtle_eggs/contract.py:52
+    // smart_contracts/turtle_eggs/contract.py:60
     // assert Txn.sender.bytes == self.admin, "Only admin can remove modifiers"
     txn Sender
     intc_0 // 0
@@ -324,12 +361,12 @@ remove_modifier:
     assert // check self.admin exists
     ==
     assert // Only admin can remove modifiers
-    // smart_contracts/turtle_eggs/contract.py:54
+    // smart_contracts/turtle_eggs/contract.py:62
     // box_key = b"modifier:" + old_modifier.bytes
     bytec 4 // 0x6d6f6469666965723a
     frame_dig -1
     concat
-    // smart_contracts/turtle_eggs/contract.py:55
+    // smart_contracts/turtle_eggs/contract.py:63
     // op.Box.delete(box_key)
     box_del
     pop
@@ -338,11 +375,11 @@ remove_modifier:
 
 // smart_contracts.turtle_eggs.contract.TurtleMonitor.is_modifier_addr(check_addr: bytes) -> uint64:
 is_modifier_addr:
-    // smart_contracts/turtle_eggs/contract.py:91-92
+    // smart_contracts/turtle_eggs/contract.py:99-100
     // @abimethod
     // def is_modifier_addr(self, check_addr: Address) -> bool:
     proto 1 1
-    // smart_contracts/turtle_eggs/contract.py:96
+    // smart_contracts/turtle_eggs/contract.py:104
     // return self.is_modifier(check_addr.bytes)
     frame_dig -1
     callsub is_modifier
@@ -351,32 +388,32 @@ is_modifier_addr:
 
 // smart_contracts.turtle_eggs.contract.TurtleMonitor.is_modifier(addr: bytes) -> uint64:
 is_modifier:
-    // smart_contracts/turtle_eggs/contract.py:73-74
+    // smart_contracts/turtle_eggs/contract.py:81-82
     // @subroutine
     // def is_modifier(self, addr: Bytes ) -> bool:
     proto 1 1
-    // smart_contracts/turtle_eggs/contract.py:75
+    // smart_contracts/turtle_eggs/contract.py:83
     // modifier_box_key = b"modifier:" + addr
     bytec 4 // 0x6d6f6469666965723a
     frame_dig -1
     concat
-    // smart_contracts/turtle_eggs/contract.py:76
+    // smart_contracts/turtle_eggs/contract.py:84
     // modifier_val, has_value = op.Box.get(modifier_box_key)
     box_get
-    // smart_contracts/turtle_eggs/contract.py:79-82
+    // smart_contracts/turtle_eggs/contract.py:87-90
     // # Se non esiste la box, potresti decidere di restituire False
     // # oppure confrontare value con b"" se preferisci.
     // # Ad esempio:
     // if not has_value:
     bnz is_modifier_after_if_else@2
-    // smart_contracts/turtle_eggs/contract.py:83
+    // smart_contracts/turtle_eggs/contract.py:91
     // return False
     intc_0 // 0
     swap
     retsub
 
 is_modifier_after_if_else@2:
-    // smart_contracts/turtle_eggs/contract.py:85
+    // smart_contracts/turtle_eggs/contract.py:93
     // return (modifier_val == b"1")
     frame_dig 0
     bytec_2 // 0x31
@@ -387,11 +424,11 @@ is_modifier_after_if_else@2:
 
 // smart_contracts.turtle_eggs.contract.TurtleMonitor.is_creator_addr(check_addr: bytes) -> uint64:
 is_creator_addr:
-    // smart_contracts/turtle_eggs/contract.py:98-99
+    // smart_contracts/turtle_eggs/contract.py:106-107
     // @abimethod
     // def is_creator_addr(self, check_addr: Address) -> bool:
     proto 1 1
-    // smart_contracts/turtle_eggs/contract.py:103
+    // smart_contracts/turtle_eggs/contract.py:111
     // return self.is_creator(check_addr.bytes)
     frame_dig -1
     callsub is_creator
@@ -400,35 +437,35 @@ is_creator_addr:
 
 // smart_contracts.turtle_eggs.contract.TurtleMonitor.is_creator(addr: bytes) -> uint64:
 is_creator:
-    // smart_contracts/turtle_eggs/contract.py:57-61
+    // smart_contracts/turtle_eggs/contract.py:65-69
     // # ----------------------------------------------------------------
     // # 2) Helper: check se sender è creator o modifier
     // # ----------------------------------------------------------------
     // @subroutine
     // def is_creator(self, addr: Bytes) -> bool:
     proto 1 1
-    // smart_contracts/turtle_eggs/contract.py:62
+    // smart_contracts/turtle_eggs/contract.py:70
     // creator_box_key = b"creator:" + addr
     bytec_3 // 0x63726561746f723a
     frame_dig -1
     concat
-    // smart_contracts/turtle_eggs/contract.py:63
+    // smart_contracts/turtle_eggs/contract.py:71
     // value, has_value = op.Box.get(creator_box_key)  # destrutturiamo la tupla
     box_get
-    // smart_contracts/turtle_eggs/contract.py:65-68
+    // smart_contracts/turtle_eggs/contract.py:73-76
     // # Se non esiste la box, potresti decidere di restituire False
     // # oppure confrontare value con b"" se preferisci.
     // # Ad esempio:
     // if not has_value:
     bnz is_creator_after_if_else@2
-    // smart_contracts/turtle_eggs/contract.py:69
+    // smart_contracts/turtle_eggs/contract.py:77
     // return False
     intc_0 // 0
     swap
     retsub
 
 is_creator_after_if_else@2:
-    // smart_contracts/turtle_eggs/contract.py:71
+    // smart_contracts/turtle_eggs/contract.py:79
     // return (value == b"1")
     frame_dig 0
     bytec_2 // 0x31
@@ -439,11 +476,11 @@ is_creator_after_if_else@2:
 
 // smart_contracts.turtle_eggs.contract.TurtleMonitor.create_egg_nft(name: bytes, url: bytes, data_blob: bytes) -> uint64:
 create_egg_nft:
-    // smart_contracts/turtle_eggs/contract.py:105-106
+    // smart_contracts/turtle_eggs/contract.py:113-114
     // @abimethod
     // def create_egg_nft(self, name: String, url: String, data_blob: String) -> UInt64:
     proto 3 1
-    // smart_contracts/turtle_eggs/contract.py:114
+    // smart_contracts/turtle_eggs/contract.py:122
     // is_admin = (Txn.sender.bytes == self.admin)
     txn Sender
     intc_0 // 0
@@ -451,15 +488,15 @@ create_egg_nft:
     app_global_get_ex
     assert // check self.admin exists
     ==
-    // smart_contracts/turtle_eggs/contract.py:115
+    // smart_contracts/turtle_eggs/contract.py:123
     // is_creat = self.is_creator(Txn.sender.bytes)
     txn Sender
     callsub is_creator
-    // smart_contracts/turtle_eggs/contract.py:117
+    // smart_contracts/turtle_eggs/contract.py:125
     // assert (is_admin or is_creat), "Not authorized to create"
     ||
     assert // Not authorized to create
-    // smart_contracts/turtle_eggs/contract.py:119-130
+    // smart_contracts/turtle_eggs/contract.py:127-138
     // # 1) Creiamo l'ASA (NFT)
     // itxn_result = itxn.AssetConfig(
     //     total=1,
@@ -473,10 +510,10 @@ create_egg_nft:
     //     fee=0
     // ).submit()
     itxn_begin
-    // smart_contracts/turtle_eggs/contract.py:125
+    // smart_contracts/turtle_eggs/contract.py:133
     // manager=Global.current_application_address,
     global CurrentApplicationAddress
-    // smart_contracts/turtle_eggs/contract.py:126-128
+    // smart_contracts/turtle_eggs/contract.py:134-136
     // reserve=Global.current_application_address,
     // freeze=Global.current_application_address,
     // clawback=Global.current_application_address,
@@ -489,24 +526,24 @@ create_egg_nft:
     itxn_field ConfigAssetURL
     frame_dig -3
     itxn_field ConfigAssetName
-    // smart_contracts/turtle_eggs/contract.py:122
+    // smart_contracts/turtle_eggs/contract.py:130
     // decimals=0,
     intc_0 // 0
     itxn_field ConfigAssetDecimals
-    // smart_contracts/turtle_eggs/contract.py:121
+    // smart_contracts/turtle_eggs/contract.py:129
     // total=1,
     intc_1 // 1
     itxn_field ConfigAssetTotal
-    // smart_contracts/turtle_eggs/contract.py:119-120
+    // smart_contracts/turtle_eggs/contract.py:127-128
     // # 1) Creiamo l'ASA (NFT)
     // itxn_result = itxn.AssetConfig(
     intc_2 // acfg
     itxn_field TypeEnum
-    // smart_contracts/turtle_eggs/contract.py:129
+    // smart_contracts/turtle_eggs/contract.py:137
     // fee=0
     intc_0 // 0
     itxn_field Fee
-    // smart_contracts/turtle_eggs/contract.py:119-130
+    // smart_contracts/turtle_eggs/contract.py:127-138
     // # 1) Creiamo l'ASA (NFT)
     // itxn_result = itxn.AssetConfig(
     //     total=1,
@@ -521,7 +558,7 @@ create_egg_nft:
     // ).submit()
     itxn_submit
     itxn CreatedAssetID
-    // smart_contracts/turtle_eggs/contract.py:134-135
+    // smart_contracts/turtle_eggs/contract.py:142-143
     // # 2) Registriamo lo stato iniziale ("non_schiuso") in Box
     // egg_key = b"egg:" + op.itob(created_asa_id)
     dup
@@ -529,44 +566,44 @@ create_egg_nft:
     bytec 5 // 0x6567673a
     dig 1
     concat
-    // smart_contracts/turtle_eggs/contract.py:136-138
+    // smart_contracts/turtle_eggs/contract.py:144-146
     // # Mettiamo un blob di esempio (stato e magari campi futuri)
     // # Per semplicità, scriviamo "state=non_schiuso"
     // op.Box.put(egg_key, data_blob.bytes)
     frame_dig -1
     box_put
-    // smart_contracts/turtle_eggs/contract.py:141
+    // smart_contracts/turtle_eggs/contract.py:149
     // b"Create ASA=" + op.itob(created_asa_id) +
     pushbytes 0x437265617465204153413d
     swap
     concat
-    // smart_contracts/turtle_eggs/contract.py:142
+    // smart_contracts/turtle_eggs/contract.py:150
     // b" from=" +
     bytec 6 // 0x2066726f6d3d
-    // smart_contracts/turtle_eggs/contract.py:141-142
+    // smart_contracts/turtle_eggs/contract.py:149-150
     // b"Create ASA=" + op.itob(created_asa_id) +
     // b" from=" +
     concat
-    // smart_contracts/turtle_eggs/contract.py:143
+    // smart_contracts/turtle_eggs/contract.py:151
     // b" to=" + data_blob.bytes +
     bytec 7 // 0x20746f3d
-    // smart_contracts/turtle_eggs/contract.py:141-143
+    // smart_contracts/turtle_eggs/contract.py:149-151
     // b"Create ASA=" + op.itob(created_asa_id) +
     // b" from=" +
     // b" to=" + data_blob.bytes +
     concat
     frame_dig -1
     concat
-    // smart_contracts/turtle_eggs/contract.py:144
+    // smart_contracts/turtle_eggs/contract.py:152
     // b" initialURL=" + url.bytes
     pushbytes 0x20696e697469616c55524c3d
-    // smart_contracts/turtle_eggs/contract.py:141-144
+    // smart_contracts/turtle_eggs/contract.py:149-152
     // b"Create ASA=" + op.itob(created_asa_id) +
     // b" from=" +
     // b" to=" + data_blob.bytes +
     // b" initialURL=" + url.bytes
     concat
-    // smart_contracts/turtle_eggs/contract.py:139-145
+    // smart_contracts/turtle_eggs/contract.py:147-153
     // # 3) Log
     // log_str = (
     //     b"Create ASA=" + op.itob(created_asa_id) +
@@ -575,23 +612,23 @@ create_egg_nft:
     //     b" initialURL=" + url.bytes
     // )
     frame_dig -2
-    // smart_contracts/turtle_eggs/contract.py:141-144
+    // smart_contracts/turtle_eggs/contract.py:149-152
     // b"Create ASA=" + op.itob(created_asa_id) +
     // b" from=" +
     // b" to=" + data_blob.bytes +
     // b" initialURL=" + url.bytes
     concat
-    // smart_contracts/turtle_eggs/contract.py:146
+    // smart_contracts/turtle_eggs/contract.py:154
     // log(log_str)
     log
-    // smart_contracts/turtle_eggs/contract.py:148
+    // smart_contracts/turtle_eggs/contract.py:156
     // return created_asa_id
     retsub
 
 
 // smart_contracts.turtle_eggs.contract.TurtleMonitor.update_egg_data(asa_id: uint64, new_url: bytes, data_blob: bytes) -> uint64:
 update_egg_data:
-    // smart_contracts/turtle_eggs/contract.py:150-156
+    // smart_contracts/turtle_eggs/contract.py:158-164
     // @abimethod
     // def update_egg_data(
     //     self,
@@ -600,7 +637,7 @@ update_egg_data:
     //     data_blob: String # JSON o string con altre info (stato, date, ecc.)
     // ) -> UInt64:
     proto 3 1
-    // smart_contracts/turtle_eggs/contract.py:165
+    // smart_contracts/turtle_eggs/contract.py:173
     // is_admin = (Txn.sender.bytes == self.admin)
     txn Sender
     intc_0 // 0
@@ -608,15 +645,15 @@ update_egg_data:
     app_global_get_ex
     assert // check self.admin exists
     ==
-    // smart_contracts/turtle_eggs/contract.py:166
+    // smart_contracts/turtle_eggs/contract.py:174
     // is_mod = self.is_modifier(Txn.sender.bytes)
     txn Sender
     callsub is_modifier
-    // smart_contracts/turtle_eggs/contract.py:167
+    // smart_contracts/turtle_eggs/contract.py:175
     // assert (is_admin or is_mod), "Not authorized to update"
     ||
     assert // Not authorized to update
-    // smart_contracts/turtle_eggs/contract.py:169
+    // smart_contracts/turtle_eggs/contract.py:177
     // egg_key = b"egg:" + op.itob(asa_id)
     frame_dig -3
     itob
@@ -625,10 +662,10 @@ update_egg_data:
     swap
     concat
     dup
-    // smart_contracts/turtle_eggs/contract.py:170
+    // smart_contracts/turtle_eggs/contract.py:178
     // old_val, has_old = op.Box.get(egg_key)
     box_get
-    // smart_contracts/turtle_eggs/contract.py:174-185
+    // smart_contracts/turtle_eggs/contract.py:182-193
     // # 2) Esegui la reconfig dell'ASA: cambiamo 'url' in "new_url"
     // #    Nota: se vuoi cambiare anche "assetName" o "metadataHash", fallo qui.
     // itxn_result = itxn.AssetConfig(
@@ -642,10 +679,10 @@ update_egg_data:
     //     fee=0
     // ).submit()
     itxn_begin
-    // smart_contracts/turtle_eggs/contract.py:179
+    // smart_contracts/turtle_eggs/contract.py:187
     // manager=Global.current_application_address,  # ridichiari
     global CurrentApplicationAddress
-    // smart_contracts/turtle_eggs/contract.py:180-182
+    // smart_contracts/turtle_eggs/contract.py:188-190
     // reserve=Global.current_application_address,  # se serve
     // freeze=Global.current_application_address,   # se serve
     // clawback=Global.current_application_address, # se serve
@@ -658,18 +695,18 @@ update_egg_data:
     itxn_field ConfigAssetURL
     frame_dig -3
     itxn_field ConfigAsset
-    // smart_contracts/turtle_eggs/contract.py:174-176
+    // smart_contracts/turtle_eggs/contract.py:182-184
     // # 2) Esegui la reconfig dell'ASA: cambiamo 'url' in "new_url"
     // #    Nota: se vuoi cambiare anche "assetName" o "metadataHash", fallo qui.
     // itxn_result = itxn.AssetConfig(
     intc_2 // acfg
     itxn_field TypeEnum
-    // smart_contracts/turtle_eggs/contract.py:183-184
+    // smart_contracts/turtle_eggs/contract.py:191-192
     // # manager = Global.current_application_address,  # ridichiari se necessario
     // fee=0
     intc_0 // 0
     itxn_field Fee
-    // smart_contracts/turtle_eggs/contract.py:174-185
+    // smart_contracts/turtle_eggs/contract.py:182-193
     // # 2) Esegui la reconfig dell'ASA: cambiamo 'url' in "new_url"
     // #    Nota: se vuoi cambiare anche "assetName" o "metadataHash", fallo qui.
     // itxn_result = itxn.AssetConfig(
@@ -683,56 +720,56 @@ update_egg_data:
     //     fee=0
     // ).submit()
     itxn_submit
-    // smart_contracts/turtle_eggs/contract.py:188-189
+    // smart_contracts/turtle_eggs/contract.py:196-197
     // # 3) Aggiorna i dati in Box (se vuoi conservare altre info: stato, date, ecc.)
     // if has_old:
     bz update_egg_data_after_if_else@3
-    // smart_contracts/turtle_eggs/contract.py:190
+    // smart_contracts/turtle_eggs/contract.py:198
     // op.Box.delete(egg_key)
     frame_dig 1
     box_del
     pop
 
 update_egg_data_after_if_else@3:
-    // smart_contracts/turtle_eggs/contract.py:191
+    // smart_contracts/turtle_eggs/contract.py:199
     // op.Box.put(egg_key, data_blob.bytes)
     frame_dig 1
     frame_dig -1
     box_put
-    // smart_contracts/turtle_eggs/contract.py:195
+    // smart_contracts/turtle_eggs/contract.py:203
     // b"Update ASA=" + op.itob(asa_id) +
     pushbytes 0x557064617465204153413d
     frame_dig 0
     concat
-    // smart_contracts/turtle_eggs/contract.py:196
+    // smart_contracts/turtle_eggs/contract.py:204
     // b" from=" + old_val +
     bytec 6 // 0x2066726f6d3d
-    // smart_contracts/turtle_eggs/contract.py:195-196
+    // smart_contracts/turtle_eggs/contract.py:203-204
     // b"Update ASA=" + op.itob(asa_id) +
     // b" from=" + old_val +
     concat
     frame_dig 2
     concat
-    // smart_contracts/turtle_eggs/contract.py:197
+    // smart_contracts/turtle_eggs/contract.py:205
     // b" to=" + data_blob.bytes +
     bytec 7 // 0x20746f3d
-    // smart_contracts/turtle_eggs/contract.py:195-197
+    // smart_contracts/turtle_eggs/contract.py:203-205
     // b"Update ASA=" + op.itob(asa_id) +
     // b" from=" + old_val +
     // b" to=" + data_blob.bytes +
     concat
     frame_dig -1
     concat
-    // smart_contracts/turtle_eggs/contract.py:198
+    // smart_contracts/turtle_eggs/contract.py:206
     // b" reconfigURL=" + new_url.bytes
     pushbytes 0x207265636f6e66696755524c3d
-    // smart_contracts/turtle_eggs/contract.py:195-198
+    // smart_contracts/turtle_eggs/contract.py:203-206
     // b"Update ASA=" + op.itob(asa_id) +
     // b" from=" + old_val +
     // b" to=" + data_blob.bytes +
     // b" reconfigURL=" + new_url.bytes
     concat
-    // smart_contracts/turtle_eggs/contract.py:193-199
+    // smart_contracts/turtle_eggs/contract.py:201-207
     // # 4) Log
     // log_str = (
     //     b"Update ASA=" + op.itob(asa_id) +
@@ -741,16 +778,16 @@ update_egg_data_after_if_else@3:
     //     b" reconfigURL=" + new_url.bytes
     // )
     frame_dig -2
-    // smart_contracts/turtle_eggs/contract.py:195-198
+    // smart_contracts/turtle_eggs/contract.py:203-206
     // b"Update ASA=" + op.itob(asa_id) +
     // b" from=" + old_val +
     // b" to=" + data_blob.bytes +
     // b" reconfigURL=" + new_url.bytes
     concat
-    // smart_contracts/turtle_eggs/contract.py:200
+    // smart_contracts/turtle_eggs/contract.py:208
     // log(log_str)
     log
-    // smart_contracts/turtle_eggs/contract.py:201
+    // smart_contracts/turtle_eggs/contract.py:209
     // return asa_id
     frame_dig -3
     frame_bury 0
