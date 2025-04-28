@@ -16,7 +16,7 @@ import MDInput from "../MDInput";
 import translations from "./translations.json";
 
 function EggsViewer() {
-  const [appId, setAppId] = useState(1001);
+  const [appId, setAppId] = useState(BigInt(process.env.NEXT_PUBLIC_TURTLE_APPID));
   const [loading, setLoading] = useState(false);
   const lang = useSelector((state) => state.lang.value) || "it";
   const t = translations[lang] ?? translations["it"];
@@ -33,7 +33,8 @@ function EggsViewer() {
 
   const turtleClient = new TurtleMonitorClient({
     algorand,
-    appId: 1001n,
+    appId: BigInt(process.env.NEXT_PUBLIC_TURTLE_APPID),
+    //appId: 1001n,
     defaultSender: activeAddress,
     defaultSigner: transactionSigner,
   });
@@ -63,7 +64,7 @@ function EggsViewer() {
   };
 
   const getEggsBoxes = async () => {
-    let eggs = await methods.get_turtles_ids(algorand, 1001);
+    let eggs = await methods.get_turtles_ids(algorand, BigInt(process.env.NEXT_PUBLIC_TURTLE_APPID));
     let eggsTableData = [];
     let eggsIds = Object.keys(eggs);
     eggsIds.map((asaId) => {
@@ -76,7 +77,11 @@ function EggsViewer() {
 
   const getUserAuthority = async () => {
     setLoading(true);
-    const is_smart_contract_creator: boolean = await methods.check_is_smart_contract_creator(algorand, activeAddress, 1001);
+    const is_smart_contract_creator: boolean = await methods.check_is_smart_contract_creator(
+      algorand,
+      activeAddress,
+      BigInt(process.env.NEXT_PUBLIC_TURTLE_APPID)
+    );
     if (is_smart_contract_creator == true) {
       dispatchStore(setUserAuthorityScCreator());
     }
