@@ -32,4 +32,7 @@ Thank you, and sorry that my progress is still rather limited!
 
 in order to start frontend:
 npm i
+
+set in env.local proper variables, remember to set NEXT_PUBLIC_TURTLE_APPID
+
 npm run devnext
