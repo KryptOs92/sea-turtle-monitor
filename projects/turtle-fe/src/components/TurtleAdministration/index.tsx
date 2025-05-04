@@ -35,18 +35,7 @@ function TurtleAdministration() {
     defaultSigner: transactionSigner,
   });
 
-  const getUserAuthority = async () => {
-    setLoading(true);
-    const is_smart_contract_creator: boolean = await methods.check_is_smart_contract_creator(
-      algorand,
-      activeAddress,
-      BigInt(process.env.NEXT_PUBLIC_TURTLE_APPID)
-    );
-    if (is_smart_contract_creator == true) {
-      dispatchStore(setUserAuthorityScCreator());
-    }
-    setLoading(false);
-  };
+
 
   const addCreator = async () => {
     const is_smart_contract_creator: boolean = await methods.check_is_smart_contract_creator(
@@ -65,7 +54,6 @@ function TurtleAdministration() {
 
   useEffect(() => {
     // Esempio: fetch iniziale
-    getUserAuthority();
     setMounted(true);
     // return simile a componentWillUnmount
     return () => {

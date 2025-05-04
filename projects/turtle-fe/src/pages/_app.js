@@ -20,6 +20,7 @@ import { useRouter } from "next/router";
 
 // @emotion
 import createCache from "@emotion/cache";
+import * as methods from "../methods";
 
 // @emotion/react components
 import { CacheProvider } from "@emotion/react";
@@ -52,6 +53,8 @@ import routes from "/src/routes";
 import "../styles/App.css";
 // NextJS Material Dashboard 2 PRO Context Provider
 import { MaterialUIControllerProvider, useMaterialUIController, setMiniSidenav, setOpenConfigurator } from "/src/context";
+import { useWallet, WalletId, WalletManager, WalletProvider } from "@txnlab/use-wallet-react";
+import { useDispatch, useSelector } from "react-redux";
 
 // Images
 import favicon from "/src/assets/images/favicon.png";
@@ -60,15 +63,60 @@ import brandWhite from "/src/assets/images/logo-ct.png";
 import brandDark from "/src/assets/images/logo-ct-dark.png";
 import StoreProvider from "../components/StoreProvider";
 import { Config } from "@algorandfoundation/algokit-utils";
+
+
+
+import { getAlgodConfigFromViteEnvironment, getKmdConfigFromViteEnvironment } from "../utils/network/getAlgoClientConfigs";
+
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createCache({ key: "css", prepend: true });
+const algodConfig = getAlgodConfigFromViteEnvironment();
+let supportedWallets;
+if (process.env.NEXT_PUBLIC_VITE_ALGOD_NETWORK === "localnet") {
+  const kmdConfig = getKmdConfigFromViteEnvironment();
+  supportedWallets = [
+    {
+      id: WalletId.KMD,
+      options: {
+        baseServer: kmdConfig.server,
+        token: String(kmdConfig.token),
+        port: String(kmdConfig.port),
+      },
+    },
+  ];
+} else {
+  supportedWallets = [
+    { id: WalletId.DEFLY },
+    { id: WalletId.PERA },
+    { id: WalletId.EXODUS },
+    // If you are interested in WalletConnect v2 provider
+    // refer to https://github.com/TxnLab/use-wallet for detailed integration instructions
+  ];
+}
 
+const walletManager = new WalletManager({
+  wallets: supportedWallets,
+  defaultNetwork: algodConfig.network,
+  networks: {
+    [algodConfig.network]: {
+      algod: {
+        baseServer: algodConfig.server,
+        port: algodConfig.port,
+        token: String(algodConfig.token),
+      },
+    },
+  },
+  options: {
+    resetNetwork: true,
+  },
+});
 function Main({ Component, pageProps }) {
   const [controller, dispatch] = useMaterialUIController();
   const { miniSidenav, direction, layout, openConfigurator, sidenavColor, transparentSidenav, whiteSidenav, darkMode } = controller;
   const [onMouseEnter, setOnMouseEnter] = useState(false);
   const [rtlCache, setRtlCache] = useState(null);
   const { pathname } = useRouter();
+
   Config.configure({ debug: true });
   // Cache for the rtl
   useMemo(() => {
@@ -95,10 +143,19 @@ function Main({ Component, pageProps }) {
       setOnMouseEnter(false);
     }
   };
+  const dispatchStore = useDispatch();
 
   // Change the openConfigurator state
   const handleConfiguratorOpen = () => setOpenConfigurator(dispatch, !openConfigurator);
+  const waitRefreshUserAuthority = async () => {
+    await methods.refreshUserAuthority(activeAddress, dispatchStore)
+  }
+    const { activeAddress, transactionSigner } = useWallet();
+  
 
+  useEffect( () => {
+    waitRefreshUserAuthority()
+  }, []);
   // Setting the dir attribute for the body element
   useEffect(() => {
     document.body.setAttribute("dir", direction);
@@ -181,6 +238,7 @@ function Main({ Component, pageProps }) {
   );
 }
 
+
 function MyApp({ Component, pageProps, emotionCache = clientSideEmotionCache }) {
   return (
     <StoreProvider>
@@ -192,7 +250,10 @@ function MyApp({ Component, pageProps, emotionCache = clientSideEmotionCache }) 
             <link rel="apple-touch-icon" sizes="76x76" href={appleIcon.src} />
             <title>Next Material Dashboard 2 PRO</title>
           </Head>
+          <WalletProvider manager={walletManager}>
+
           <Main Component={Component} pageProps={pageProps} />
+          </WalletProvider>
         </CacheProvider>
       </MaterialUIControllerProvider>
     </StoreProvider>

@@ -43,6 +43,45 @@ import Icon from "@mui/material/Icon";
 // Images
 import profilePicture from "/src/assets/images/team-3.jpg";
 
+const adminRoutes = [ {
+  type: "collapse",
+  name: "Dashboards",
+  key: "dashboards",
+  icon: <Icon fontSize="medium">dashboard</Icon>,
+  collapse: [
+    
+    {
+      name: "Turtle Home",
+      key: "home",
+      route: "/dashboards/turtles/home",
+    },
+    {
+      name: "Handle Creators",
+      key: "creators",
+      route: "/dashboards/turtles/home",
+    },
+    {
+      name: "Handle Modifier",
+      key: "modifiers",
+      route: "/dashboards/turtles/home",
+    },
+    {
+      name: "Handle Turtles",
+      key: "turtles",
+      route: "/dashboards/turtles/home",
+    },
+    {
+      name: "View Turtles",
+      key: "turtlesView",
+      route: "/dashboards/turtles/home",
+    },
+  ],
+},]
+const modifierRoutes = []
+const creatorRoutes = []
+const viewerRoutes = []
+
+
 const routes = [
   /*  {
     type: "collapse",

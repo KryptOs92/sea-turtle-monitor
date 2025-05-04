@@ -2,6 +2,11 @@ import * as algokit from "@algorandfoundation/algokit-utils";
 import { TurtleMonitorClient } from "./contracts/TurtleMonitor";
 import { encodeAddress, decodeAddress, decodeUint64, encodeUint64 } from "algosdk";
 import { AlgoAmount } from "@algorandfoundation/algokit-utils/types/amount";
+import { AlgorandClient } from "@algorandfoundation/algokit-utils";
+import { getAlgodConfigFromViteEnvironment } from "./utils/network/getAlgoClientConfigs";
+import { useWallet, Wallet, WalletId } from "@txnlab/use-wallet-react";
+import { useDispatch, useSelector } from "react-redux";
+import { setUserAuthorityScCreator } from "./lib/turtleSCslice";
 
 /**
  * Create the application and opt it into the desired asset
@@ -139,4 +144,17 @@ export async function updateEggData(
       appId,
     }
   );
+}
+
+export async function refreshUserAuthority(activeAddress: string, dispatchStore : any) {
+  if (activeAddress) {
+
+    const algodConfig = getAlgodConfigFromViteEnvironment();
+    const algorand = AlgorandClient.fromConfig({ algodConfig });
+    const appId = BigInt(process.env.NEXT_PUBLIC_TURTLE_APPID!);
+    const is_smart_contract_creator: boolean = await check_is_smart_contract_creator(algorand, activeAddress, BigInt(appId));
+    if (is_smart_contract_creator == true) {
+      dispatchStore(setUserAuthorityScCreator());
+    }
+  }
 }

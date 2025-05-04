@@ -1,14 +1,19 @@
 // langSlice.ts
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
+
 // Definisci lo shape dello stato per la lingua
 interface TurltleSCstate {
   user_authority: string; // "sc_creator", "turtle_creator", "turtle_modifier".
+  loading: boolean;
+  error: string
 }
 
 // Stato iniziale: ad esempio "it"
 const initialState: TurltleSCstate = {
   user_authority: "",
+  loading: false,
+  error: ''
 };
 
 export const turtleSCslice = createSlice({
@@ -25,7 +30,9 @@ export const turtleSCslice = createSlice({
     setUserAuthorityScModifier: (state) => {
       state.user_authority = "turtle_modifier";
     },
+    
   },
+
 });
 
 // Esporta le azioni generate da createSlice

@@ -26,7 +26,6 @@ if (process.env.NEXT_PUBLIC_VITE_ALGOD_NETWORK === "localnet") {
   ];
 }
 
-console.log("TESTTTTTTTTTTTTTTTTT ", process.env.NEXT_PUBLIC_VITE_ALGOD_NETWORK);
 
 export default function App() {
   const algodConfig = getAlgodConfigFromViteEnvironment();

@@ -75,22 +75,10 @@ function EggsViewer() {
     setEggs(eggsTableData);
   };
 
-  const getUserAuthority = async () => {
-    setLoading(true);
-    const is_smart_contract_creator: boolean = await methods.check_is_smart_contract_creator(
-      algorand,
-      activeAddress,
-      BigInt(process.env.NEXT_PUBLIC_TURTLE_APPID)
-    );
-    if (is_smart_contract_creator == true) {
-      dispatchStore(setUserAuthorityScCreator());
-    }
-    setLoading(false);
-  };
+
 
   useEffect(() => {
     // Esempio: fetch iniziale
-    getUserAuthority();
     getEggsBoxes();
     setMounted(true);
     // return simile a componentWillUnmount
