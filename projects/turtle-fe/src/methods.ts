@@ -4,8 +4,6 @@ import { encodeAddress, decodeAddress, decodeUint64, encodeUint64 } from "algosd
 import { AlgoAmount } from "@algorandfoundation/algokit-utils/types/amount";
 import { AlgorandClient } from "@algorandfoundation/algokit-utils";
 import { getAlgodConfigFromViteEnvironment } from "./utils/network/getAlgoClientConfigs";
-import { useWallet, Wallet, WalletId } from "@txnlab/use-wallet-react";
-import { useDispatch, useSelector } from "react-redux";
 import { setUserAuthorityScCreator } from "./lib/turtleSCslice";
 
 /**

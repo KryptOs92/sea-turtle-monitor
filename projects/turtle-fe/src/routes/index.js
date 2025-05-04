@@ -43,7 +43,7 @@ import Icon from "@mui/material/Icon";
 // Images
 import profilePicture from "/src/assets/images/team-3.jpg";
 
-const adminRoutes = [ {
+export const adminRoutes = [ {
   type: "collapse",
   name: "Dashboards",
   key: "dashboards",
@@ -82,7 +82,7 @@ const creatorRoutes = []
 const viewerRoutes = []
 
 
-const routes = [
+export const routes = [
   /*  {
     type: "collapse",
     name: "Brooklyn Alice",
@@ -519,4 +519,3 @@ const routes = [
   }, */
 ];
 
-export default routes;

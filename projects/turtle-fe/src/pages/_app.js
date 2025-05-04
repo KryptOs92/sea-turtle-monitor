@@ -49,7 +49,7 @@ import themeDarkRTL from "/src/assets/theme-dark/theme-rtl";
 import rtlPlugin from "stylis-plugin-rtl";
 
 // NextJS Material Dashboard 2 PRO routes
-import routes from "/src/routes";
+import { routes, adminRoutes} from "/src/routes";
 import "../styles/App.css";
 // NextJS Material Dashboard 2 PRO Context Provider
 import { MaterialUIControllerProvider, useMaterialUIController, setMiniSidenav, setOpenConfigurator } from "/src/context";
@@ -71,6 +71,7 @@ import { getAlgodConfigFromViteEnvironment, getKmdConfigFromViteEnvironment } fr
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createCache({ key: "css", prepend: true });
 const algodConfig = getAlgodConfigFromViteEnvironment();
+
 let supportedWallets;
 if (process.env.NEXT_PUBLIC_VITE_ALGOD_NETWORK === "localnet") {
   const kmdConfig = getKmdConfigFromViteEnvironment();
@@ -204,7 +205,6 @@ function Main({ Component, pageProps }) {
               color={sidenavColor}
               brand={brandIcon}
               brandName="Material Dashboard PRO"
-              routes={routes}
               onMouseEnter={handleOnMouseEnter}
               onMouseLeave={handleOnMouseLeave}
             />
@@ -225,7 +225,6 @@ function Main({ Component, pageProps }) {
             color={sidenavColor}
             brand={brandIcon}
             brandName="Material Dashboard PRO"
-            routes={routes}
             onMouseEnter={handleOnMouseEnter}
             onMouseLeave={handleOnMouseLeave}
           />

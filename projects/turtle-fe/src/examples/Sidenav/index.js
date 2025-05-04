@@ -35,6 +35,7 @@ import MDTypography from "/src/components/MDTypography";
 import SidenavCollapse from "/src/examples/Sidenav/SidenavCollapse";
 import SidenavList from "/src/examples/Sidenav/SidenavList";
 import SidenavItem from "/src/examples/Sidenav/SidenavItem";
+import {  useSelector } from "react-redux";
 
 // Custom styles for the Sidenav
 import SidenavRoot from "/src/examples/Sidenav/SidenavRoot";
@@ -48,7 +49,9 @@ import {
   setWhiteSidenav,
 } from "/src/context";
 
-function Sidenav({ color, brand, brandName, routes, ...rest }) {
+function Sidenav({ color, brand, brandName, ...rest }) {
+  const routes = useSelector((state) => state.turtleSC.routes) || "it";
+  
   const [openCollapse, setOpenCollapse] = useState(false);
   const [openNestedCollapse, setOpenNestedCollapse] = useState(false);
   const [controller, dispatch] = useMaterialUIController();
