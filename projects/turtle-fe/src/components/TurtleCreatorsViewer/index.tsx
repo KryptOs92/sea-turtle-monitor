@@ -11,11 +11,19 @@ import { setUserAuthorityScCreator } from "../../lib/turtleSCslice";
 import MDBox from "../MDBox";
 import MDButton from "../MDButton";
 import formatItalianDateTime from "../../lib/utils";
-
+import Image from "next/image";
 import MDInput from "../MDInput";
 import translations from "./translations.json";
+import sadturtle from "../../assets/images/turtles/sadturtle.png";
+import MDAvatar from "../MDAvatar";
+import Card from "@mui/material/Card";
+import Icon from "@mui/material/Icon";
+import Grid from "@mui/material/Grid";
 
+import { useMaterialUIController } from "../../context";
 function TurtleCreatorsViewer() {
+  const [controller] = useMaterialUIController();
+  const { darkMode } = controller;
   const [appId, setAppId] = useState(BigInt(process.env.NEXT_PUBLIC_TURTLE_APPID));
   const [loading, setLoading] = useState(false);
   const lang = useSelector((state) => state.lang.value) || "it";
@@ -76,8 +84,6 @@ function TurtleCreatorsViewer() {
     console.log("CREATORSSS ", creatorsData);
   };
 
-
-
   useEffect(() => {
     // Esempio: fetch iniziale
     getCreatorsBoxes();
@@ -96,24 +102,50 @@ function TurtleCreatorsViewer() {
     <div className="turtle-administration-container">
       {activeAddress ? (
         <React.Fragment>
-          <MDBox
-            sx={{ display: "flex", flexDirection: "column", gap: "10px" }}
-            variant="gradient"
-            borderRadius="lg"
-            shadow="lg"
-            opacity={1}
-            p={2}
-          >
-            <h3>{t.boxHeading}</h3>
-            {
-              <DataTable
-                table={{
-                  columns: [{ Header: "Address", accessor: "address", width: "100%" }],
-                  rows: creators,
-                }}
-              />
-            }
-          </MDBox>
+          <Card>
+            <MDBox
+              sx={{ display: "flex", flexDirection: "column", gap: "10px" }}
+              variant="gradient"
+              borderRadius="lg"
+              shadow="lg"
+              opacity={1}
+              p={2}
+              bgColor={darkMode ? "dark" : "white"} // palette.dark.main / palette.white.main
+              color={darkMode ? "white" : "dark"}
+            >
+              <Grid container spacing={3}>
+                <Grid item xs={12} md={6} lg={3}>
+                  <h6>{t.boxHeading}</h6>
+                </Grid>
+                <Grid item xs={12} md={6} lg={3}>
+                  ciao
+                </Grid>
+              </Grid>
+              {creators.length ? (
+                <DataTable
+                  table={{
+                    columns: [{ Header: "Address", accessor: "address", width: "100%" }],
+                    rows: creators,
+                  }}
+                />
+              ) : (
+                <MDBox
+                  variant="gradient"
+                  bgColor={darkMode ? "dark" : "white"} // palette.dark.main / palette.white.main
+                  color={darkMode ? "white" : "dark"}
+                  coloredShadow={darkMode ? "white" : "dark"}
+                  borderRadius="xl"
+                  display="flex"
+                  justifyContent="center"
+                  alignItems="center"
+                  width="4rem"
+                  height="4rem"
+                >
+                  <Image src={sadturtle} alt={"st"} size="100%" quality={100} style={{ width: "100%", height: "100%", display: "block" }} />
+                </MDBox>
+              )}
+            </MDBox>
+          </Card>
         </React.Fragment>
       ) : (
         <React.Fragment>Non sei connesso </React.Fragment>
