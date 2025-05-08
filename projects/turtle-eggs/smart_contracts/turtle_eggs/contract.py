@@ -99,25 +99,25 @@ class TurtleMonitor(ARC4Contract):
     @abimethod
     def is_modifier_addr(self, check_addr: Address) -> bool:
         """
-        Metodo ABI per controllare se 'check_addr' e' un modifier registrato.
+        Check if 'check_addr' is a registered modifier.
         """
         return self.is_modifier(check_addr.bytes)
 
     @abimethod
     def is_creator_addr(self, check_addr: Address) -> bool:
         """
-        Metodo ABI per controllare se 'check_addr' e' un creator registrato.
+        Check if 'check_addr' is a registered creator.
         """
         return self.is_creator(check_addr.bytes)
 
     @abimethod
     def create_egg_nft(self, name: String, url: String, data_blob: String) -> UInt64:
         """
-        - Admin o un creator possono chiamare
-        - Crea un NFT ASA
-        - Salva in Box "egg:<asset_id>" = "non_schiuso" (stato iniziale)
-        - Emette un log
-        Ritorna asset_id creato
+        - Admin or creators can call this method
+        - Create the turtle ASA NFT
+        - Save it in a box "egg:<asset_id>" = "key1=val1;key2=val2...."
+        - Creates a Log
+        Return asset_id
         """
         is_admin = (Txn.sender.bytes == self.admin)
         is_creat = self.is_creator(Txn.sender.bytes)
@@ -163,10 +163,10 @@ class TurtleMonitor(ARC4Contract):
         data_blob: String # JSON o string con altre info (stato, date, ecc.)
     ) -> UInt64:
         """
-        - Admin o 'modifier'
-        - Riconfigura l'ASA cambiando 'url'
-        - Sovrascrive la Box "egg:<asa_id>" con i nuovi dati (data_blob)
-        - Emette un log
+        - Admin o 'modifier' can call this method
+        - Update ASA
+        - Overwrite Box "egg:<asa_id>" with new data_blob
+        - Creates a Log in order to track updates
         """
         # 1) Check ruoli
 
@@ -189,7 +189,7 @@ class TurtleMonitor(ARC4Contract):
             freeze=Global.current_application_address,   # se serve
             clawback=Global.current_application_address, # se serve
             # manager = Global.current_application_address,  # ridichiari se necessario
-            fee=0
+      
         ).submit()
         # Ora i wallet, vedendo il campo 'url' dell'asset, mostreranno la nuova immagine.
 
