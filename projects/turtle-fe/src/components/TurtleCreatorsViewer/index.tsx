@@ -17,7 +17,7 @@ import translations from "./translations.json";
 import sadturtle from "../../assets/images/turtles/sadturtle.png";
 import MDAvatar from "../MDAvatar";
 import Card from "@mui/material/Card";
-import Icon from "@mui/material/Icon";
+import HandleCreatorModal from "../HandleCreatorModal";
 import Grid from "@mui/material/Grid";
 
 import { useMaterialUIController } from "../../context";
@@ -81,7 +81,6 @@ function TurtleCreatorsViewer() {
       }
     });
     setCreators(creatorsData);
-    console.log("CREATORSSS ", creatorsData);
   };
 
   useEffect(() => {
@@ -113,12 +112,12 @@ function TurtleCreatorsViewer() {
               bgColor={darkMode ? "dark" : "white"} // palette.dark.main / palette.white.main
               color={darkMode ? "white" : "dark"}
             >
-              <Grid container spacing={3}>
-                <Grid item xs={12} md={6} lg={3}>
-                  <h6>{t.boxHeading}</h6>
-                </Grid>
-                <Grid item xs={12} md={6} lg={3}>
-                  ciao
+              <Grid container>
+                <Grid item xs={12} md={12} lg={12}>
+                  <MDBox display="flex" alignItems="center" gap={2}>
+                    <h6>{t.boxHeading}</h6>
+                    <HandleCreatorModal mode="create" />
+                  </MDBox>
                 </Grid>
               </Grid>
               {creators.length ? (
@@ -129,20 +128,28 @@ function TurtleCreatorsViewer() {
                   }}
                 />
               ) : (
-                <MDBox
-                  variant="gradient"
-                  bgColor={darkMode ? "dark" : "white"} // palette.dark.main / palette.white.main
-                  color={darkMode ? "white" : "dark"}
-                  coloredShadow={darkMode ? "white" : "dark"}
-                  borderRadius="xl"
-                  display="flex"
-                  justifyContent="center"
-                  alignItems="center"
-                  width="4rem"
-                  height="4rem"
-                >
-                  <Image src={sadturtle} alt={"st"} size="100%" quality={100} style={{ width: "100%", height: "100%", display: "block" }} />
-                </MDBox>
+                <div style={{ width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <MDBox
+                    variant="gradient"
+                    bgColor={darkMode ? "dark" : "white"} // palette.dark.main / palette.white.main
+                    color={darkMode ? "white" : "dark"}
+                    coloredShadow={darkMode ? "white" : "dark"}
+                    borderRadius="xl"
+                    display="flex"
+                    justifyContent="center"
+                    alignItems="center"
+                    width="4rem"
+                    height="4rem"
+                  >
+                    <Image
+                      src={sadturtle}
+                      alt={"st"}
+                      size="100%"
+                      quality={100}
+                      style={{ width: "100%", height: "100%", display: "block" }}
+                    />
+                  </MDBox>
+                </div>
               )}
             </MDBox>
           </Card>

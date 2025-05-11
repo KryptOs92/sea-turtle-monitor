@@ -135,7 +135,13 @@ function DashboardTurtle({ absolute, light, isMini }) {
               <IconButton size="small" disableRipple color="inherit" sx={navbarIconButton} onClick={handleConfiguratorOpen}>
                 <Icon sx={iconsStyle}>settings</Icon>
               </IconButton>
-              <MDButton onClick={toggleWalletModal}>{t.connect_wallet}</MDButton>
+              <MDButton
+                bgColor={darkMode ? "dark" : "white"} // palette.dark.main / palette.white.main
+                color={darkMode ? "white" : "dark"}
+                onClick={toggleWalletModal}
+              >
+                {t.connect_wallet}
+              </MDButton>
             </MDBox>
           </MDBox>
         )}
