@@ -49,7 +49,7 @@ import themeDarkRTL from "/src/assets/theme-dark/theme-rtl";
 import rtlPlugin from "stylis-plugin-rtl";
 
 // NextJS Material Dashboard 2 PRO routes
-import { routes, adminRoutes} from "/src/routes";
+import { routes, adminRoutes } from "/src/routes";
 import "../styles/App.css";
 // NextJS Material Dashboard 2 PRO Context Provider
 import { MaterialUIControllerProvider, useMaterialUIController, setMiniSidenav, setOpenConfigurator } from "/src/context";
@@ -63,8 +63,7 @@ import brandWhite from "/src/assets/images/logo-ct.png";
 import brandDark from "/src/assets/images/logo-ct-dark.png";
 import StoreProvider from "../components/StoreProvider";
 import { Config } from "@algorandfoundation/algokit-utils";
-
-
+import TurtleClientProvider from "../components/TurtleClientProvider";
 
 import { getAlgodConfigFromViteEnvironment, getKmdConfigFromViteEnvironment } from "../utils/network/getAlgoClientConfigs";
 
@@ -149,13 +148,12 @@ function Main({ Component, pageProps }) {
   // Change the openConfigurator state
   const handleConfiguratorOpen = () => setOpenConfigurator(dispatch, !openConfigurator);
   const waitRefreshUserAuthority = async () => {
-    await methods.refreshUserAuthority(activeAddress, dispatchStore)
-  }
-    const { activeAddress, transactionSigner } = useWallet();
-  
+    await methods.refreshUserAuthority(activeAddress, dispatchStore);
+  };
+  const { activeAddress, transactionSigner } = useWallet();
 
-  useEffect( () => {
-    waitRefreshUserAuthority()
+  useEffect(() => {
+    waitRefreshUserAuthority();
   }, []);
   // Setting the dir attribute for the body element
   useEffect(() => {
@@ -237,7 +235,6 @@ function Main({ Component, pageProps }) {
   );
 }
 
-
 function MyApp({ Component, pageProps, emotionCache = clientSideEmotionCache }) {
   return (
     <StoreProvider>
@@ -250,8 +247,9 @@ function MyApp({ Component, pageProps, emotionCache = clientSideEmotionCache }) 
             <title>Next Material Dashboard 2 PRO</title>
           </Head>
           <WalletProvider manager={walletManager}>
-
-          <Main Component={Component} pageProps={pageProps} />
+            <TurtleClientProvider>
+              <Main Component={Component} pageProps={pageProps} />
+            </TurtleClientProvider>
           </WalletProvider>
         </CacheProvider>
       </MaterialUIControllerProvider>

@@ -19,8 +19,11 @@ import MDAvatar from "../MDAvatar";
 import Card from "@mui/material/Card";
 import HandleCreatorModal from "../HandleCreatorModal";
 import Grid from "@mui/material/Grid";
+import TurtleTable from "../CreatorsTable";
 
 import { useMaterialUIController } from "../../context";
+import CreatorModal from "../HandleCreatorModal";
+import CreatorsTable from "../CreatorsTable";
 function TurtleCreatorsViewer() {
   const [controller] = useMaterialUIController();
   const { darkMode } = controller;
@@ -121,12 +124,7 @@ function TurtleCreatorsViewer() {
                 </Grid>
               </Grid>
               {creators.length ? (
-                <DataTable
-                  table={{
-                    columns: [{ Header: "Address", accessor: "address", width: "100%" }],
-                    rows: creators,
-                  }}
-                />
+                <CreatorsTable />
               ) : (
                 <div style={{ width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center" }}>
                   <MDBox

@@ -5,6 +5,7 @@ import { AlgoAmount } from "@algorandfoundation/algokit-utils/types/amount";
 import { AlgorandClient } from "@algorandfoundation/algokit-utils";
 import { getAlgodConfigFromViteEnvironment } from "./utils/network/getAlgoClientConfigs";
 import { setUserAuthorityScCreator } from "./lib/turtleSCslice";
+import { errorMonitor } from "events";
 
 /**
  * Create the application and opt it into the desired asset
@@ -31,12 +32,14 @@ export async function is_creator(tmClient: TurtleMonitorClient, address: string,
 
   const boolVal = result;
   console.log("isCreator?", boolVal); */
+  return false;
 }
 
 export async function check_is_smart_contract_creator(algorand: algokit.AlgorandClient, address: string | null, appId): Promise<boolean> {
   if (!address || !appId) {
     return false;
   }
+  console.log("APP ID ", appId);
   //OTTENGO RIFERIMENTO DELL APP ALGOKIT
   const app = await algorand.app.getById(appId);
 
@@ -99,13 +102,28 @@ export async function get_turtles_ids(algorand: algokit.AlgorandClient, appId) {
 
 export async function addCreator(
   tmClient: TurtleMonitorClient,
-
   newCreator: string // Indirizzo base32,
 ) {
-  await tmClient.send.addCreator({
-    args: { newCreator: newCreator },
-    populateAppCallResources: true,
-  });
+  let result = {
+    success: false,
+    data: "",
+  };
+  try {
+    await tmClient.send.addCreator({
+      args: { newCreator: newCreator },
+      populateAppCallResources: true,
+    });
+    result = {
+      success: true,
+      data: "indirizzo creator aggiunto",
+    };
+  } catch (errormessage: any) {
+    result = {
+      success: false,
+      data: errormessage,
+    };
+  }
+  return result;
 }
 
 export async function createEggNft(tmClient: TurtleMonitorClient, name: string, url: string, dataBlob: string): Promise<number> {
@@ -144,9 +162,8 @@ export async function updateEggData(
   );
 }
 
-export async function refreshUserAuthority(activeAddress: string, dispatchStore : any) {
+export async function refreshUserAuthority(activeAddress: string, dispatchStore: any) {
   if (activeAddress) {
-
     const algodConfig = getAlgodConfigFromViteEnvironment();
     const algorand = AlgorandClient.fromConfig({ algodConfig });
     const appId = BigInt(process.env.NEXT_PUBLIC_TURTLE_APPID!);
