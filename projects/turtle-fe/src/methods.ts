@@ -73,6 +73,30 @@ export async function get_turtle_creators(algorand: algokit.AlgorandClient, appI
   return creatorBoxes;
 }
 
+export async function get_turtle_modifiers(algorand: algokit.AlgorandClient, appId) {
+  let boxNames = await algorand.app.getBoxNames(appId);
+  let modifierBoxes: any = {};
+  await Promise.all(
+    boxNames.map(async (name) => {
+      const boxName = Buffer.from(name.name);
+
+      if (boxName.toString().startsWith("modifier:")) {
+        /* LA CHIAVE DI TUTTE LE BOX ESSENDO creator:byteAddress avranno i primi 8 bytes che servono per la stringa 'creator:' e i successivi 32 per l address salvato */
+        const rawName = name.nameRaw;
+        const addrBytes = rawName.slice(8, 40); // i 32 byte
+        const modifierAddress = encodeAddress(addrBytes);
+
+        /* IN QUESTO CASO il valore mi torna '49' che in ASCII EQUIVALE A 1, infatti io quando salvo un creator metto il valore a 1. In realta dato che quando lo cancello rimuovo la box e non setto a 0 è superfluo andare a
+      controllare che il valore sia 1, tanto o c'è o non c'è l address */
+        let boxValue = await algorand.app.getBoxValue(appId, name);
+        let creatorValue = new TextDecoder().decode(boxValue);
+        modifierBoxes[modifierAddress] = creatorValue;
+      }
+    })
+  );
+  return modifierBoxes;
+}
+
 export async function get_turtles_ids(algorand: algokit.AlgorandClient, appId) {
   let boxNames = await algorand.app.getBoxNames(appId);
   var eggsBoxes = {};
@@ -116,6 +140,58 @@ export async function addCreator(
     result = {
       success: true,
       data: "indirizzo creator aggiunto",
+    };
+  } catch (errormessage: any) {
+    result = {
+      success: false,
+      data: errormessage,
+    };
+  }
+  return result;
+}
+
+export async function addModifier(
+  tmClient: TurtleMonitorClient,
+  newModifier: string // Indirizzo base32,
+) {
+  let result = {
+    success: false,
+    data: "",
+  };
+  try {
+    await tmClient.send.addModifier({
+      args: { newModifier: newModifier },
+      populateAppCallResources: true,
+    });
+    result = {
+      success: true,
+      data: "indirizzo modifier aggiunto",
+    };
+  } catch (errormessage: any) {
+    result = {
+      success: false,
+      data: errormessage,
+    };
+  }
+  return result;
+}
+
+export async function removeCreator(
+  tmClient: TurtleMonitorClient,
+  creatorAddress: string // Indirizzo base32,
+) {
+  let result = {
+    success: false,
+    data: "",
+  };
+  try {
+    await tmClient.send.removeCreator({
+      args: { oldCreator: creatorAddress },
+      populateAppCallResources: true,
+    });
+    result = {
+      success: true,
+      data: "creator eliminato",
     };
   } catch (errormessage: any) {
     result = {

@@ -1,0 +1,14 @@
+{
+  "it": {
+    "create_error": "Errore, controlla che l'indirizzo sia realmente esistente",
+    "create_error_no_address": "Devi inserire un address"
+
+
+  },
+  "en-US": {
+    "create_error": "Error, please check if the address actually exists",
+    "create_error_no_address": "Address is mandatory"
+
+
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "it": {
+    "name": "Nome",
+    "latitude": "Latitudine",
+    "longitude": "Longitudine",
+    "altitude": "Altitudine",
+    "birthDate": "Data registrazione",
+    "birthTime": "Orario registrazione",
+    "createNFT": "Genera NFT",
+    "boxHeading": "Turtle modifiers",
+    "add_creator": "Aggiungi Modifier"
+
+  },
+  "en-US": {
+    "name": "Name",
+    "latitude": "Latitude",
+    "longitude": "Longitude",
+    "altitude": "Altitude",
+    "birthDate": "Registration date",
+    "birthTime": "Registration time",
+    "createNFT": "Generate NFT",
+    "boxHeading": "Turtle modifiers",
+    "add_creator": "Add Modifier"
+
+  }
+}

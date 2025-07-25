@@ -42,6 +42,7 @@
     "@fullcalendar/timegrid": "6.1.9",
     "@mui/icons-material": "5.14.12",
     "@mui/material": "5.14.12",
+    "@mui/x-data-grid": "^8.5.1",
     "@perawallet/connect": "^1.4.1",
     "@reduxjs/toolkit": "^2.6.1",
     "@txnlab/use-wallet": "^4.0.0",

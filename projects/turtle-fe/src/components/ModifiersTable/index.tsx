@@ -21,17 +21,17 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import FilterListIcon from "@mui/icons-material/FilterList";
 import { visuallyHidden } from "@mui/utils";
 import { useTurtleClient } from "../TurtleClientProvider";
-import { removeCreator } from "../../methods";
+import { removeModifier } from "../../methods";
 
-type CreatorItem = { address: string };
+type ModifierItem = { address: string };
 
-interface CreatorsTableProps {
-  items?: CreatorItem[]; // opzionale (può mancare) - se presente è [] o [ {address:"…"} ]
+interface ModifiersTableProps {
+  items?: ModifierItem[]; // opzionale (può mancare) - se presente è [] o [ {address:"…"} ]
   // alternativa obbligatoria:
   // items: AddressItem[];
 }
 
-function createData(address: string): Creator {
+function createData(address: string): Modifier {
   return {
     address,
   };
@@ -58,7 +58,7 @@ function getComparator<Key extends keyof any>(
 
 interface HeadCell {
   disablePadding: boolean;
-  id: keyof CreatorItem;
+  id: keyof ModifierItem;
   label: string;
   numeric: boolean;
 }
@@ -133,12 +133,12 @@ interface EnhancedTableToolbarProps {
 function EnhancedTableToolbar(props: EnhancedTableToolbarProps) {
   const { numSelected, itemsSelected } = props;
   const turtleClient = useTurtleClient();
-  const deleteCreator = async () => {
+  const deleteModifier = async () => {
     let res = null;
     console.log("ADDRESSES ", itemsSelected);
      itemsSelected.map(async (addrSelected) => {
-      res = await removeCreator(turtleClient, addrSelected);
-      
+      res = await removeModifier(turtleClient, addrSelected);
+
     });
   };
   return (
@@ -165,7 +165,7 @@ function EnhancedTableToolbar(props: EnhancedTableToolbarProps) {
       {numSelected > 0 ? (
         <Tooltip title="Delete">
           <IconButton>
-            <DeleteIcon onClick={deleteCreator} />
+            <DeleteIcon onClick={deleteModifier} />
           </IconButton>
         </Tooltip>
       ) : (
@@ -178,7 +178,7 @@ function EnhancedTableToolbar(props: EnhancedTableToolbarProps) {
     </Toolbar>
   );
 }
-export default function CreatorsTable({ creators = [] }): React.FC<CreatorsTableProps> {
+export default function ModifiersTable({ modifiers = [] }): React.FC<ModifiersTableProps> {
   const [order, setOrder] = React.useState<Order>("asc");
   const [orderBy, setOrderBy] = React.useState<keyof Data>("calories");
   const [selected, setSelected] = React.useState<readonly number[]>([]);
@@ -194,7 +194,7 @@ export default function CreatorsTable({ creators = [] }): React.FC<CreatorsTable
 
   const handleSelectAllClick = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.checked) {
-      const newSelected = creators.map((n) => n);
+      const newSelected = modifiers.map((n) => n);
       setSelected(newSelected);
       return;
     }
@@ -231,10 +231,10 @@ export default function CreatorsTable({ creators = [] }): React.FC<CreatorsTable
   };
 
   // Avoid a layout jump when reaching the last page with empty rows.
-  const emptyRows = page > 0 ? Math.max(0, (1 + page) * rowsPerPage - creators.length) : 0;
+  const emptyRows = page > 0 ? Math.max(0, (1 + page) * rowsPerPage - modifiers.length) : 0;
 
   const visibleRows = React.useMemo(
-    () => [...creators].sort(getComparator(order, orderBy)).slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage),
+    () => [...modifiers].sort(getComparator(order, orderBy)).slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage),
     [order, orderBy, page, rowsPerPage]
   );
 
@@ -249,7 +249,7 @@ export default function CreatorsTable({ creators = [] }): React.FC<CreatorsTable
             orderBy={orderBy}
             onSelectAllClick={handleSelectAllClick}
             onRequestSort={handleRequestSort}
-            rowCount={creators.length}
+            rowCount={modifiers.length}
           />
           <TableBody>
             {visibleRows.map((row, index) => {
@@ -297,7 +297,7 @@ export default function CreatorsTable({ creators = [] }): React.FC<CreatorsTable
       <TablePagination
         rowsPerPageOptions={[5, 10, 25]}
         component="div"
-        count={creators.length}
+        count={modifiers.length}
         rowsPerPage={rowsPerPage}
         page={page}
         onPageChange={handleChangePage}

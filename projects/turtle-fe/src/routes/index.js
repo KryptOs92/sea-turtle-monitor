@@ -63,7 +63,7 @@ export const adminRoutes = [
       {
         name: "Handle Modifier",
         key: "modifiers",
-        route: "/dashboards/turtles/home",
+        route: "/dashboards/turtles/modifiers",
       },
       {
         name: "Handle Turtles",

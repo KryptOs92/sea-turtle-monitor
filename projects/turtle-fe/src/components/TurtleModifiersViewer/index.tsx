@@ -17,17 +17,15 @@ import translations from "./translations.json";
 import sadturtle from "../../assets/images/turtles/sadturtle.png";
 import MDAvatar from "../MDAvatar";
 import Card from "@mui/material/Card";
-import HandleCreatorModal from "../HandleCreatorModal";
+import HandleModifierModal from "../HandleModifierModal";
 import Grid from "@mui/material/Grid";
-import TurtleTable from "../CreatorsTable";
 
 import { useMaterialUIController } from "../../context";
-import CreatorModal from "../HandleCreatorModal";
-import CreatorsTable from "../CreatorsTable";
-export const TurtleCreatorsViewerContext = createContext({
-  getCreatorsBoxes: () => {},
+import ModifiersTable from "../ModifiersTable";
+export const TurtleModifiersViewerContext = createContext({
+  getModifiersBoxes: () => {},
 });
-function TurtleCreatorsViewer() {
+function TurtleModifiersViewer() {
   const [controller] = useMaterialUIController();
   const { darkMode } = controller;
   const [appId, setAppId] = useState(BigInt(process.env.NEXT_PUBLIC_TURTLE_APPID));
@@ -43,7 +41,7 @@ function TurtleCreatorsViewer() {
   algorand.setDefaultSigner(transactionSigner);
   const [mounted, setMounted] = React.useState(false);
   const [newCreatorAddress, setNewCreatorAddress] = useState("");
-  const [creators, setCreators] = useState([]);
+  const [modifiers, setModifiers] = useState([]);
   const turtleClient = new TurtleMonitorClient({
     algorand,
     appId: BigInt(process.env.NEXT_PUBLIC_TURTLE_APPID),
@@ -51,46 +49,22 @@ function TurtleCreatorsViewer() {
     defaultSender: activeAddress,
     defaultSigner: transactionSigner,
   });
-  const parseEggData = (asaId, dataBlob) => {
-    let eggData = {};
 
-    eggData.id = asaId;
-
-    const parsedBlob = Object.fromEntries(
-      dataBlob // 1. stringa originale
-        .split(";") // 2. ["latitude=23", "longitude=23", ... , ""]
-        .filter(Boolean) // 3. rimuove l’ultima voce vuota
-        .map((pair) => {
-          const [key, raw] = pair.split("="); // 4. ["latitude", "23"]
-          const value =
-            key === "birthDate"
-              ? formatItalianDateTime(new Date(raw)) // 5. parse ISO in Date
-              : isNaN(raw)
-              ? raw //    lascia stringhe non-numero
-              : Number(raw); //    converte in numero
-          return [key, value]; // 6. [["latitude", 23], ...]
-        })
-    );
-
-    eggData = { ...eggData, ...parsedBlob };
-    return eggData;
-  };
-
-  const getCreatorsBoxes = async () => {
-    let creators = await methods.get_turtle_creators(algorand, BigInt(process.env.NEXT_PUBLIC_TURTLE_APPID));
-    let creatorsData = [];
-    let creatorsAddress = Object.keys(creators);
-    creatorsAddress.map((addr) => {
-      if (creators[addr] == "1") {
-        creatorsData.push({ address: addr });
+  const getModifierBoxes = async () => {
+    let modifiers = await methods.get_turtle_modifiers(algorand, BigInt(process.env.NEXT_PUBLIC_TURTLE_APPID));
+    let modifiersData = [];
+    let modifiersAddress = Object.keys(modifiers);
+    modifiersAddress.map((addr) => {
+      if (modifiers[addr] == "1") {
+        modifiersData.push({ address: addr });
       }
     });
-    setCreators(creatorsData);
+    setModifiers(modifiersData);
   };
 
   useEffect(() => {
     // Esempio: fetch iniziale
-    getCreatorsBoxes();
+    getModifierBoxes();
     setMounted(true);
     // return simile a componentWillUnmount
     return () => {
@@ -101,12 +75,12 @@ function TurtleCreatorsViewer() {
     // finché siamo in fase SSR o appena montati, mostro un placeholder
     return <div className="turtle-administration-container">Caricamento...</div>;
   }
-
+//5HG4ETNSIEQ6TNVPKFFIC5HRTFRPBYHYTZVCABM5LMTAGI27ZVVZC6OXAM
   return (
     <div className="turtle-administration-container">
       {activeAddress ? (
         <React.Fragment>
-          <TurtleCreatorsViewerContext.Provider value={{ getCreatorsBoxes: getCreatorsBoxes }}>
+          <TurtleModifiersViewerContext.Provider value={{ getModifiersBoxes: getModifierBoxes }}>
             <Card>
               <MDBox
                 sx={{ display: "flex", flexDirection: "column", gap: "10px" }}
@@ -122,12 +96,12 @@ function TurtleCreatorsViewer() {
                   <Grid item xs={12} md={12} lg={12}>
                     <MDBox display="flex" alignItems="center" gap={2}>
                       <h6>{t.boxHeading}</h6>
-                      <HandleCreatorModal mode="create" />
+                      <HandleModifierModal mode="create" />
                     </MDBox>
                   </Grid>
                 </Grid>
-                {creators.length ? (
-                  <CreatorsTable creators={creators} />
+                {modifiers.length ? (
+                  <ModifiersTable modifiers={modifiers} />
                 ) : (
                   <div style={{ width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center" }}>
                     <MDBox
@@ -154,7 +128,7 @@ function TurtleCreatorsViewer() {
                 )}
               </MDBox>
             </Card>
-          </TurtleCreatorsViewerContext.Provider>
+          </TurtleModifiersViewerContext.Provider>
         </React.Fragment>
       ) : (
         <React.Fragment>Non sei connesso </React.Fragment>
@@ -163,4 +137,4 @@ function TurtleCreatorsViewer() {
   );
 }
 
-export default TurtleCreatorsViewer;
+export default TurtleModifiersViewer;
